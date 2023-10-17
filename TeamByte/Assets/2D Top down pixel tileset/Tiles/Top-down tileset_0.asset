@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Top-down tileset_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 2742009423743090881, guid: 0b9548c61e2a5054a83e0c5c5d836da7,
-    type: 3}
+  m_Sprite: {fileID: 2742009423743090881, guid: 0b9548c61e2a5054a83e0c5c5d836da7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
