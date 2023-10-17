@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("OutLine"))
         {
-
+            
         }
     }
 
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         // 총알에 Rigidbody2D 컴포넌트를 가져옴
         Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
         Vector2 defaultShootDirection = Vector2.right; // 기본적으로 오른쪽으로 발사하도록 설정
-        if (horizontalInput == 0 && verticalInput == 0)
+        if(horizontalInput == 0 && verticalInput == 0)
         {
             if (spriteRenderer.flipX == false)
             {
