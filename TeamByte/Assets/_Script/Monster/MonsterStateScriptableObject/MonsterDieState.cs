@@ -6,12 +6,12 @@ public class MonsterDieState : ScriptableObject, IState
 {
     public void Enter(Monster owner)
     {
-        Debug.Log("Die State Enter");
+        owner.StartDie();
     }
     public void Excute(Monster owner)
     {
-        Debug.Log("Excute");
-
+        
+        
     }
     public void Exit(Monster owner)
     {
