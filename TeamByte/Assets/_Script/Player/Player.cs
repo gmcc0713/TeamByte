@@ -41,7 +41,12 @@ public class Player : MonoBehaviour
             Debug.Log("Collide");
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("OutLine"))
+        {
+            
+        }
     }
+
 
     void Move()
     {
@@ -56,10 +61,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             spriteRenderer.flipX = false;
+            animator.SetTrigger("Walk");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             spriteRenderer.flipX = true;
+            animator.SetTrigger("Walk");
         }
 
         if (horizontalInput == 0 && verticalInput == 0)
@@ -78,9 +85,24 @@ public class Player : MonoBehaviour
 
         // 총알에 Rigidbody2D 컴포넌트를 가져옴
         Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
+        Vector2 defaultShootDirection = Vector2.right; // 기본적으로 오른쪽으로 발사하도록 설정
+        if(horizontalInput == 0 && verticalInput == 0)
+        {
+            if (spriteRenderer.flipX == false)
+            {
+                defaultShootDirection = Vector2.left;
+                bulletRb.velocity = defaultShootDirection * bulletSpeed;
+            }
+            if (spriteRenderer.flipX == true)
+            {
+                bulletRb.velocity = defaultShootDirection * bulletSpeed;
+            }
+        }
+        else
+        {
+            Vector2 shootDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
-        // 플레이어가 바라보는 방향으로 총알 발사
-        Vector2 shootDirection = new Vector2(horizontalInput, verticalInput).normalized;
-        bulletRb.velocity = shootDirection * bulletSpeed;
+            bulletRb.velocity = shootDirection * bulletSpeed;
+        }
     }
 }
