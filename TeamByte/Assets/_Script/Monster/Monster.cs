@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 
@@ -12,12 +13,27 @@ public class Monster : MonoBehaviour
     private StateData m_cState;
     [SerializeField] private GameObject m_target;
     public GameObject _target => m_target;
+    public Animator m_animator;
+    NavMeshAgent agent;
+    private int m_iHP;
+    private int m_iattackDamage;
     void Start()
     {
         transform.position = new Vector3(10, 10, 0);
         m_target = GameObject.Find("Player");
         
         m_cFSM.ChangeState(m_cState.MoveState);
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
+        Initialized();
+    }
+    private void Initialized()
+    {
+        m_iHP = m_sData.m_iHP;
+        m_iattackDamage = m_sData.m_iAttackDamage;
+        m_animator = GetComponent<Animator>();
     }
     private IEnumerator OnUpdate()
     {
@@ -54,28 +70,45 @@ public class Monster : MonoBehaviour
     }
     public void MoveToPlayer()
     {
-        Vector2 direction = m_target.transform.position - transform.position;
-        direction.Normalize();
+        agent.SetDestination(m_target.transform.position);
+       if(transform.position.x > m_target.transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
 
-        float moveSpeed = m_sData.m_iSpeed; // 이동 속도
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
+    }
+    public void StartDie()
+    {
+        StartCoroutine(Die());
+    }
+    IEnumerator Die()
+    {
+        m_animator.SetTrigger("IsDie");
+        yield return new WaitForSeconds(0.7f);
+        gameObject.SetActive(false);
+    }
+
+    public void GetDamage(int damage)
+    {
+        m_iHP-=damage;
+        Debug.Log(m_sData.m_iHP);
+        if (m_iHP <= 0)
+        {
+            m_cFSM.ChangeState(m_cState.DieState);
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter");
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("OnTriggerEnter11");
-            m_cFSM.ChangeState(m_cState.AttackState);
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("s");
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("s1");
+
             m_cFSM.ChangeState(m_cState.AttackState);
         }
     }
