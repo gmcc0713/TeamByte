@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 43982358}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8899,7 +8899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbff50880d71854e92eff8a6f898a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Monster: {fileID: 4445368357504442182, guid: d9097f624fcccd84ea594285cff87f97, type: 3}
+  m_Monster: {fileID: 4839759781614722535, guid: e4834982a63093c4f9c3fbc3f009f607, type: 3}
 --- !u!4 &258617548
 Transform:
   m_ObjectHideFlags: 0
