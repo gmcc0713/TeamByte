@@ -8,33 +8,37 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
-    [SerializeField] private MonsterData m_sData;
-    private MonsterFSM m_cFSM;
-    private StateData m_cState;
-    [SerializeField] private GameObject m_target;
+    [SerializeField] protected MonsterData m_sData;
+    protected MonsterFSM m_cFSM;
+    protected StateData m_cState;
+    [SerializeField] protected GameObject m_target;
+    protected Animator m_animator;
     public GameObject _target => m_target;
-    public Animator m_animator;
-    NavMeshAgent agent;
-    private int m_iHP;
-    private int m_iattackDamage;
+    protected NavMeshAgent agent;
+
+    protected int m_iHP;
+    protected int m_iattackDamage;
     void Start()
     {
         transform.position = new Vector3(10, 10, 0);
         m_target = GameObject.Find("Player");
-        
-        m_cFSM.ChangeState(m_cState.MoveState);
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
 
-        Initialized();
+        Initialize();
     }
-    private void Initialized()
+    public virtual void Initialize()
     {
         m_iHP = m_sData.m_iHP;
         m_iattackDamage = m_sData.m_iAttackDamage;
         m_animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
+    public virtual void Move()
+    {
+       
+    }
+
     private IEnumerator OnUpdate()
     {
         while (true)
@@ -68,19 +72,7 @@ public class Monster : MonoBehaviour
         return true;
 
     }
-    public void MoveToPlayer()
-    {
-        agent.SetDestination(m_target.transform.position);
-       if(transform.position.x > m_target.transform.position.x)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
 
-    }
     public void StartDie()
     {
         StartCoroutine(Die());
@@ -108,7 +100,6 @@ public class Monster : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
             m_cFSM.ChangeState(m_cState.AttackState);
         }
     }

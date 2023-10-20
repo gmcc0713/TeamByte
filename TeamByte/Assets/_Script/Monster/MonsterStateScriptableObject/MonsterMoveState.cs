@@ -10,7 +10,7 @@ public class MonsterMoveState : ScriptableObject, IState
     }
     public void Excute(Monster owner)
     {
-        owner.MoveToPlayer();
+        owner.Move();
     }
     public void Exit(Monster owner)
     {
