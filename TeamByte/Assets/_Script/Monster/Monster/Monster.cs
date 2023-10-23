@@ -17,6 +17,7 @@ public class Monster : MonoBehaviour
     protected NavMeshAgent agent;
 
     protected int m_iHP;
+    protected int m_iMaxHP;
     protected int m_iattackDamage;
     void Start()
     {
@@ -27,7 +28,8 @@ public class Monster : MonoBehaviour
     }
     public virtual void Initialize()
     {
-        m_iHP = m_sData.m_iHP;
+        m_iMaxHP = m_sData.m_iHP;
+        m_iHP = m_iMaxHP;
         m_iattackDamage = m_sData.m_iAttackDamage;
         m_animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -84,10 +86,10 @@ public class Monster : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void GetDamage(int damage)
+    public virtual void GetDamage(int damage)
     {
         m_iHP-=damage;
-        Debug.Log(m_sData.m_iHP);
+        Debug.Log("Monster" + m_iHP);
         if (m_iHP <= 0)
         {
             m_cFSM.ChangeState(m_cState.DieState);
