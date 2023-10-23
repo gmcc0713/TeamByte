@@ -6,6 +6,11 @@ public class MonsterBullet : MonoBehaviour
 {
     public float moveSpeed;
     public bool isRun;
+
+    public void HPChange()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +21,11 @@ public class MonsterBullet : MonoBehaviour
     void Update()
     {
         if (!isRun) return;
-        transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
     }
     private void Destroy()
     {
         Destroy(gameObject);
     }
+    
 }
