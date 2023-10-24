@@ -81,28 +81,28 @@ public class Player : MonoBehaviour
     void FireBullet()
     {
         // 총알을 생성하고 초기 위치를 플레이어 위치로 설정
-        GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject newBullet;
+        Rigidbody2D bulletRb;
 
         // 총알에 Rigidbody2D 컴포넌트를 가져옴
-        Rigidbody2D bulletRb = newBullet.GetComponent<Rigidbody2D>();
-        Vector2 defaultShootDirection = Vector2.right; // 기본적으로 오른쪽으로 발사하도록 설정
-        if(horizontalInput == 0 && verticalInput == 0)
-        {
-            if (spriteRenderer.flipX == false)
-            {
-                defaultShootDirection = Vector2.left;
-                bulletRb.velocity = defaultShootDirection * bulletSpeed;
-            }
-            if (spriteRenderer.flipX == true)
-            {
-                bulletRb.velocity = defaultShootDirection * bulletSpeed;
-            }
-        }
-        else
-        {
-            Vector2 shootDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 마우스 커서 위치를 게임 월드 좌표로 변환
+        Vector2 shootDirection = (mousePosition - (Vector2)transform.position).normalized; // 플레이어에서 마우스 커서 방향을 구함
+
+        if (gameObject.transform.position.x < mousePosition.x && spriteRenderer.flipX)
+        {
+            newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bulletRb = newBullet.GetComponent<Rigidbody2D>();
+            // 플레이어가 +방향을 보고 있을 때만 발사
             bulletRb.velocity = shootDirection * bulletSpeed;
         }
+        else if(gameObject.transform.position.x > mousePosition.x && !spriteRenderer.flipX)
+        {
+            newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bulletRb = newBullet.GetComponent<Rigidbody2D>();
+            // 플레이어가 -방향을 보고 있을 때는 반대 방향으로 발사
+            bulletRb.velocity = shootDirection * bulletSpeed;
+        }
+        
     }
 }
