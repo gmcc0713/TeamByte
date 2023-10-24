@@ -13,6 +13,7 @@ public class Monster : MonoBehaviour
     protected StateData m_cState;
     [SerializeField] protected GameObject m_target;
     protected Animator m_animator;
+    public Animator _animator => m_animator;
     public GameObject _target => m_target;
     protected NavMeshAgent agent;
 
@@ -36,10 +37,8 @@ public class Monster : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
-    public virtual void Move()
-    {
-       
-    }
+    public virtual void Idle() { }
+    public virtual void Move() { }
 
     private IEnumerator OnUpdate()
     {

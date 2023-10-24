@@ -7,12 +7,11 @@ public class MonsterIdleState : ScriptableObject, IState
 {
     public void Enter(Monster owner)
     {
-        Debug.Log("Idle State Enter");
+        owner.Idle();
     }
     public void Excute(Monster owner)
     {
-        Debug.Log("Idle Excute");
-        
+        owner.Idle();
     }
     public void Exit(Monster owner)
     {

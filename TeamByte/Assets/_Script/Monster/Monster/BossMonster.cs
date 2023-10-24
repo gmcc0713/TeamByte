@@ -17,13 +17,18 @@ public class BossMonster : Monster
     {
         base.Initialize();
         
-        m_cFSM.ChangeState(m_cState.IdleState);
+        //m_cFSM.ChangeState(m_cState.);
         transform.position = m_spawnPos;
         m_HPUI =GetComponentInChildren<Slider>();
 
-        StartCoroutine(AttackAndCooldown());
+        JumpAttack();
+        //StartCoroutine(AttackAndCooldown());
         //ShootBulletCircle(10);
-        SectorFormShot(10,90);
+        //SectorFormShot(10,90);
+    }
+    public override void Idle()
+    {
+        StartCoroutine(AttackCoolDown());
     }
     public override void Move()
     {
@@ -31,6 +36,11 @@ public class BossMonster : Monster
     }
     public void JumpAttack()
     {
+        if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            CircleShot(10);
+            m_cFSM.ChangeState(m_cState.IdleState);
+        }
 
     }
     
@@ -67,19 +77,6 @@ public class BossMonster : Monster
         }
         m_bIsAttacking = true;
     }
-    void SectorFromDelayShot(int bulletCount,int cventral,int rotate,int rotateCount,int entireCount)
-    {
-        StartCoroutine(ShotRoutine());
-        IEnumerator ShotRoutine()
-        {
-            m_bIsAttacking = false;
-
-            float z = -rotate;
-            float amount = (rotate * 2f) / rotateCount;
-
-            yield break;
-        }
-    }
     public override void GetDamage(int damage)
     {
         m_iHP -= damage;
@@ -93,10 +90,33 @@ public class BossMonster : Monster
 
         m_HPUI.value = (float)m_iHP / m_iMaxHP;
     }
-    private IEnumerator AttackAndCooldown()
+    void CircleShot(int count)
     {
+        for (int i = 0; i < 360; i += 360 / count)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
+        {
 
+            Instantiate(m_bullet, transform.position, Quaternion.Euler(0,0,i));
+        }
+    }
+    private IEnumerator AttackCoolDown()
+    {
         yield return new WaitForSeconds(5.0f);
+        switch (RandomAttackType())
+        {
+            case 0:
+                ShootBulletCircle(10);
+                break;
+            case 1:
+                SectorFormShot(10, 90);
+                break;
+            case 2:
+                m_cFSM.ChangeState(m_cState.BossJumpState);
+                break;
+        }
         m_bIsAttacking = false;
+    }
+    private int RandomAttackType()
+    {
+        return Random.Range(0, 3);
     }
 }
