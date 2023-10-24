@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("OutLine"))
         {
-            
+
         }
     }
 
@@ -96,13 +96,13 @@ public class Player : MonoBehaviour
             // 플레이어가 +방향을 보고 있을 때만 발사
             bulletRb.velocity = shootDirection * bulletSpeed;
         }
-        else if(gameObject.transform.position.x > mousePosition.x && !spriteRenderer.flipX)
+        else if (gameObject.transform.position.x > mousePosition.x && !spriteRenderer.flipX)
         {
             newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bulletRb = newBullet.GetComponent<Rigidbody2D>();
             // 플레이어가 -방향을 보고 있을 때는 반대 방향으로 발사
             bulletRb.velocity = shootDirection * bulletSpeed;
         }
-        
+
     }
 }
