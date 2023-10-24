@@ -7,11 +7,11 @@ public class MonsterIdleState : ScriptableObject, IState
 {
     public void Enter(Monster owner)
     {
+        Debug.Log("BossIdle");
         owner.Idle();
     }
     public void Excute(Monster owner)
     {
-        owner.Idle();
     }
     public void Exit(Monster owner)
     {

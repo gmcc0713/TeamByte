@@ -10,25 +10,25 @@ public class BossMonster : Monster
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private Vector3 m_spawnPos;
     [SerializeField] private Slider m_HPUI;
-    private bool m_bIsAttacking;
+    private bool m_bIsAttacking = false;
 
 
     public override void Initialize()
     {
         base.Initialize();
-        
-        //m_cFSM.ChangeState(m_cState.);
+        m_bIsAttacking = false;
+        m_cFSM.ChangeState(m_cState.IdleState);
         transform.position = m_spawnPos;
         m_HPUI =GetComponentInChildren<Slider>();
-
-        JumpAttack();
-        //StartCoroutine(AttackAndCooldown());
-        //ShootBulletCircle(10);
-        //SectorFormShot(10,90);
     }
     public override void Idle()
     {
-        StartCoroutine(AttackCoolDown());
+        m_bIsAttacking = false;
+        if (!m_bIsAttacking)
+        {
+            Debug.Log("attack");
+            StartCoroutine(AttackCoolDown());
+        }
     }
     public override void Move()
     {
@@ -39,26 +39,49 @@ public class BossMonster : Monster
         if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
             CircleShot(10);
+
             m_cFSM.ChangeState(m_cState.IdleState);
+            
+        }
+
+
+    }
+    private IEnumerator ShotCircleBullets()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            float radius = 1f;
+            Vector3 startPos = transform.position;
+            for (int j = 0; j < 360; j += 360 / 10)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
+            {
+                Vector3 pos = startPos + new Vector3(Mathf.Cos(j * Mathf.Deg2Rad) * radius, Mathf.Sin(j * Mathf.Deg2Rad) * radius, 0);
+
+                Vector2 normalVec = (m_target.transform.position - startPos).normalized;
+                float z = Mathf.Atan2(normalVec.y, normalVec.x) * Mathf.Rad2Deg;
+                Quaternion rot = Quaternion.Euler(0, 0, z);
+
+                Instantiate(m_bullet, pos, rot);
+            }
+            m_bIsAttacking = true;
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+    IEnumerator SectorShot()
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            SectorFormShot(10, 90);
+            yield return new WaitForSeconds(0.5f);
         }
 
     }
-    
-    public void ShootBulletCircle(int count)    // 방향 오류 확인필요
+    public void ShootBulletCircle()  
     {
-        float radius = 1f;
-        Vector3 startPos = transform.position;
-        for (int i =0;i<360;i+= 360/count)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
-        {
-            Vector3 pos = startPos + new Vector3(Mathf.Cos(i * Mathf.Deg2Rad) * radius, Mathf.Sin(i * Mathf.Deg2Rad) * radius, 0);
-
-            Vector2 normalVec = (m_target.transform.position - startPos).normalized;
-            float z = Mathf.Atan2(normalVec.y, normalVec.x) * Mathf.Rad2Deg;
-            Quaternion rot = Quaternion.Euler(0, 0, z);
-
-            Instantiate(m_bullet, pos, rot);
-        }
-        m_bIsAttacking = true;
+        ShotCircleBullets();
+    }
+    public void BossSectorShot()
+    {
+        StartCoroutine(SectorShot());
     }
     public void SectorFormShot(int count,float central)
     {
@@ -97,26 +120,33 @@ public class BossMonster : Monster
 
             Instantiate(m_bullet, transform.position, Quaternion.Euler(0,0,i));
         }
+        m_bIsAttacking = true;
     }
     private IEnumerator AttackCoolDown()
     {
-        yield return new WaitForSeconds(5.0f);
+        Debug.Log("Wait 5sec");
+        m_bIsAttacking = false;
+        yield return new WaitForSeconds(1.0f);
         switch (RandomAttackType())
         {
             case 0:
-                ShootBulletCircle(10);
+                Debug.Log("0");
+                m_cFSM.ChangeState(m_cState.BossCircleShotState);
                 break;
             case 1:
-                SectorFormShot(10, 90);
+                Debug.Log("2");
+                m_cFSM.ChangeState(m_cState.BossSectorShotState);
                 break;
             case 2:
+                Debug.Log("1");
                 m_cFSM.ChangeState(m_cState.BossJumpState);
                 break;
         }
-        m_bIsAttacking = false;
     }
     private int RandomAttackType()
     {
-        return Random.Range(0, 3);
+        int ran = Random.Range(0, 3);
+        Debug.Log("rac" + ran);
+        return ran;
     }
 }

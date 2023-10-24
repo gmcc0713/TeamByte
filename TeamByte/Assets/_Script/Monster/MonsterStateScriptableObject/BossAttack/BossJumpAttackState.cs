@@ -8,7 +8,8 @@ public class BossJumpAttackState : ScriptableObject, IState
 
     public void Enter(Monster owner)
     {
-        owner._animator.SetTrigger("JumpAttack");
+        Debug.Log("BosssSjump");
+        owner._animator.SetTrigger("IsJump");
     }
     public void Excute(Monster owner)
     {

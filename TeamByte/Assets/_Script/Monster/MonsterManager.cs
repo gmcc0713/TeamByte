@@ -27,8 +27,10 @@ public class MonsterManager : MonoBehaviour
         IState die = (IState)Resources.Load("ScriptableObject/MonsterState/DieState");
 
         IState bossJumpAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossJumpState");
+        IState bossCircleShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossCircleShot");
+        IState bossSectorShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossSectorShot");
         StateData data = ScriptableObject.CreateInstance<StateData>();
-        data.SetData(idle, move, attack, die, bossJumpAttack);
+        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot);
         monster.SetData(data);
     }
 }

@@ -15,13 +15,17 @@ public class StateData : ScriptableObject
     public IState AttackState { get; private set; }
     public IState DieState { get; private set; }
     public IState BossJumpState { get; private set; }
-    public void SetData(IState idle, IState move, IState attack, IState die, IState bossJump)
+    public IState BossCircleShotState { get; private set; }
+    public IState BossSectorShotState { get; private set; }
+    public void SetData(IState idle, IState move, IState attack, IState die, IState bossJump, IState bossCircleShot, IState bossSectorShot)
     {
         IdleState = idle;
         MoveState = move;
         AttackState = attack;
         DieState = die;
-        BossJumpState = bossJump;
+        BossJumpState = bossCircleShot;
+        BossCircleShotState = bossJump;
+        BossSectorShotState = bossSectorShot;
     }
 
 }

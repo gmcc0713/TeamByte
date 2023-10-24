@@ -10,7 +10,6 @@ public class MonsterFSM : MonoBehaviour
     MonsterFSM() { }
     public MonsterFSM(Monster owner)
     {
-        Debug.Log("Constraction");
         this.owner = owner;
     }
     public void Update()
@@ -25,6 +24,7 @@ public class MonsterFSM : MonoBehaviour
     }
     public bool ChangeState(IState state)
     {
+
         if (null == state) return false;
         currState.Exit(owner);
         currState = state;
