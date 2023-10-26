@@ -68,6 +68,14 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = true;
             animator.SetBool("Walk", true);
         }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetBool("Walk", true);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            animator.SetBool("Walk", true);
+        }
 
         if (horizontalInput == 0 && verticalInput == 0)
         {
