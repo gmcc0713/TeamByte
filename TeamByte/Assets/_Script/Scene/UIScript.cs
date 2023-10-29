@@ -8,7 +8,7 @@ public class UIScript : MonoBehaviour
 
     public void GameStartBtn()
     {
-        SceneManager.LoadScene("KJHTest");
+        SceneManager.LoadScene("Stage1");
     }
     public void ExitGame()
     {

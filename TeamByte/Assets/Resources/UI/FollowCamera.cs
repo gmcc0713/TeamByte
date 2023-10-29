@@ -5,11 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class FollowCamera : MonoBehaviour
 {
-
-    /*
     public Transform target; // 카메라가 따라갈 대상(플레이어)의 Transform 컴포넌트
 
-    public float lerpTime = 1.0f; // 보간에 사용될 시간
+    public float lerpTime = 2f; // 보간에 사용될 시간
 
     public float CameraHeight; // 카메라 높이의 절반
     public float CameraWidth; // 카메라 넓이의 절반
@@ -25,31 +23,25 @@ public class FollowCamera : MonoBehaviour
         CameraWidth = CameraHeight * Screen.width / Screen.height;
 
         // 맵의 TileMap을 기반으로 맵의 크기를 계산
-        BoundsInt bounds = tilemap.cellBounds;
-        mapSize = new Vector3(bounds.size.x, bounds.size.y, 0f);
-
-        // Vector3Int size = tilemap.size;
-        // mapSize = new Vector3(size.x, size.y, 0f);
+        //BoundsInt bounds = tilemap.cellBounds;
+        //mapSize = new Vector3(bounds.size.x, bounds.size.y, 0f);
     }
 
     void Update()
     {
         if (target != null)
         {
-
-            // 플레이어의 위치를 따라가도록 카메라의 위치를 업데이트합니다.
-            //transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
-
-            // 타겟의 위치를 카메라의 x, y 좌표로 보간하여 새로운 위치 벡터를 생성
+           // 타깃 위치 보간
             Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
 
-            // 현재 카메라의 위치에서 타겟의 위치로 보간을 적용하여 새로운 카메라의 위치를 계산
+            // 최종 카메라 position
             transform.position = Vector3.Lerp(transform.position, targetPosition, lerpTime * Time.deltaTime);
 
         }
     }
-    */
 
+    // 보간 수정 후 적용
+    /*
     public Transform target; // 카메라가 따라갈 대상(플레이어)의 Transform 컴포넌트
     public float lerpTime = 1.0f; // 보간에 사용될 시간
 
@@ -91,4 +83,5 @@ public class FollowCamera : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, new Vector3(clampX, clampY, targetPosition.z), lerpTime * Time.deltaTime);
         }
     }
+    */
 }
