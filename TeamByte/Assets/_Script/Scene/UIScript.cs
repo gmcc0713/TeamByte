@@ -8,7 +8,7 @@ public class UIScript : MonoBehaviour
 
     public void GameStartBtn()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("Tutorial");
     }
     public void ExitGame()
     {
