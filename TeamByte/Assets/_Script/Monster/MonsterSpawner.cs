@@ -8,7 +8,7 @@ public class MonsterSpawner : MonoBehaviour
     public GameObject m_Monster;
     void Start()
     {
-        GameObject clone = Instantiate(m_Monster);
+        GameObject clone = Instantiate(m_Monster,transform.position, Quaternion.identity);
         Debug.Log(clone);
         MonsterManager.Instance.MonsterInit(clone.GetComponent<Monster>());
     }
