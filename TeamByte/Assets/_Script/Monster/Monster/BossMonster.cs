@@ -26,7 +26,6 @@ public class BossMonster : Monster
         m_bIsAttacking = false;
         if (!m_bIsAttacking)
         {
-            Debug.Log("attack");
             StartCoroutine(AttackCoolDown());
         }
     }
@@ -34,25 +33,58 @@ public class BossMonster : Monster
     {
         //좌우로 움직임 처리
     }
-    public void JumpAttack()
+    public void ShootBulletCircle()  
     {
-        if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
-        {
-            CircleShot(10);
-
-            m_cFSM.ChangeState(m_cState.IdleState);
-            
-        }
-
+        StartCoroutine(CircleShotPattern());
 
     }
-    private IEnumerator ShotCircleBullets()
+    public void BossSectorShot()
     {
+        StartCoroutine(SectorShotPattern());
+
+    }
+    public void BossJumpShot()
+    {
+        StartCoroutine(JumpAttackPattern());
+    }
+    public IEnumerator JumpAttackPattern()
+    {
+        int count;
+        yield return new WaitForSeconds(0.2f);
         for (int i = 0; i < 3; i++)
         {
+            count = Random.Range(15, 25);
+            Debug.Log(i + " JumpCount");
+            CircleShot(count);
+            yield return new WaitForSeconds(0.5f);
+        }
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+    }
+    IEnumerator CircleShotPattern()
+    {
+
+        for (int j = 0; j < 10; j++)
+        {
+            ShotCircleBullets(10);
+            yield return new WaitForSeconds(0.5f);
+        }
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+    }
+    IEnumerator SectorShotPattern()
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            SectorFormShot(10, 90);
+            yield return new WaitForSeconds(0.5f);
+        }
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+    }
+
+    private void ShotCircleBullets(int count)
+    {
             float radius = 1f;
             Vector3 startPos = transform.position;
-            for (int j = 0; j < 360; j += 360 / 10)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
+            for (int j = 0; j < 360; j += 360 / count)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
             {
                 Vector3 pos = startPos + new Vector3(Mathf.Cos(j * Mathf.Deg2Rad) * radius, Mathf.Sin(j * Mathf.Deg2Rad) * radius, 0);
 
@@ -63,25 +95,6 @@ public class BossMonster : Monster
                 Instantiate(m_bullet, pos, rot);
             }
             m_bIsAttacking = true;
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-    IEnumerator SectorShot()
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            SectorFormShot(10, 90);
-            yield return new WaitForSeconds(0.5f);
-        }
-
-    }
-    public void ShootBulletCircle()  
-    {
-        ShotCircleBullets();
-    }
-    public void BossSectorShot()
-    {
-        StartCoroutine(SectorShot());
     }
     public void SectorFormShot(int count,float central)
     {
@@ -115,30 +128,34 @@ public class BossMonster : Monster
     }
     void CircleShot(int count)
     {
+
         for (int i = 0; i < 360; i += 360 / count)      //0~360도 까지 각도 증가(생성할 총알 갯수만큼 나눠서 각도 설정)
         {
-
             Instantiate(m_bullet, transform.position, Quaternion.Euler(0,0,i));
         }
         m_bIsAttacking = true;
+    }
+    public void StartAttackCoolTime()
+    {
+        StartCoroutine(AttackCoolDown());
     }
     private IEnumerator AttackCoolDown()
     {
         Debug.Log("Wait 5sec");
         m_bIsAttacking = false;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         switch (RandomAttackType())
         {
             case 0:
-                Debug.Log("0");
+                Debug.Log("Change Circle");
                 m_cFSM.ChangeState(m_cState.BossCircleShotState);
                 break;
             case 1:
-                Debug.Log("2");
+                Debug.Log("Change Sector");
                 m_cFSM.ChangeState(m_cState.BossSectorShotState);
                 break;
             case 2:
-                Debug.Log("1");
+                Debug.Log("Change Jump");
                 m_cFSM.ChangeState(m_cState.BossJumpState);
                 break;
         }

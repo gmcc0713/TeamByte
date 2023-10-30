@@ -10,10 +10,11 @@ public class BossJumpAttackState : ScriptableObject, IState
     {
         Debug.Log("BosssSjump");
         owner._animator.SetTrigger("IsJump");
+        owner.GetComponent<BossMonster>().BossJumpShot();
     }
     public void Excute(Monster owner)
     {
-        owner.GetComponent<BossMonster>().JumpAttack();
+
     }
     public void Exit(Monster owner)
     {
