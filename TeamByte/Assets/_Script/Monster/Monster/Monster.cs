@@ -24,7 +24,7 @@ public class Monster : MonoBehaviour
     {
         transform.position = new Vector3(10, 10, 0);
         m_target = GameObject.Find("Player");
-
+        Debug.Log(m_target);
         Initialize();
     }
     public virtual void Initialize()
@@ -54,12 +54,9 @@ public class Monster : MonoBehaviour
     public bool SetData(StateData _data)            //제일 초기에 한번 데이터 세팅
     {
         m_cState = _data;
-        Debug.Log(m_cState);
         if (null == m_cFSM)
         {
             m_cFSM = new MonsterFSM(this);
-
-            Debug.Log(m_cFSM);
         }
 
         if (!m_cFSM.SetCurrState(m_cState.IdleState))
