@@ -1,10 +1,8 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Potion : MonoBehaviour
 {
-    public GameObject Canvas;
     public Text resultText;
     private int result = 0;
     public Text successText;
@@ -45,12 +43,6 @@ public class Potion : MonoBehaviour
         if (result == 50)
         {
             successText.gameObject.SetActive(true);
-            StartCoroutine(CloseQuiz());
         }
-    }
-    private IEnumerator CloseQuiz() 
-    {
-        yield return new WaitForSeconds(3);
-        Canvas.SetActive(false);
     }
 }
