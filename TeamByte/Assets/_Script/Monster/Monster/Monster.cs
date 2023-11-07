@@ -101,7 +101,7 @@ public class Monster : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            m_cFSM.ChangeState(m_cState.AttackState);
+            Debug.Log("attack");
         }
     }
 }
