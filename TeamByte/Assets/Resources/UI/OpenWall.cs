@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class OpenWall : MonoBehaviour
 {
-    public GameObject ActiveWall; // 활성화 될 다음 벽
-    public GameObject wall; // 상호작용으로 삭제할 벽
+    public GameObject wall;
     public GameObject circleObj; // Circle 오브젝트의 Transform 참조
     public float interactDistance = 20f; // 허용 거리
     public GameObject playerObj;
@@ -24,7 +23,7 @@ public class OpenWall : MonoBehaviour
     {
         Debug.Log("벽 부수기");
         Destroy(wall);
-        ActiveWall.SetActive(true);
+        
     }
 }
 
