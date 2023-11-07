@@ -8,11 +8,13 @@ TagManager:
   - Bullet
   - Enemy
   - BossHP
+  - Portal
+  - HiddenWall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - HiddenObject
   - Water
   - UI
   - 
