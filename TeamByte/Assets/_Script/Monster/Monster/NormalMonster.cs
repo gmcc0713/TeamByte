@@ -14,6 +14,10 @@ public class NormalMonster : Monster
     }
     public override void Move()
     {
+        if(!m_target)
+        {
+            return;
+        }
         agent.SetDestination(m_target.transform.position);
         if (transform.position.x > m_target.transform.position.x)
         {

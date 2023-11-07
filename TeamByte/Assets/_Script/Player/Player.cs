@@ -9,23 +9,22 @@ public class Player : MonoBehaviour
     public float f_playerHCount = 3;
     public float f_maxHearts = 3; // 최대 하트 개수
     private float f_currentHearts;
-
+    public bool m_bGuard = false;
 
     void Start()
     {
         f_currentHearts = f_maxHearts;
         UpdateHeartsUI();
-        StartCoroutine(CollideCoroutine());
+
     }
 
     IEnumerator CollideCoroutine()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
-        }
+        m_bGuard = true;
+        yield return new WaitForSeconds(1f);
+        m_bGuard = false;
     }
-        void UpdateHeartsUI()
+    void UpdateHeartsUI()
         {
             for (int i = 0; i < heartUI.Length; i++)
             {
@@ -40,9 +39,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        void OnTriggerEnter2D(Collider2D collision)
+        void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
+            if (!m_bGuard &&(collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy")) )
             {
                 Debug.Log("Collide");
                 f_currentHearts--;
@@ -51,7 +50,7 @@ public class Player : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
-
+                StartCoroutine(CollideCoroutine());
                 UpdateHeartsUI();
             }
         }
