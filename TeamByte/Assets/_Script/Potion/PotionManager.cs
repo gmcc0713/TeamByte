@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Potion : MonoBehaviour
+public class PotionManager : MonoBehaviour
 {
     public GameObject Canvas;
     public Text resultText;
