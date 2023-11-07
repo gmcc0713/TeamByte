@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BossMonster : Monster
 {
+
     // Start is called before the first frame update
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private Vector3 m_spawnPos;
@@ -13,7 +15,7 @@ public class BossMonster : Monster
     [SerializeField] private GameObject[] m_aMovingRoot;
     private bool m_bIsAttacking = false;
     private int m_iPriviousAttackType;
-
+    private int m_curPathIndex;
     Vector3 start;
     Vector3 centerPos;
     public override void Initialize()
@@ -25,6 +27,8 @@ public class BossMonster : Monster
         m_HPUI =GetComponentInChildren<Slider>();
         start = transform.position;
         centerPos = new Vector3(0, 0, 0);
+        m_aMovingRoot = BossManager.Instance.GetMovingRoot();
+        m_curPathIndex = 0;
     }
     public override void Idle()
     {
@@ -92,21 +96,41 @@ public class BossMonster : Monster
     }
     private IEnumerator BossWalk()
     {
-        while ((transform.position - centerPos).sqrMagnitude > 4) 
+        Vector2[] path = RandomPathGet();
+
+        while (m_curPathIndex < path.Length) 
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_target.transform.position, 0.1f);
-            
+            transform.position = Vector2.MoveTowards(transform.position, path[m_curPathIndex], 10*Time.deltaTime);
+            yield return new WaitForSeconds(0.001f);
+            if(Vector2.Distance(transform.position, path[m_curPathIndex]) == 0)
+            {
+                Debug.Log("Walk " + m_curPathIndex);
+                m_curPathIndex++;
+            }
         }
         yield return null;
         _animator.SetBool("IsWalk", false);
-        CircleDelayShot(10);
-        _animator.SetBool("IsWalk", true);
-        while ((start - transform.position).sqrMagnitude > 4)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, start, 0.1f);
-        }
-        _animator.SetBool("IsWalk", false);
+        
             
+    }
+    Vector2[] RandomPathGet()
+    {
+        Vector2[] path = new Vector2[6];
+        int rand = 0;
+        int priviousRand = -1;
+        for (int i =0;i<5;)
+        {
+            rand = Random.Range(0, m_aMovingRoot.Length);
+            if(rand != priviousRand)
+            {
+                i++;
+            }
+            Debug.Log(rand);
+            path[i] = m_aMovingRoot[rand].transform.position;
+            priviousRand = rand;
+        }
+        path[5] = m_aMovingRoot[0].transform.position;
+        return path;
     }
     void CircleDelayShot(int count)
     {
@@ -192,7 +216,9 @@ public class BossMonster : Monster
         Debug.Log("Wait 5sec");
         m_bIsAttacking = false;
         yield return new WaitForSeconds(3.0f);
-        switch (RandomAttackType())
+        int t = 3;
+        //RandomAttackType()
+        switch (t)
         {
             case 0:
                 Debug.Log("Change Circle");
