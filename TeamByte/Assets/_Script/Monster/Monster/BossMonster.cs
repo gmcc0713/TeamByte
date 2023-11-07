@@ -10,9 +10,12 @@ public class BossMonster : Monster
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private Vector3 m_spawnPos;
     [SerializeField] private Slider m_HPUI;
+    [SerializeField] private GameObject[] m_aMovingRoot;
     private bool m_bIsAttacking = false;
+    private int m_iPriviousAttackType;
 
-
+    Vector3 start;
+    Vector3 centerPos;
     public override void Initialize()
     {
         base.Initialize();
@@ -20,6 +23,8 @@ public class BossMonster : Monster
         m_cFSM.ChangeState(m_cState.IdleState);
         transform.position = m_spawnPos;
         m_HPUI =GetComponentInChildren<Slider>();
+        start = transform.position;
+        centerPos = new Vector3(0, 0, 0);
     }
     public override void Idle()
     {
@@ -29,19 +34,17 @@ public class BossMonster : Monster
             StartCoroutine(AttackCoolDown());
         }
     }
-    public override void Move()
+    public void MoveAttack()
     {
-        //谅快肺 框流烙 贸府
+        StartCoroutine(BossWalk());
     }
     public void ShootBulletCircle()  
     {
-        StartCoroutine(CircleShotPattern());
-
+        StartCoroutine(SectorShotPattern());
     }
     public void BossSectorShot()
     {
-        StartCoroutine(SectorShotPattern());
-
+        StartCoroutine(CircleShotPattern());
     }
     public void BossJumpShot()
     {
@@ -54,7 +57,6 @@ public class BossMonster : Monster
         for (int i = 0; i < 3; i++)
         {
             count = Random.Range(15, 25);
-            Debug.Log(i + " JumpCount");
             CircleShot(count);
             yield return new WaitForSeconds(0.5f);
         }
@@ -79,7 +81,53 @@ public class BossMonster : Monster
         }
         m_cFSM.ChangeState(m_cState.BossWaitState);
     }
+    IEnumerator BossWalkAndAttack()
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            SectorFormShot(10, 90);
+            yield return new WaitForSeconds(0.5f);
+        }
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+    }
+    private IEnumerator BossWalk()
+    {
+        while ((transform.position - centerPos).sqrMagnitude > 4) 
+        {
+            transform.position = Vector3.MoveTowards(transform.position, m_target.transform.position, 0.1f);
+            
+        }
+        yield return null;
+        _animator.SetBool("IsWalk", false);
+        CircleDelayShot(10);
+        _animator.SetBool("IsWalk", true);
+        while ((start - transform.position).sqrMagnitude > 4)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, start, 0.1f);
+        }
+        _animator.SetBool("IsWalk", false);
+            
+    }
+    void CircleDelayShot(int count)
+    {
+        StartCoroutine(shotCor());
 
+        IEnumerator shotCor()
+        {
+            for(int j = 0;j<5;j++)
+            {
+                for (int i = 0; i < 360; i += 360 / count)
+                {
+                    Instantiate(m_bullet, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, i));
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
+           
+
+            yield break;
+        }
+        
+    }
     private void ShotCircleBullets(int count)
     {
             float radius = 1f;
@@ -158,12 +206,19 @@ public class BossMonster : Monster
                 Debug.Log("Change Jump");
                 m_cFSM.ChangeState(m_cState.BossJumpState);
                 break;
+            case 3:
+                Debug.Log("Change Walk");
+                m_cFSM.ChangeState(m_cState.BossDashAttack);
+                break;
         }
     }
     private int RandomAttackType()
     {
-        int ran = Random.Range(0, 3);
-        Debug.Log("rac" + ran);
+        int ran = Random.Range(0, 4);
+        if(m_iPriviousAttackType == ran)
+            ran = Random.Range(0, 4);
+        m_iPriviousAttackType = ran;
+        Debug.Log(ran);
         return ran;
     }
 }

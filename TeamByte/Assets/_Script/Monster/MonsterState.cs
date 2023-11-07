@@ -18,7 +18,9 @@ public class StateData : ScriptableObject
     public IState BossCircleShotState { get; private set; }
     public IState BossSectorShotState { get; private set; }
     public IState BossWaitState { get; private set; }
-    public void SetData(IState idle, IState move, IState attack, IState die, IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait)
+    public IState BossDashAttack { get; private set; }
+    public void SetData(IState idle, IState move, IState attack, IState die, 
+                        IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait, IState bossDash)
     {
         IdleState = idle;
         MoveState = move;
@@ -28,6 +30,7 @@ public class StateData : ScriptableObject
         BossCircleShotState = bossJump;
         BossSectorShotState = bossSectorShot;
         BossWaitState = bossWait;
+        BossDashAttack = bossDash;
     }
 
 }
