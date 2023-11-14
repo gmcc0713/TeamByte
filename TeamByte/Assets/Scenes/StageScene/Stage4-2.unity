@@ -1660,7 +1660,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9252,7 +9252,7 @@ GameObject:
   - component: {fileID: 588402620}
   - component: {fileID: 588402619}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: To4-1Portal
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9267,7 +9267,7 @@ Transform:
   m_GameObject: {fileID: 588402617}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.1, y: -36.4, z: 1.0449958}
+  m_LocalPosition: {x: 51.01, y: -25.34, z: 1.0449958}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9313,7 +9313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 
-  Player: {fileID: 0}
+  Player: {fileID: 939480655}
   SummonPositionLeft: {fileID: 0}
   SummonPositionRight: {fileID: 0}
 --- !u!58 &588402621
