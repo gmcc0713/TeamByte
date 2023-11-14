@@ -32,7 +32,7 @@ public class NextStage : MonoBehaviour
             if (currentScene == "Stage2")
                 SceneManager.LoadScene("Stage3");
             if (currentScene == "Stage3")
-                SceneManager.LoadScene("Stage4");
+                SceneManager.LoadScene("Stage4-1");
             if (currentScene == "Stage4-1")
                 SceneManager.LoadScene("Stage4-2");
             if (currentScene == "Stage4-2")
@@ -49,11 +49,20 @@ public class NextStage : MonoBehaviour
                     Player.transform.position = SummonPositionLeft.transform.position;
                     Debug.Log("오른쪽 문 충돌");
                 }
+
+                if (this.gameObject.name == "To4-1Portal")
+                {
+                    SceneManager.LoadScene("Stage4-1");
+                    Debug.Log("4-1 돌아감");
+                    PlayerPosition position = new PlayerPosition();
+                    position.data.stage4Position = true;
+                }
+
             }
 
 
 
-     
+
         }
     }
 }
