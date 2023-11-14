@@ -5,19 +5,21 @@ using UnityEngine;
 public class PlayerPosition : MonoBehaviour
 {
     public GameObject player;
-    public SceneData data = new SceneData();
+    public GameObject DestoryObstacle;
     private void Start()
     {
-        Debug.Log(data.stage4Position);
+        Debug.Log(SceneData.stage4Position);
     }
     // Update is called once per frame
     void Update()
     {
        
 
-        if (data.stage4Position == true)
+        if (SceneData.stage4Position == true)
         {
             player.transform.position = this.transform.position;
+            Destroy(this);
+            Destroy(DestoryObstacle);
         }
        
     }

@@ -55,7 +55,7 @@ public class NextStage : MonoBehaviour
                     SceneManager.LoadScene("Stage4-1");
                     Debug.Log("4-1 µ¹¾Æ°¨");
                     PlayerPosition position = new PlayerPosition();
-                    position.data.stage4Position = true;
+                    SceneData.stage4Position = true;
                 }
 
             }
