@@ -97,15 +97,16 @@ public class BossMonster : Monster
     private IEnumerator BossWalk()
     {
         Vector2[] path = RandomPathGet();
-
         while (m_curPathIndex < path.Length) 
         {
+            Debug.Log("Walk " + m_curPathIndex);
             transform.position = Vector2.MoveTowards(transform.position, path[m_curPathIndex], 10*Time.deltaTime);
             yield return new WaitForSeconds(0.001f);
-            if(Vector2.Distance(transform.position, path[m_curPathIndex]) == 0)
+            if(Vector2.Distance(transform.position, path[m_curPathIndex]) < 0.3f)
             {
-                Debug.Log("Walk " + m_curPathIndex);
+                Debug.Log("Arrive");
                 m_curPathIndex++;
+
             }
         }
         yield return null;
@@ -117,21 +118,21 @@ public class BossMonster : Monster
     {
         Vector2[] path = new Vector2[6];
         int rand = 0;
-        int priviousRand = -1;
-        for (int i =0;i<5;)
+        int previousRand = -1;
+        for (int i = 0; i < 5;) // 조건부 확인에 문제가 있을 수 있습니다.
         {
             rand = Random.Range(0, m_aMovingRoot.Length);
-            if(rand != priviousRand)
+            if (rand != previousRand)
             {
-                i++;
+                path[i] = m_aMovingRoot[rand].transform.position;
+                i++; // 이 부분을 수정하여 항상 i를 증가시킵니다.
             }
-            Debug.Log(rand);
-            path[i] = m_aMovingRoot[rand].transform.position;
-            priviousRand = rand;
+            previousRand = rand;
         }
         path[5] = m_aMovingRoot[0].transform.position;
         return path;
     }
+
     void CircleDelayShot(int count)
     {
         StartCoroutine(shotCor());
@@ -216,8 +217,7 @@ public class BossMonster : Monster
         Debug.Log("Wait 5sec");
         m_bIsAttacking = false;
         yield return new WaitForSeconds(3.0f);
-        int t = 3;
-        //RandomAttackType()
+        int t = RandomAttackType();
         switch (t)
         {
             case 0:

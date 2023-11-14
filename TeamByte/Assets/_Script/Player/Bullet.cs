@@ -9,9 +9,11 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OutLine") || collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collide");
-
             Destroy(gameObject);
+        }
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Monster>().GetDamage(10);
         }
     }
 }
