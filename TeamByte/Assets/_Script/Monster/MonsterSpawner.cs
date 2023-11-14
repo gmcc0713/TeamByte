@@ -11,6 +11,7 @@ public class MonsterSpawner : MonoBehaviour
     void Start()
     {
         count = m_Monster.Length;
+        gameObject.SetActive(true);
     }
 
     void Spawn(int c)
@@ -28,6 +29,7 @@ public class MonsterSpawner : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Spawn(count);
+            gameObject.SetActive(false);
         }
     }
 
