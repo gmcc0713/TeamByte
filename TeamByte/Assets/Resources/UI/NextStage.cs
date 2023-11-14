@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class NextStage : MonoBehaviour
 {
-    private string currentScene; // Scene 이름 저장
+    public string currentScene; // Scene 이름 저장
+    public GameObject Player;
+    public GameObject SummonPositionLeft;
+    public GameObject SummonPositionRight;
 
     public void Start()
     {
@@ -29,8 +33,27 @@ public class NextStage : MonoBehaviour
                 SceneManager.LoadScene("Stage3");
             if (currentScene == "Stage3")
                 SceneManager.LoadScene("Stage4");
-            if (currentScene == "Stage4")
-                SceneManager.LoadScene("EndingScene");
+            if (currentScene == "Stage4-1")
+                SceneManager.LoadScene("Stage4-2");
+            if (currentScene == "Stage4-2")
+            {
+                Debug.Log("현재 4-2 stage");
+                if (this.gameObject.name == "OtherRoomLeft")
+                {
+                    Player.transform.position = SummonPositionRight.transform.position;
+                    Debug.Log("왼쪽 문 충돌");
+                }
+                    
+                if (this.gameObject.name == "OtherRoomRight")
+                {
+                    Player.transform.position = SummonPositionLeft.transform.position;
+                    Debug.Log("오른쪽 문 충돌");
+                }
+            }
+
+
+
+     
         }
     }
 }

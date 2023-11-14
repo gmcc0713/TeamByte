@@ -13,6 +13,7 @@ public class TimelineController : MonoBehaviour
 
     public GameObject[] Cameras;
     
+    // stage 2
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
