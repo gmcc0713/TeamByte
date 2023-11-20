@@ -34,7 +34,18 @@ public class NextStage : MonoBehaviour
             if (currentScene == "Stage3")
                 SceneManager.LoadScene("Stage4-1");
             if (currentScene == "Stage4-1")
-                SceneManager.LoadScene("Stage4-2");
+            {
+                if(this.gameObject.name == "LastBossPortal")
+                {
+                    SceneManager.LoadScene("Stage4-3");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Stage4-2");
+                }
+                    
+            }
+
             if (currentScene == "Stage4-2")
             {
                 Debug.Log("ÇöÀç 4-2 stage");
@@ -60,6 +71,8 @@ public class NextStage : MonoBehaviour
 
             }
 
+            if (currentScene == "Stage4-3")
+                SceneManager.LoadScene("EndingScene");
 
 
 

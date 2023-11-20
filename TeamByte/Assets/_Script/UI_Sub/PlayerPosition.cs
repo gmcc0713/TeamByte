@@ -6,6 +6,7 @@ public class PlayerPosition : MonoBehaviour
 {
     public GameObject player;
     public GameObject DestoryObstacle;
+    public GameObject ActiveObstacle;
     private void Start()
     {
         Debug.Log(SceneData.stage4Position);
@@ -20,6 +21,7 @@ public class PlayerPosition : MonoBehaviour
             player.transform.position = this.transform.position;
             Destroy(this);
             Destroy(DestoryObstacle);
+            ActiveObstacle.SetActive(true);
         }
        
     }
