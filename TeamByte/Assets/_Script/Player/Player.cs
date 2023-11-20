@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
         void OnTriggerStay2D(Collider2D collision)
         {
-            if (!m_bGuard &&(collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy")) )
+            if (!m_bGuard &&(collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyObstacle")) )
             {
                 Debug.Log("Collide");
                 f_currentHearts--;

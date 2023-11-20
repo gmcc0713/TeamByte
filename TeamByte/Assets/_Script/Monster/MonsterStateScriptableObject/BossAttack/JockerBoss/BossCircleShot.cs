@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "BossSectorShot", menuName = "ScriptableObject/FSM State/BossSectorShot", order = 3)]
+[CreateAssetMenu(fileName = "BossCircleShot", menuName = "ScriptableObject/FSM State/BossCircleShot", order = 3)]
 
-public class BossSectorShot : ScriptableObject, IState
+public class BossCircleShot : ScriptableObject, IState
 {
 
     public void Enter(Monster owner)
     {
         
-        owner.GetComponent<BossMonster>().BossSectorShot();
+        owner.GetComponent<JockerBossMonster>().ShootBulletCircle();
     }
     public void Excute(Monster owner)
     {

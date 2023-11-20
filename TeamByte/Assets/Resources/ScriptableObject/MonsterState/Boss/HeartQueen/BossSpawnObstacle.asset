@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebd40902722e604e85128d3c236d372, type: 3}
-  m_Name: BossMonster
+  m_Script: {fileID: 11500000, guid: e6a8bdacb5616424d906d5ed7f0f3ca1, type: 3}
+  m_Name: BossSpawnObstacle
   m_EditorClassIdentifier: 
-  m_iAttackDamage: 2
-  m_iHP: 500
-  m_iSpeed: 1
-  m_iAttackRange: 0

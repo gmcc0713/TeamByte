@@ -10,17 +10,24 @@ public interface IState
 }
 public class StateData : ScriptableObject
 {
+    //NormalMonster
     public IState IdleState { get; private set; }
     public IState MoveState { get; private set; }
     public IState AttackState { get; private set; }
     public IState DieState { get; private set; }
+    //JockerBoss
     public IState BossJumpState { get; private set; }
     public IState BossCircleShotState { get; private set; }
     public IState BossSectorShotState { get; private set; }
     public IState BossWaitState { get; private set; }
     public IState BossDashAttack { get; private set; }
+    //HeartQueenBoss
+    
+    public IState BossSpawnObstacle { get; private set; }
+
     public void SetData(IState idle, IState move, IState attack, IState die, 
-                        IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait, IState bossDash)
+                        IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait, IState bossDash,
+                        IState bossSpawnObstacle)
     {
         IdleState = idle;
         MoveState = move;
@@ -31,6 +38,8 @@ public class StateData : ScriptableObject
         BossSectorShotState = bossSectorShot;
         BossWaitState = bossWait;
         BossDashAttack = bossDash;
-    }
+        BossDashAttack = bossSpawnObstacle;
+
+	}
 
 }

@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("EnemyBullet"))
+        if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("EnemyBullet")|| other.gameObject.CompareTag("EnemyObstacle"))
         {
             
         }

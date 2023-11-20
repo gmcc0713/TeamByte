@@ -21,18 +21,21 @@ public class MonsterManager : MonoBehaviour
     }
     public void MonsterInit(Monster monster)
     {
+        //Monster
         IState idle = (IState)Resources.Load("ScriptableObject/MonsterState/IdleState");
         IState move = (IState)Resources.Load("ScriptableObject/MonsterState/MoveState");
         IState attack = (IState)Resources.Load("ScriptableObject/MonsterState/AttackState");
         IState die = (IState)Resources.Load("ScriptableObject/MonsterState/DieState");
-
-        IState bossJumpAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossJumpState");
-        IState bossCircleShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossCircleShot");
-        IState bossSectorShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossSectorShot");
-        IState bossWait = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossWaitState");
-        IState bossDashAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/BossDashAttack");
+        //jocker Boss
+        IState bossJumpAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossJumpState");
+        IState bossCircleShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossCircleShot");
+        IState bossSectorShot = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossSectorShot");
+        IState bossWait = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossWaitState");
+        IState bossDashAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossDashAttack");
+        //HeartQueen Boss
+        IState bossSpawnObstacle = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpawnObstacle");
         StateData data = ScriptableObject.CreateInstance<StateData>();
-        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack);
+        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, bossSpawnObstacle);
         monster.SetData(data);
     }
 }
