@@ -195,15 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1150897144, guid: d4e833720f5ae0b4f9d640f2229267d2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -372,15 +372,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0, b: 0.092527054, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1223714273, guid: d4e833720f5ae0b4f9d640f2229267d2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 3412019000777636613}
   - component: {fileID: 3490404548206246230}
   - component: {fileID: 8245482235777382643}
-  - component: {fileID: 165838563538490205}
+  - component: {fileID: -6405118787054413157}
   - component: {fileID: 7027748590429889208}
   - component: {fileID: -8792864842979991751}
   - component: {fileID: 5498158106104604447}
@@ -500,7 +500,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &165838563538490205
+--- !u!114 &-6405118787054413157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -509,14 +509,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8528506545941225601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3578bd43e89334469f208d2e9f97278, type: 3}
+  m_Script: {fileID: 11500000, guid: f5808094a71f2f948b7c6c667ace1098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_sData: {fileID: 11400000, guid: 1e050b03e34a8d44d99e8607f9d58c9c, type: 2}
   m_target: {fileID: 0}
   m_bullet: {fileID: 8801748014444227644, guid: a129bb21210bf8c47adb9eaa3d813d0a, type: 3}
-  m_spawnPos: {x: 0, y: 5, z: 0}
+  m_spawnPos: {x: 0, y: 0, z: 0}
   m_HPUI: {fileID: 9082644129953698647}
+  m_aMovingRoot: []
 --- !u!195 &7027748590429889208
 NavMeshAgent:
   m_ObjectHideFlags: 0

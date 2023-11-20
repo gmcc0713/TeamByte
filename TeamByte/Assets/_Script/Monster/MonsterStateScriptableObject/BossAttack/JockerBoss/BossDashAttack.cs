@@ -7,7 +7,7 @@ public class BossDashAttack : ScriptableObject, IState
     public void Enter(Monster owner)
     {
         owner._animator.SetTrigger("IsWalk");
-        owner.GetComponent<BossMonster>().MoveAttack();
+        owner.GetComponent<JockerBossMonster>().MoveAttack();
     }
     public void Excute(Monster owner)
     {
