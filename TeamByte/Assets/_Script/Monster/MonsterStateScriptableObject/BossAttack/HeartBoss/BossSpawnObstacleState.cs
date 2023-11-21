@@ -14,6 +14,7 @@ public class BossSpawnObstacleState : ScriptableObject, IState
 	}
 	public void Excute(Monster owner)
 	{
+
 	}
 	public void Exit(Monster owner)
 	{

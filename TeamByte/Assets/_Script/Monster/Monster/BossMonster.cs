@@ -62,9 +62,9 @@ public class BossMonster : Monster
     }
 	public int RandomAttackType()
     {
-        int ran = Random.Range(0, 4);
+        int ran = Random.Range(0, 1);
         if(m_iPriviousAttackType == ran)
-            ran = Random.Range(0, 4);
+            ran = Random.Range(0, 1);
         m_iPriviousAttackType = ran;
         Debug.Log(ran);
         return ran;

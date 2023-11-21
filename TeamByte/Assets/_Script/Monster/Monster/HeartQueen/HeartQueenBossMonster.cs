@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class HeartQueenBossMonster : BossMonster
 {
-	[SerializeField] GameObject warningPattern;
 	[SerializeField] RandomSpawner randomSpawner;
 	[SerializeField] GameObject spinSquare;
+	[SerializeField] GameObject damagePlane;
 
 	private void Start()
 	{
         Initialize();
 	}
 
-	public void BossSpawnObstacle()
-	{
-		StartCoroutine(WarningLineSpawn(randomSpawner.ReturnRandomPosition()));
-	}
 	public void SpawnObstacle()
 	{
 		Debug.Log("장애물 소환");
+		Instantiate(damagePlane,m_target.transform);
         m_cFSM.ChangeState(m_cState.BossWaitState);
     }
 	public void StartSpin()
@@ -40,17 +37,6 @@ public class HeartQueenBossMonster : BossMonster
 	public void SpinSqureUpdate()
 	{
         spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.3f);
-	}
-	public IEnumerator WarningLineSpawn(Vector3 spawnPos)
-	{
-		warningPattern.transform.position = spawnPos;
-		SpriteRenderer waringPatternRenderer = warningPattern.GetComponent<SpriteRenderer>();
-		for (int i =0;i<10; i++)
-		{
-			waringPatternRenderer.color = new Color(1,0,0,0.1f*i);
-			yield return new WaitForSeconds(0.1f);
-		}
-		SpawnObstacle();
 	}
 	
 	protected override void ChangeStateBossPattern(int idx)
