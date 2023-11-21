@@ -21,7 +21,6 @@ public class UIScript : MonoBehaviour
 #endif
     }
 
-
     // Start is called before the first frame update
     public void TitleMove()
     {
