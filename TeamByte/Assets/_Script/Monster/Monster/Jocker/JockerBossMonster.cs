@@ -5,8 +5,12 @@ using UnityEngine;
 public class JockerBossMonster : BossMonster
 {
 	private int m_curPathIndex;
-
-	public void MoveAttack()
+    private void Start()
+    {
+		Debug.Log("Start");
+        Initialize();
+    }
+    public void MoveAttack()
 	{
 		StartCoroutine(BossWalk());
 	}

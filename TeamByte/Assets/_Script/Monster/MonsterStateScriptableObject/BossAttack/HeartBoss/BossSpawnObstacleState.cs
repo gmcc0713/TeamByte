@@ -9,6 +9,7 @@ public class BossSpawnObstacleState : ScriptableObject, IState
 
 	public void Enter(Monster owner)
 	{
+
 		owner.GetComponent<HeartQueenBossMonster>().SpawnObstacle();
 	}
 	public void Excute(Monster owner)

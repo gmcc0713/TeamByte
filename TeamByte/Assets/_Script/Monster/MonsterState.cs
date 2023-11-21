@@ -24,10 +24,11 @@ public class StateData : ScriptableObject
     //HeartQueenBoss
     
     public IState BossSpawnObstacle { get; private set; }
+    public IState BossSpinSquare { get; private set; }
 
     public void SetData(IState idle, IState move, IState attack, IState die, 
                         IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait, IState bossDash,
-                        IState bossSpawnObstacle)
+                        IState bossSpawnObstacle, IState bossSpinSqure)
     {
         IdleState = idle;
         MoveState = move;
@@ -38,8 +39,9 @@ public class StateData : ScriptableObject
         BossSectorShotState = bossSectorShot;
         BossWaitState = bossWait;
         BossDashAttack = bossDash;
-        BossDashAttack = bossSpawnObstacle;
+        BossSpawnObstacle = bossSpawnObstacle;
+        BossSpinSquare = bossSpinSqure;
 
-	}
+    }
 
 }

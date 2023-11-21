@@ -9,7 +9,6 @@ public class BossMonster : Monster
 
     // Start is called before the first frame update
     [SerializeField] protected GameObject m_bullet;
-    [SerializeField] protected Vector3 m_spawnPos;
     [SerializeField] protected Slider m_HPUI;
     [SerializeField] protected GameObject[] m_aMovingRoot;
 	protected bool m_bIsAttacking = false;
@@ -20,9 +19,11 @@ public class BossMonster : Monster
         base.Initialize();
         m_bIsAttacking = false;
         m_cFSM.ChangeState(m_cState.IdleState);
-        transform.position = m_spawnPos;
         m_HPUI =GetComponentInChildren<Slider>();
         m_aMovingRoot = BossManager.Instance.GetMovingRoot();
+
+        m_target = GameObject.Find("Player");
+        Debug.Log(m_target);
     }
     public override void Idle()
     {

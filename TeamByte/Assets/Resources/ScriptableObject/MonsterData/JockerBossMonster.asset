@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: JockerBossMonster
   m_EditorClassIdentifier: 
   m_iAttackDamage: 2
-  m_iHP: 500
+  m_iHP: 200
   m_iSpeed: 1
   m_iAttackRange: 0

@@ -34,8 +34,9 @@ public class MonsterManager : MonoBehaviour
         IState bossDashAttack = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/Jocker/BossDashAttack");
         //HeartQueen Boss
         IState bossSpawnObstacle = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpawnObstacle");
+        IState bossSpinSquare = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpinSquareState");
         StateData data = ScriptableObject.CreateInstance<StateData>();
-        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, bossSpawnObstacle);
+        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, bossSpawnObstacle, bossSpinSquare);
         monster.SetData(data);
     }
 }

@@ -6,11 +6,13 @@ public class HeartQueenBossMonster : BossMonster
 {
 	[SerializeField] GameObject warningPattern;
 	[SerializeField] RandomSpawner randomSpawner;
+	[SerializeField] GameObject spinSquare;
 
 	private void Start()
 	{
-		BossSpawnObstacle();
+        Initialize();
 	}
+
 	public void BossSpawnObstacle()
 	{
 		StartCoroutine(WarningLineSpawn(randomSpawner.ReturnRandomPosition()));
@@ -18,6 +20,26 @@ public class HeartQueenBossMonster : BossMonster
 	public void SpawnObstacle()
 	{
 		Debug.Log("장애물 소환");
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+    }
+	public void StartSpin()
+	{
+		Debug.Log("Spin");
+        spinSquare.SetActive(true);
+		StartCoroutine(TimerCheck(10.0f));
+    }
+	public IEnumerator TimerCheck(float time)
+	{
+        Debug.Log("TimeCheck");
+        yield return new WaitForSeconds(time);
+		Debug.Log("End");
+		spinSquare.GetComponent<SpinSquareBullet>().ResetSpeed();
+        spinSquare.SetActive(false);
+        m_cFSM.ChangeState(m_cState.BossWaitState);
+	}
+	public void SpinSqureUpdate()
+	{
+        spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.3f);
 	}
 	public IEnumerator WarningLineSpawn(Vector3 spawnPos)
 	{
@@ -33,23 +55,16 @@ public class HeartQueenBossMonster : BossMonster
 	
 	protected override void ChangeStateBossPattern(int idx)
 	{
+		Debug.Log(idx);
 		switch (idx)
 		{
 			case 0:
 				Debug.Log("Change Spawn Obstacle");
-				m_cFSM.ChangeState(m_cState.BossCircleShotState);
+				m_cFSM.ChangeState(m_cState.BossSpawnObstacle);
 				break;
 			case 1:
-				Debug.Log("Change Sector");
-				m_cFSM.ChangeState(m_cState.BossSectorShotState);
-				break;
-			case 2:
-				Debug.Log("Change Jump");
-				m_cFSM.ChangeState(m_cState.BossJumpState);
-				break;
-			case 3:
-				Debug.Log("Change Walk");
-				m_cFSM.ChangeState(m_cState.BossDashAttack);
+				Debug.Log("Change Spin Square");
+				m_cFSM.ChangeState(m_cState.BossSpinSquare);
 				break;
 		}
 	}
