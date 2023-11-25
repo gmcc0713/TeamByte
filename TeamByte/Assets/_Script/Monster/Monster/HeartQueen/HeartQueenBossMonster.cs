@@ -16,9 +16,21 @@ public class HeartQueenBossMonster : BossMonster
 	public void SpawnObstacle()
 	{
 		Debug.Log("장애물 소환");
-		Instantiate(damagePlane,m_target.transform);
-        m_cFSM.ChangeState(m_cState.BossWaitState);
+		GameObject clone = Instantiate(damagePlane);
+		clone.transform.position = m_target.transform.position;
+		Debug.Log(clone.transform.position);
+
+		m_cFSM.ChangeState(m_cState.BossWaitState);
     }
+	public void SpawnDamagePlane()
+	{
+		Debug.Log("장애물 소환");
+		GameObject clone = Instantiate(damagePlane);
+		clone.transform.position = m_target.transform.position;
+		Debug.Log(clone.transform.position);
+
+		m_cFSM.ChangeState(m_cState.BossWaitState);
+	}
 	public void StartSpin()
 	{
 		Debug.Log("Spin");
@@ -50,6 +62,14 @@ public class HeartQueenBossMonster : BossMonster
 				break;
 			case 1:
 				Debug.Log("Change Spin Square");
+				m_cFSM.ChangeState(m_cState.BossSpinSquare);
+				break;
+			case 2:
+				Debug.Log("Change Spawn DamagePlane");
+				m_cFSM.ChangeState(m_cState.BossSpawnDamagePlane);
+				break;
+			case 3:
+				Debug.Log("Change Spin Square1");
 				m_cFSM.ChangeState(m_cState.BossSpinSquare);
 				break;
 		}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpinSquareBullet : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SpinSquareBullet : MonoBehaviour
     void Start()
     {
         curSpeed = rotateSpeed;
+        transform.rotation =Quaternion.Euler(new Vector3(0,0,0));
     }
 
     // Update is called once per frame
@@ -25,5 +27,5 @@ public class SpinSquareBullet : MonoBehaviour
     {
         curSpeed = rotateSpeed;
     }
-    
+
 }
