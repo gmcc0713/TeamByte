@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,784 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 381
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47a208a08500d746ab8b25c60f317e2
+      internalID: -780139394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 381
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fedc9cf2bcc5b41ab8496fbcda754a
+      internalID: 1793832371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95036821267d96940b15750529b033e2
+      internalID: 154107293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc2268385e36d84082c7059238ea906
+      internalID: 1500449252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229e09747388d2d48b80ca2afd63e32d
+      internalID: -1661990014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057a0e8f9634bed4c8edcd1c526f456f
+      internalID: -21120336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87d925a851017444886ed319d7b987d
+      internalID: -2078602426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d6340cd21b8644e8bbf6df78bc6570
+      internalID: 1220630525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8b5892e4dc5084fbff62d6b0e01469
+      internalID: 1965120778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_9
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37919c8cac157c438b8a3b70ea6b111
+      internalID: 254588650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_10
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4af7ce023c62a41a517622e7a8a0a8
+      internalID: -1636062635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f2f0e37a32e7a46a6f523752aac44e
+      internalID: 919607757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_12
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75849235da04781438a6419db896ffdd
+      internalID: 1187067298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_13
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a679b91501667f544aabb77c8537868c
+      internalID: -2091323698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_14
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd26bd3ab3f969c4f9433d7307bd2165
+      internalID: 1924296916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_15
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff45d75fc656c0344b58d6b28c9a24e2
+      internalID: -1510259661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_16
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82938ef52d775f849b543a1f5f1b0a36
+      internalID: -302419494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_17
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2010bfff1a2d55048ba647726f27b0fe
+      internalID: -1019364883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_18
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89c5e0db23ecd641a8892b05f94f38a
+      internalID: 780445581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_19
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eb325d0e08c2542a7bba305d8f91e7
+      internalID: 1561793757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_20
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be77e3af12b381841a5dddadc886a64c
+      internalID: -856786073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_21
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cac9afdba87e54098ee2fcd98af1b3
+      internalID: -380784361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_22
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5b3782bd9ef4941a6c74d419091a1f
+      internalID: -1452277257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_23
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6aca9454fbc554198fbbb27dcc9e8e
+      internalID: 882181861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_24
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eab128fa8bbf0e41a4d59fc2ab352c9
+      internalID: 2078770574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_25
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0569e0dbf6f16ca4483d888a2ca38ea6
+      internalID: -1624298423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_26
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1955079756085344fbaa49458c3f284c
+      internalID: -695556621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_27
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 365
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2f374dcd7ff9348ab0eb0dac80b078
+      internalID: -618074819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_28
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 352
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2ad66fc9b7aea48aa35a72284f9e28
+      internalID: 1141825326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_29
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 311
+        width: 61
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20eec105a0ed0ec41af9cc2a10b6216b
+      internalID: -54296516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_30
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 290
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adfd552b83a96f43b683a2a92945a46
+      internalID: 1252358808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_31
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 282
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1861540568bb7d47bdaa8b47cd12f0a
+      internalID: 179243787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_32
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 285
+        width: 53
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9390ef482c54a5a4f8ca3be5bc9cb39b
+      internalID: 846727215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_33
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 276
+        width: 38
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba543190426ff2843801fcb9b02ec574
+      internalID: -866443241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_34
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 285
+        width: 43
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d16ed9b8cdcd784cb14e2b74f1549ac
+      internalID: -1499438936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_35
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 275
+        width: 45
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b0e62200a730f4aa787e336f6b3336
+      internalID: 1125776870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_36
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 248
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92fef6f7342d9314d8f517f21b35f2ec
+      internalID: -313571578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +896,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ICON_AtoZ (1)_0: -780139394
+      ICON_AtoZ (1)_1: 1793832371
+      ICON_AtoZ (1)_10: -1636062635
+      ICON_AtoZ (1)_11: 919607757
+      ICON_AtoZ (1)_12: 1187067298
+      ICON_AtoZ (1)_13: -2091323698
+      ICON_AtoZ (1)_14: 1924296916
+      ICON_AtoZ (1)_15: -1510259661
+      ICON_AtoZ (1)_16: -302419494
+      ICON_AtoZ (1)_17: -1019364883
+      ICON_AtoZ (1)_18: 780445581
+      ICON_AtoZ (1)_19: 1561793757
+      ICON_AtoZ (1)_2: 154107293
+      ICON_AtoZ (1)_20: -856786073
+      ICON_AtoZ (1)_21: -380784361
+      ICON_AtoZ (1)_22: -1452277257
+      ICON_AtoZ (1)_23: 882181861
+      ICON_AtoZ (1)_24: 2078770574
+      ICON_AtoZ (1)_25: -1624298423
+      ICON_AtoZ (1)_26: -695556621
+      ICON_AtoZ (1)_27: -618074819
+      ICON_AtoZ (1)_28: 1141825326
+      ICON_AtoZ (1)_29: -54296516
+      ICON_AtoZ (1)_3: 1500449252
+      ICON_AtoZ (1)_30: 1252358808
+      ICON_AtoZ (1)_31: 179243787
+      ICON_AtoZ (1)_32: 846727215
+      ICON_AtoZ (1)_33: -866443241
+      ICON_AtoZ (1)_34: -1499438936
+      ICON_AtoZ (1)_35: 1125776870
+      ICON_AtoZ (1)_36: -313571578
+      ICON_AtoZ (1)_4: -1661990014
+      ICON_AtoZ (1)_5: -21120336
+      ICON_AtoZ (1)_6: -2078602426
+      ICON_AtoZ (1)_7: 1220630525
+      ICON_AtoZ (1)_8: 1965120778
+      ICON_AtoZ (1)_9: 254588650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
