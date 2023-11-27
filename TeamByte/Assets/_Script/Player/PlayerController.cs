@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,11 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
 
+    //
+    Vector3 dirVec;
+    GameObject scanObject;
+    public GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +34,8 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
+        Scan();
+
         if (Input.GetButtonDown("Fire1"))
         {
             FireBullet();
@@ -37,8 +45,10 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        //        horizontalInput =  Input.GetAxisRaw("Horizontal");
+        //        verticalInput =  Input.GetAxisRaw("Vertical");
+        horizontalInput = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        verticalInput = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
         Vector3 playerMove = new Vector3(horizontalInput, verticalInput, 0.0f).normalized;
         Vector3 moveDistance = playerMove * speed * Time.deltaTime;
@@ -49,19 +59,27 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = false;
             animator.SetBool("Walk", true);
+            //
+            dirVec = Vector3.left;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             spriteRenderer.flipX = true;
             animator.SetBool("Walk", true);
+            //
+            dirVec = Vector3.right;
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             animator.SetBool("Walk", true);
+            //
+            dirVec = Vector3.up;
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetBool("Walk", true);
+            //
+            dirVec = Vector3.down;
         }
 
         if (horizontalInput == 0 && verticalInput == 0)
@@ -73,6 +91,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.speed = 1f;
         }
+
+        //
+        if(Input.GetKeyDown(KeyCode.Space) && scanObject !=null)
+        {
+            manager.Action(scanObject);
+        }
+
     }
     void FireBullet()
     {
@@ -101,5 +126,25 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("EnemyObstacle"))
+        {
 
+        }
+    }
+
+    private void Scan()
+    {
+        //Ray
+        Debug.DrawRay(playerRb.position, dirVec * 0.7f, new Color(1, 1, 1));
+        RaycastHit2D rayHit = Physics2D.Raycast(playerRb.position, dirVec, 1.0f, LayerMask.GetMask("Object"));
+
+        if(rayHit.collider != null)
+        {
+            scanObject = rayHit.collider.gameObject;
+        }
+        else
+            scanObject = null;
+    }
 }
