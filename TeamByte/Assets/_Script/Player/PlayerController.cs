@@ -8,8 +8,11 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private float horizontalInput;
     private float verticalInput;
+    private bool isReload;
 
-    public float bulletSpeed = 10f;
+    public float bulletSpeed = 10.0f;
+    public int maxBullet = 10;
+    public float delay = 10.0f;
 
     public GameObject bulletPrefab;
     Rigidbody2D playerRb;
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        isReload = false;
     }
 
     // Update is called once per frame
@@ -36,12 +40,27 @@ public class PlayerController : MonoBehaviour
 
         Scan();
 
+        StartCoroutine(DelayedFire());
+    }
+    IEnumerator DelayedFire()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
-            FireBullet();
+            if (maxBullet == 0 && isReload)
+            {
+                yield return new WaitForSeconds(delay); // 3√  µÙ∑π¿Ã
+                isReload = false;
+                maxBullet = 10;
+            }
+            else
+            {
+                FireBullet();
+                maxBullet--;
+                if (maxBullet == 0) { isReload = true;}
+                Debug.Log(maxBullet);
+            }
         }
     }
-
 
     void Move()
     {
@@ -125,13 +144,6 @@ public class PlayerController : MonoBehaviour
             bulletRb.velocity = shootDirection * bulletSpeed;
         }
 
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("EnemyObstacle"))
-        {
-
-        }
     }
 
     private void Scan()
