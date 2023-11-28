@@ -20,10 +20,7 @@ public class HeartQueenBossMonster : BossMonster
 	{
 
 		StartCoroutine(WaitSpawnMonster(1.0f));
-<<<<<<< Updated upstream
         m_cFSM.ChangeState(m_cState.BossWaitState);
-=======
->>>>>>> Stashed changes
     }
     public IEnumerator WaitSpawnMonster(float time)
 	{
