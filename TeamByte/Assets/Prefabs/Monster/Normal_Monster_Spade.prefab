@@ -139,7 +139,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -211,7 +211,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4839759781614722535}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 3.5
   m_Acceleration: 2
   avoidancePriority: 50
@@ -238,3 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sData: {fileID: 11400000, guid: 0831d448322e82f4092f8affee30e114, type: 2}
   m_target: {fileID: 0}
+  agent: {fileID: 0}
+  m_iHP: 0
+  m_iMaxHP: 0
+  m_iattackDamage: 0

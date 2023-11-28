@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2357761832203933210}
-  - component: {fileID: 1055471862661623601}
+  - component: {fileID: 1358323843830681319}
   m_Layer: 0
   m_Name: EnemyObstacle
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 7322169236887190654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1055471862661623601
+--- !u!114 &1358323843830681319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,12 +43,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 923075232663910098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce3062d4e5fecab4c887eb76f15737ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 7903fe23ff091334e89764b7267e43b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planes:
+  warnings:
   - {fileID: 5159400098618641506}
+  obstacles:
   - {fileID: 4947238064577282298}
+  damagePlaneType: 10
 --- !u!1 &4947238064577282298
 GameObject:
   m_ObjectHideFlags: 0

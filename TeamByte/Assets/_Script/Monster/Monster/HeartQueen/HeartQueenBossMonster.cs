@@ -4,19 +4,41 @@ using UnityEngine;
 
 public class HeartQueenBossMonster : BossMonster
 {
-	[SerializeField] RandomSpawner randomSpawner;
+	[SerializeField] BossMonsterSpawnPattern spawnPattern;
 	[SerializeField] GameObject spinSquare;
 	[SerializeField] GameObject damagePlane;
+	[SerializeField] GameObject enemyObstacle;
+	[SerializeField] GameObject[] enemySpawnPoints;
 
 	private void Start()
 	{
         Initialize();
+        enemySpawnPoints = BossManager.Instance.GetSpawnPoints();
+
+    }
+	public void SpawnMonster()
+	{
+
+		StartCoroutine(WaitSpawnMonster(1.0f));
+    }
+    public IEnumerator WaitSpawnMonster(float time)
+	{
+        foreach (var point in enemySpawnPoints)
+		{
+			Debug.Log("스폰포인트" + point);
+            point.SetActive(true);
+        }
+        yield return new WaitForSeconds(time);
+        foreach (var point in enemySpawnPoints)
+		{
+            point.SetActive(false);
+        }
 	}
 
-	public void SpawnObstacle()
+    public void SpawnObstacle()
 	{
 		Debug.Log("장애물 소환");
-		GameObject clone = Instantiate(damagePlane);
+		GameObject clone = Instantiate(enemyObstacle);
 		clone.transform.position = m_target.transform.position;
 		Debug.Log(clone.transform.position);
 
@@ -48,6 +70,7 @@ public class HeartQueenBossMonster : BossMonster
 	}
 	public void SpinSqureUpdate()
 	{
+
         spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.3f);
 	}
 	
@@ -58,8 +81,8 @@ public class HeartQueenBossMonster : BossMonster
 		{
 			case 0:
 				Debug.Log("Change Spawn Obstacle");
-				m_cFSM.ChangeState(m_cState.BossSpawnObstacle);
-				break;
+                m_cFSM.ChangeState(m_cState.BossSpawnMonster);
+                break;
 			case 1:
 				Debug.Log("Change Spin Square");
 				m_cFSM.ChangeState(m_cState.BossSpinSquare);
@@ -70,7 +93,7 @@ public class HeartQueenBossMonster : BossMonster
 				break;
 			case 3:
 				Debug.Log("Change Spin Square1");
-				m_cFSM.ChangeState(m_cState.BossSpinSquare);
+				m_cFSM.ChangeState(m_cState.BossSpawnMonster);
 				break;
 		}
 	}

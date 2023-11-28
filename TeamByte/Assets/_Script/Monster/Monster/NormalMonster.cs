@@ -5,16 +5,22 @@ using UnityEngine.AI;
 
 public class NormalMonster : Monster
 {
-
     public override void Initialize()
     {
         base.Initialize();
+        Debug.Log(m_cState);
+        Debug.Log(m_cFSM);
         m_cFSM.ChangeState(m_cState.MoveState);
-
+       
+    }
+    private void OnEnable()
+    {
+        Initialize();
     }
     public override void Move()
     {
-        if(!m_target)
+        Debug.Log("M" + transform.position);
+        if (!m_target)
         {
             return;
         }

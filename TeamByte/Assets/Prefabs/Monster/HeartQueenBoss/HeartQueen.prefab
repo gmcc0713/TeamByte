@@ -279,12 +279,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sData: {fileID: 11400000, guid: 616b2abe510f5e148b0ea4b3e948a9df, type: 2}
   m_target: {fileID: 0}
+  agent: {fileID: 0}
+  m_iHP: 0
+  m_iMaxHP: 0
+  m_iattackDamage: 0
   m_bullet: {fileID: 0}
   m_HPUI: {fileID: 2661572548647977995}
   m_aMovingRoot: []
-  randomSpawner: {fileID: 0}
+  spawnPattern: {fileID: 0}
   spinSquare: {fileID: 8854204225077646771}
   damagePlane: {fileID: 923075232663910098, guid: 1357651eeb58c1548828fda7d340edb1, type: 3}
+  enemyObstacle: {fileID: 7779880456153157121, guid: cd64c9aa7512351409f5da918199f07e, type: 3}
+  enemySpawnPoints: []
 --- !u!195 &116447929423090426
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -304,7 +310,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 14.6875
-  m_BaseOffset: 7.34375
+  m_BaseOffset: 10000
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!60 &5716048951274947695
@@ -336,7 +342,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

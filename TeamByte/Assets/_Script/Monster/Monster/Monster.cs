@@ -15,19 +15,18 @@ public class Monster : MonoBehaviour
     protected Animator m_animator;
     public Animator _animator => m_animator;
     public GameObject _target => m_target;
-    protected NavMeshAgent agent;
+    [SerializeField] protected NavMeshAgent agent;
 
-    protected int m_iHP;
-    protected int m_iMaxHP;
-    protected int m_iattackDamage;
+    [SerializeField] protected int m_iHP;
+    [SerializeField] protected int m_iMaxHP;
+    [SerializeField] protected int m_iattackDamage;
     void Start()
     {
-
-        m_target = GameObject.Find("Player");
         Initialize();
     }
     public virtual void Initialize()
-    { 
+    {
+        m_target = GameObject.Find("Player");
         m_iMaxHP = m_sData.m_iHP;
         m_iHP = m_iMaxHP;
         m_iattackDamage = m_sData.m_iAttackDamage;

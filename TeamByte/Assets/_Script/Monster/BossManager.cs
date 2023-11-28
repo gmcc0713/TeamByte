@@ -18,9 +18,13 @@ public class BossManager : MonoBehaviour
 
     }
     [SerializeField] private GameObject[] m_aMovingRoot;
+    [SerializeField] private GameObject[] m_aSpawnPoint;
     public GameObject[] GetMovingRoot()
     {
         return m_aMovingRoot;
     }
-
+    public GameObject[] GetSpawnPoints()
+    {
+        return m_aSpawnPoint;
+    }
 }

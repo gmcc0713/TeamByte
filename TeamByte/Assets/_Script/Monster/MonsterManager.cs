@@ -21,6 +21,7 @@ public class MonsterManager : MonoBehaviour
     }
     public void MonsterInit(Monster monster)
     {
+        Debug.Log("MonsterInit");
         //Monster
         IState idle = (IState)Resources.Load("ScriptableObject/MonsterState/IdleState");
         IState move = (IState)Resources.Load("ScriptableObject/MonsterState/MoveState");
@@ -36,8 +37,12 @@ public class MonsterManager : MonoBehaviour
         IState bossSpawnObstacle = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpawnObstacle");
         IState bossSpinSquare = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpinSquareState");
         IState bossSpawnDamagePlane = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpawnDamagePlane");
+        IState bossSpawnMonster = (IState)Resources.Load("ScriptableObject/MonsterState/Boss/HeartQueen/BossSpawnMonster");
+
         StateData data = ScriptableObject.CreateInstance<StateData>();
-        data.SetData(idle, move, attack, die, bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, bossSpawnObstacle, bossSpinSquare, bossSpawnDamagePlane);
+        data.SetData(idle, move, attack, die, 
+            bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, 
+            bossSpawnObstacle, bossSpinSquare, bossSpawnDamagePlane,bossSpawnMonster);
         monster.SetData(data);
     }
 }

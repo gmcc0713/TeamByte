@@ -26,10 +26,11 @@ public class StateData : ScriptableObject
     public IState BossSpawnObstacle { get; private set; }
     public IState BossSpinSquare { get; private set; }
     public IState BossSpawnDamagePlane { get; private set; }
+    public IState BossSpawnMonster { get; private set; }
 
     public void SetData(IState idle, IState move, IState attack, IState die, 
                         IState bossJump, IState bossCircleShot, IState bossSectorShot,IState bossWait, IState bossDash,
-                        IState bossSpawnObstacle, IState bossSpinSqure,IState bossDamagePlane)
+                        IState bossSpawnObstacle, IState bossSpinSqure,IState bossDamagePlane, IState bossSpawnMonster)
     {
         IdleState = idle;
         MoveState = move;
@@ -43,7 +44,9 @@ public class StateData : ScriptableObject
         BossSpawnObstacle = bossSpawnObstacle;
         BossSpinSquare = bossSpinSqure;
         BossSpawnDamagePlane = bossDamagePlane;
+        BossSpawnMonster = bossSpawnMonster;
 
-	}
+
+    }
 
 }

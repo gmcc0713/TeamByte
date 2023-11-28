@@ -6,7 +6,8 @@ public class BossMosterSpawn : ScriptableObject, IState
 {
     public void Enter(Monster owner)
     {
-
+        Debug.Log("BossMonsterSpawn");
+        owner.GetComponent<HeartQueenBossMonster>().SpawnMonster();
     }
     public void Excute(Monster owner)
     {
