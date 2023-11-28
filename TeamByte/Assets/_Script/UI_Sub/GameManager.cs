@@ -24,7 +24,15 @@ public class GameManager : MonoBehaviour
         talkPanel.SetActive(isAction);
 
     }
-    void Talk(int id, bool isNPC)
+
+    public void CutSceneAction(int id)
+    {
+        isAction = true;
+        Talk(id, true);
+        talkPanel.SetActive(isAction);
+    }
+
+    public void Talk(int id, bool isNPC)
     {
         string talkData = talkManager.GetTalk(id, talkIndex);
 
