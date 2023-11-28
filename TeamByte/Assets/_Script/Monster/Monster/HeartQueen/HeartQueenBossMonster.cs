@@ -20,6 +20,7 @@ public class HeartQueenBossMonster : BossMonster
 	{
 
 		StartCoroutine(WaitSpawnMonster(1.0f));
+        m_cFSM.ChangeState(m_cState.BossWaitState);
     }
     public IEnumerator WaitSpawnMonster(float time)
 	{
