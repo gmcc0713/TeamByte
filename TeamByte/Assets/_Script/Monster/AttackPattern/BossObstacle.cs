@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 public enum DamagePlaneType
 {
-    CheckType = 5,
+    CheckType = 2,
     DamageType = 10,
 }
 public class BossObstacle : MonoBehaviour
@@ -23,12 +23,11 @@ public class BossObstacle : MonoBehaviour
         {
             foreach (var warning in warnings)
             {
-                Debug.Log(warning);
                 warning.SetActive(true);
                 SpriteRenderer waringPatternRenderer = warning.GetComponent<SpriteRenderer>();
 
-                waringPatternRenderer.color = new Color(1, 0, 0, 0.1f * i);
-
+                waringPatternRenderer.color = new Color(1, 0, 0, 0.05f * i);
+                
 
             }
             yield return new WaitForSeconds(0.1f);
@@ -42,6 +41,7 @@ public class BossObstacle : MonoBehaviour
     }
     public IEnumerator WaitForDestroy()
     {
+        Debug.Log((float)damagePlaneType+0.5f);
         yield return new WaitForSeconds((float)damagePlaneType);
         Destroy(this.gameObject);
     }

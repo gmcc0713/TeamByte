@@ -4146,7 +4146,7 @@ MonoBehaviour:
   - {fileID: 7375656545587452674}
   - {fileID: 7722572715558710936}
   - {fileID: 5767283516588054700}
-  damagePlaneType: 5
+  damagePlaneType: 2
 --- !u!1 &7912421271927996947
 GameObject:
   m_ObjectHideFlags: 0
