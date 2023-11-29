@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class BossMonster : Monster
     [SerializeField] protected GameObject[] m_aMovingRoot;
 	protected bool m_bIsAttacking = false;
 	protected int m_iPriviousAttackType;
+    protected int m_ipatternCount;
 
     public override void Initialize()
     {
@@ -21,8 +23,8 @@ public class BossMonster : Monster
         m_cFSM.ChangeState(m_cState.IdleState);
         m_HPUI =GetComponentInChildren<Slider>();
         m_aMovingRoot = BossManager.Instance.GetMovingRoot();
-
-        m_target = GameObject.Find("Player");
+		m_target = GameObject.Find("Player");
+		m_ipatternCount = 4;
        
     }
     public override void Idle()
@@ -62,9 +64,9 @@ public class BossMonster : Monster
     }
 	public int RandomAttackType()
     {
-        int ran = Random.Range(0, 1);
+        int ran = Random.Range(0, m_ipatternCount);
         if(m_iPriviousAttackType == ran)
-            ran = Random.Range(0,1);
+            ran = Random.Range(0, m_ipatternCount);
         m_iPriviousAttackType = ran;
         Debug.Log(ran);
         return ran;

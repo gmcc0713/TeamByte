@@ -8,9 +8,9 @@ public class NormalMonster : Monster
     public override void Initialize()
     {
         base.Initialize();
-        Debug.Log(m_cState);
-        Debug.Log(m_cFSM);
-        m_cFSM.ChangeState(m_cState.MoveState);
+        if(m_cFSM==null)
+		    MonsterManager.Instance.MonsterInit(this.GetComponent<Monster>());
+		m_cFSM.ChangeState(m_cState.MoveState);
        
     }
     private void OnEnable()
@@ -19,7 +19,6 @@ public class NormalMonster : Monster
     }
     public override void Move()
     {
-        Debug.Log("M" + transform.position);
         if (!m_target)
         {
             return;

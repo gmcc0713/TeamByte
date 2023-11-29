@@ -14,8 +14,10 @@ public class HeartQueenBossMonster : BossMonster
 	{
         Initialize();
         enemySpawnPoints = BossManager.Instance.GetSpawnPoints();
+		m_ipatternCount = 4;
 
-    }
+
+	}
 	public void SpawnMonster()
 	{
 
@@ -41,8 +43,6 @@ public class HeartQueenBossMonster : BossMonster
 		Debug.Log("장애물 소환");
 		GameObject clone = Instantiate(enemyObstacle);
 		clone.transform.position = m_target.transform.position;
-		Debug.Log(clone.transform.position);
-
 		m_cFSM.ChangeState(m_cState.BossWaitState);
     }
 	public void SpawnDamagePlane()
@@ -50,7 +50,6 @@ public class HeartQueenBossMonster : BossMonster
 		Debug.Log("장애물 소환");
 		GameObject clone = Instantiate(damagePlane);
 		clone.transform.position = m_target.transform.position;
-		Debug.Log(clone.transform.position);
 
 		m_cFSM.ChangeState(m_cState.BossWaitState);
 	}
@@ -64,7 +63,6 @@ public class HeartQueenBossMonster : BossMonster
 	{
         Debug.Log("TimeCheck");
         yield return new WaitForSeconds(time);
-		Debug.Log("End");
 		spinSquare.GetComponent<SpinSquareBullet>().ResetSpeed();
         spinSquare.SetActive(false);
         m_cFSM.ChangeState(m_cState.BossWaitState);
@@ -77,12 +75,11 @@ public class HeartQueenBossMonster : BossMonster
 	
 	protected override void ChangeStateBossPattern(int idx)
 	{
-		Debug.Log(idx);
 		switch (idx)
 		{
 			case 0:
 				Debug.Log("Change Spawn Obstacle");
-                m_cFSM.ChangeState(m_cState.BossSpawnMonster);
+                m_cFSM.ChangeState(m_cState.BossSpawnObstacle);
                 break;
 			case 1:
 				Debug.Log("Change Spin Square");
