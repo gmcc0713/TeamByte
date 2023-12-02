@@ -9267,7 +9267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb50736953c342449ca91d0577f22b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   nameimageArr: []
+  currentScene: 
+  CutSceneObject: {fileID: 0}
 --- !u!4 &1098535654
 Transform:
   m_ObjectHideFlags: 0
@@ -46363,10 +46366,10 @@ PolygonCollider2D:
     - - {x: 30.486565, y: 23.678465}
       - {x: -44.010227, y: 23.47111}
       - {x: -44.056908, y: -12.9415245}
-      - {x: -18.28083, y: -13.140228}
-      - {x: -17.890411, y: -3.1582494}
-      - {x: 0.739357, y: -3.6849935}
-      - {x: 0.5248718, y: -13.057456}
+      - {x: -17.314648, y: -13.140228}
+      - {x: -17.514671, y: -6.7009187}
+      - {x: -3.232727, y: -6.959279}
+      - {x: -3.2962341, y: -12.810933}
       - {x: 30.56022, y: -12.916967}
   m_UseDelaunayMesh: 0
 --- !u!50 &1294057247

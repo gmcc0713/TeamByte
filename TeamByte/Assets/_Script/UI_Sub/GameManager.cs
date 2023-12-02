@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
 
+
     public void Action(GameObject scanObj)
     {
         isAction = true;
@@ -36,15 +37,18 @@ public class GameManager : MonoBehaviour
     {
         string talkData = talkManager.GetTalk(id, talkIndex);
 
-        if(talkData == null){
-            isAction=false;
+        if (talkData == null)
+        {
+            isAction = false;
             talkIndex = 0;
             return;
         }
-        if(isNPC){
+        if (isNPC)
+        {
             talkText.text = talkData;
         }
-        else{
+        else
+        {
             talkText.text = talkData;
         }
         isAction = true;

@@ -12,35 +12,40 @@ public class TimelineController : MonoBehaviour
     public PlayableDirector playableDirector;
 
     public GameObject[] Cameras;
-    
+
+
     // stage 2
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            foreach (var camera in Cameras)
-            {
-                camera.gameObject.SetActive(true);
-            }
-
-            Debug.Log("충돌");
-            // 타임라인 실행
-            PlayTimeline(timelineAsset); ;
-
-            foreach (var camera in Cameras)
-            {
-                camera.gameObject.SetActive(false);
-            }
-            this.gameObject.SetActive(false);
+            TimelineFunction();
         }
     }
 
-    // 타임라인 실행 함수
-    private void PlayTimeline(TimelineAsset timeline)
+    public void TimelineStart()
     {
-        Debug.Log("타임라인 함수 실행");
-        // 타임라인 실행
-        playableDirector.playableAsset = timeline;
-        playableDirector.Play();
+        TimelineFunction();
     }
+
+    public void TimelineFunction()
+    {
+        foreach (var camera in Cameras)
+        {
+            camera.gameObject.SetActive(true);
+        }
+
+        Debug.Log("충돌");
+        // 타임라인 실행
+        playableDirector.playableAsset = timelineAsset;
+        playableDirector.Play();
+
+        foreach (var camera in Cameras)
+        {
+            camera.gameObject.SetActive(false);
+        }
+        this.gameObject.SetActive(false);
+    }
+
+
 }
