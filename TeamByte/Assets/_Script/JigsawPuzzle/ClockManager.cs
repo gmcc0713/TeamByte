@@ -10,9 +10,8 @@ public class ClockManager : MonoBehaviour
     public Transform levelSelectPanel;
     public Image levelSelectPrefab;
     public Transform gameHolder;
-    public Transform piecePrefab;
 
-    private List<Transform> pieces;
+    public List<Transform> pieces;
     private Vector2Int dimensions;
     private int piecesNum = 9;
     private float width;
@@ -31,8 +30,6 @@ public class ClockManager : MonoBehaviour
     public void StartGame(Texture2D jigsawTex) 
     {
         levelSelectPanel.gameObject.SetActive(false);
-
-        pieces = new List<Transform>();
 
         dimensions = GetDimensions(jigsawTex, piecesNum);
 

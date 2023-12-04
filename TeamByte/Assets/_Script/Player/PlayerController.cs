@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private float horizontalInput;
     private float verticalInput;
-    private bool isReload;
+    private bool isReload = false;
 
     public float bulletSpeed = 10.0f;
     public int maxBullet = 10;
-    public float delay = 10.0f;
+    public float reloadTime = 10.0f;
 
     public GameObject bulletPrefab;
     Rigidbody2D playerRb;
@@ -39,30 +39,32 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Move();
 
         Scan();
 
-        StartCoroutine(DelayedFire());
-    }
-    IEnumerator DelayedFire()
-    {
+
+        if (isReload)
+            return;
+
+        if (maxBullet <= 0)
+        {
+            StartCoroutine(ReloadBullet());
+            return;
+        }
         if (Input.GetButtonDown("Fire1"))
         {
-            if (maxBullet == 0 && isReload)
-            {
-                yield return new WaitForSeconds(delay); // 3초 딜레이
-                isReload = false;
-                maxBullet = 10;
-            }
-            else
-            {
-                FireBullet();
-                maxBullet--;
-                if (maxBullet == 0) { isReload = true;}
-                Debug.Log(maxBullet);
-            }
+            FireBullet();
+            maxBullet--;
         }
+    }
+    IEnumerator ReloadBullet()
+    {
+        isReload = true;
+        yield return new WaitForSeconds(reloadTime);
+        maxBullet = 10; 
+        isReload = false;
     }
 
     void Move()
@@ -126,7 +128,6 @@ public class PlayerController : MonoBehaviour
         // 총알을 생성하고 초기 위치를 플레이어 위치로 설정
         GameObject newBullet;
         Rigidbody2D bulletRb;
-
         // 총알에 Rigidbody2D 컴포넌트를 가져옴
 
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 마우스 커서 위치를 게임 월드 좌표로 변환
