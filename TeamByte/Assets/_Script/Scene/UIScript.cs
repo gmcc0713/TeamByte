@@ -15,6 +15,7 @@ public class UIScript : MonoBehaviour
 #if UNITY_EDITOR
         // 에디터 상에서는 Play 모드를 중지
         UnityEditor.EditorApplication.isPlaying = false;
+
 #else
         // 빌드된 런타임에서는 애플리케이션을 종료합니다.
         Application.Quit();
@@ -25,5 +26,9 @@ public class UIScript : MonoBehaviour
     public void TitleMove()
     {
         SceneManager.LoadScene("TitleScene");
+    }
+    public void SavePoint(int save)
+    {
+        SaveLoadManager.Instance.SetSaveData(save);
     }
 }
