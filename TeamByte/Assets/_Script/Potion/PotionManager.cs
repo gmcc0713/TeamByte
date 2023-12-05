@@ -6,8 +6,12 @@ public class PotionManager : MonoBehaviour
 {
     public GameObject Canvas;
     public Text resultText;
-    private int result = 0;
+    private int resultValue = 0;
     public Text successText;
+    public int redPotionValue = 3;
+    public int GreenPotionValue = 7;
+    public int BluePotionValue = 13;
+    public int YellowPotionValue = 1;
 
     private void Start()
     {
@@ -16,33 +20,33 @@ public class PotionManager : MonoBehaviour
 
     public void Button1OnClick()
     {
-        result += 3;
-        UpdateResultText();
+        resultValue += redPotionValue;
+        UpdateResultValue();
     }
 
     public void Button2OnClick()
     {
-        result += 5;
-        UpdateResultText();
+        resultValue += GreenPotionValue;
+        UpdateResultValue();
     }
 
     public void Button3OnClick()
     {
-        result += 10;
-        UpdateResultText();
+        resultValue += BluePotionValue;
+        UpdateResultValue();
     }
 
     public void Button4OnClick()
     {
-        result -= 7;
-        UpdateResultText();
+        resultValue -= YellowPotionValue;
+        UpdateResultValue();
     }
 
-    private void UpdateResultText()
+    private void UpdateResultValue()
     {
-        resultText.text = "Result: " + result.ToString();
+        resultText.text = "Result: " + resultValue.ToString();
 
-        if (result == 50)
+        if (resultValue == 50)
         {
             successText.gameObject.SetActive(true);
             StartCoroutine(CloseQuiz());
