@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128290475}
   - component: {fileID: 128290474}
+  - component: {fileID: 128290476}
   m_Layer: 0
   m_Name: TipManager
   m_TagString: Untagged
@@ -152,10 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcb2881474fec1498f572bedb40a935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    tipDatas: []
-  xmlFile: {fileID: 0}
-  tipText: {fileID: 850949276}
 --- !u!4 &128290475
 Transform:
   m_ObjectHideFlags: 0
@@ -171,6 +168,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128290476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128290473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6147474c3f7a7b54e971928031b3a5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    tipDatas: []
+  xmlFile: {fileID: 4900000, guid: 48d72eb1af2814e4d8b93ef98e643035, type: 3}
+  tipText: {fileID: 850949276}
 --- !u!1 &128650475
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128650477}
-  - component: {fileID: 128650476}
+  - component: {fileID: 128650478}
   m_Layer: 0
   m_Name: LoadingSceneManager
   m_TagString: Untagged
@@ -188,19 +201,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &128650476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128650475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18d172656b050c468b4ef4497d89d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingBar: {fileID: 1384327205}
 --- !u!4 &128650477
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +216,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128650478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128650475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aedc27cec882c74080011fc24258f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingBar: {fileID: 1384327205}
 --- !u!1 &198686655
 GameObject:
   m_ObjectHideFlags: 0

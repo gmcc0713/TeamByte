@@ -52,7 +52,11 @@ public class SaveLoadManager : MonoBehaviour
 	{
 		return m_eNextScene;
 	}
-	public void SetNextScene(int data)
+    public Save_Data GetSaveData()
+    {
+        return m_eSaveData;
+    }
+    public void SetNextScene(int data)
 	{
 		m_eNextScene =(Save_Data)data;
 	}
