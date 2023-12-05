@@ -983,7 +983,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 500
   isNPC: 0
-  sprite: {fileID: 0}
 --- !u!212 &219807824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18114,11 +18113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb50736953c342449ca91d0577f22b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   nameimageArr: []
-  cutSceneimageArr: []
-  currentScene: 
-  CutSceneObject: {fileID: 0}
 --- !u!4 &427403048
 Transform:
   m_ObjectHideFlags: 0
@@ -18852,7 +18847,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &809350209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18961,8 +18955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   bulletSpeed: 10
-  maxBullet: 10
-  delay: 10
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1153227814}
 --- !u!58 &939480658
@@ -19076,7 +19068,7 @@ SpriteRenderer:
   m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &939480661
@@ -20234,7 +20226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &1180027505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69173,11 +69164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentScene: 
   Player: {fileID: 0}
   SummonPositionLeft: {fileID: 0}
   SummonPositionRight: {fileID: 0}
-  data: 3
 --- !u!58 &1293122800
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9464,7 +9464,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 500
   isNPC: 0
-  sprite: {fileID: 0}
 --- !u!212 &426357968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9713,10 +9712,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentScene: 
+  Player: {fileID: 939480655}
   SummonPositionLeft: {fileID: 0}
   SummonPositionRight: {fileID: 0}
-  data: 3
 --- !u!58 &588402621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15970,8 +15969,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   bulletSpeed: 10
-  maxBullet: 10
-  delay: 10
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 157804442}
 --- !u!58 &939480658
@@ -16085,7 +16082,7 @@ SpriteRenderer:
   m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &939480661
@@ -16600,7 +16597,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &1156468464
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70488,7 +70484,6 @@ GameObject:
   - component: {fileID: 1293122800}
   - component: {fileID: 1293122799}
   - component: {fileID: 1293122798}
-  - component: {fileID: 1293122802}
   m_Layer: 0
   m_Name: OtherRoomRight
   m_TagString: Portal
@@ -70551,10 +70546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentScene: 
+  Player: {fileID: 939480655}
   SummonPositionLeft: {fileID: 1905634112}
   SummonPositionRight: {fileID: 367162510}
-  data: 0
 --- !u!58 &1293122800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -70642,22 +70637,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1293122802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293122796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534adeb2f40ceaf46a86ff99d990a555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  Player: {fileID: 939480655}
-  SummonPositionRight: {fileID: 367162510}
-  SummonPositionLeft: {fileID: 1905634112}
 --- !u!1 &1337818373
 GameObject:
   m_ObjectHideFlags: 0
@@ -71861,11 +71840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb50736953c342449ca91d0577f22b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   nameimageArr: []
-  cutSceneimageArr: []
-  currentScene: 
-  CutSceneObject: {fileID: 0}
 --- !u!4 &1360004773
 Transform:
   m_ObjectHideFlags: 0
@@ -73121,7 +73096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &1783879929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73185,8 +73159,8 @@ GameObject:
   - component: {fileID: 1788834036}
   - component: {fileID: 1788834040}
   - component: {fileID: 1788834039}
+  - component: {fileID: 1788834038}
   - component: {fileID: 1788834037}
-  - component: {fileID: 1788834041}
   m_Layer: 0
   m_Name: OtherRoomLeft
   m_TagString: Portal
@@ -73237,6 +73211,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1788834038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788834035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScene: 
+  Player: {fileID: 939480655}
+  SummonPositionLeft: {fileID: 1905634112}
+  SummonPositionRight: {fileID: 367162510}
 --- !u!58 &1788834039
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73324,22 +73314,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1788834041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788834035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534adeb2f40ceaf46a86ff99d990a555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  Player: {fileID: 939480655}
-  SummonPositionRight: {fileID: 367162510}
-  SummonPositionLeft: {fileID: 1905634112}
 --- !u!1 &1845130116
 GameObject:
   m_ObjectHideFlags: 0

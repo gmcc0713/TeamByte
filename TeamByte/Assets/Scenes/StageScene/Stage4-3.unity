@@ -9269,7 +9269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   nameimageArr: []
-  cutSceneimageArr: []
   currentScene: 
   CutSceneObject: {fileID: 0}
 --- !u!4 &1098535654
@@ -46084,7 +46083,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &1254348870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46211,11 +46209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentScene: 
   Player: {fileID: 939480655}
   SummonPositionLeft: {fileID: 0}
   SummonPositionRight: {fileID: 0}
-  data: 6
 --- !u!58 &1293122800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46790,7 +46787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
-  sprite: {fileID: 0}
 --- !u!212 &1355768834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48025,7 +48021,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 500
   isNPC: 0
-  sprite: {fileID: 0}
 --- !u!212 &1952476092
 SpriteRenderer:
   m_ObjectHideFlags: 0

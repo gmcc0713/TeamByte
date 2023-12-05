@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -73,19 +73,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -126,40 +126,40 @@ TextureImporter:
       name: HeartQueenAttack1_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 323
-        width: 140
-        height: 225
-      alignment: 9
-      pivot: {x: 0.49285716, y: 0.64}
+        x: 11
+        y: 79
+        width: 150
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 498dcfab7e12cf64ea5d3966433470a5
-      internalID: -710316895
+      spriteID: 495a8e209f49ddf4391a08c3eb70a3fe
+      internalID: 1928934268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeartQueenAttack1_1
+      name: HeartQueenAttack1_2
       rect:
         serializedVersion: 2
-        x: 218
-        y: 326
-        width: 141
-        height: 225
-      alignment: 9
-      pivot: {x: 0.49645388, y: 0.63555557}
+        x: 165
+        y: 79
+        width: 157
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cd9eb98e4c099349946ae45c938d879
-      internalID: -1070992910
+      spriteID: 10e57879f755e7c45a633e41499397a4
+      internalID: -530717641
       vertices: []
       indices: 
       edges: []
@@ -168,40 +168,40 @@ TextureImporter:
       name: HeartQueenAttack1_4
       rect:
         serializedVersion: 2
-        x: 22
-        y: 24
-        width: 132
-        height: 232
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6336207}
+        x: 328
+        y: 79
+        width: 188
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbb0c64a5adb9cc46aa25079281b7241
-      internalID: 1227744917
+      spriteID: 466746e12cb4a7b4a90d827cc49bd0ce
+      internalID: -1700433096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeartQueenAttack1_5
+      name: HeartQueenAttack1_8
       rect:
         serializedVersion: 2
-        x: 225
-        y: 25
-        width: 125
-        height: 225
-      alignment: 9
-      pivot: {x: 0.504, y: 0.63111115}
+        x: 525
+        y: 80
+        width: 188
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4e1efcac611d0c4e89e6c40d69152be
-      internalID: -1096348968
+      spriteID: d2d135c3f9589b14c9c9a10e38a5921a
+      internalID: -1747304871
       vertices: []
       indices: 
       edges: []
@@ -217,14 +217,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HeartQueenAttack1_0: -710316895
-      HeartQueenAttack1_1: -1070992910
-      HeartQueenAttack1_2: 1771305364
-      HeartQueenAttack1_3: 388406749
-      HeartQueenAttack1_4: 1227744917
-      HeartQueenAttack1_5: -1096348968
-      HeartQueenAttack1_6: -75587422
-      HeartQueenAttack1_7: 100380147
+      HeartQueenAttack1_0: 1928934268
+      HeartQueenAttack1_1: -26806708
+      HeartQueenAttack1_10: 787836725
+      HeartQueenAttack1_11: -1075567281
+      HeartQueenAttack1_12: -702888910
+      HeartQueenAttack1_13: 2124712796
+      HeartQueenAttack1_14: -1676867496
+      HeartQueenAttack1_15: -1420226248
+      HeartQueenAttack1_2: -530717641
+      HeartQueenAttack1_3: -1189429841
+      HeartQueenAttack1_4: -1700433096
+      HeartQueenAttack1_5: -525188888
+      HeartQueenAttack1_6: 1997380434
+      HeartQueenAttack1_7: 745279423
+      HeartQueenAttack1_8: -1747304871
+      HeartQueenAttack1_9: 1574051630
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,19 +69,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,114 +106,22 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: HeartQueenAttack2_0
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 1534
-        width: 139
-        height: 211
-      alignment: 9
-      pivot: {x: 0.50359714, y: -0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5176689b3809179469e6fdd6acf75d53
-      internalID: 107776902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HeartQueenAttack2_2
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 1174
-        width: 139
-        height: 216
-      alignment: 9
-      pivot: {x: 0.50359714, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 618035069232c0d4dbe66aeffd89a133
-      internalID: 862988705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HeartQueenAttack2_4
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 813
-        width: 139
-        height: 222
-      alignment: 9
-      pivot: {x: 0.50359714, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3e8a7f1386fbe645959a708b70a45aa
-      internalID: 1339514848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HeartQueenAttack2_6
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 454
-        width: 139
-        height: 229
-      alignment: 9
-      pivot: {x: 0.50359714, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37345054f95b1e64cae2d3b11774c158
-      internalID: 864239557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HeartQueenAttack2_8
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 94
-        width: 139
-        height: 214
-      alignment: 9
-      pivot: {x: 0.50359714, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f720e127a4188d45ac756916b5854ce
-      internalID: -821352320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -237,17 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      HeartQueenAttack2_0: 107776902
-      HeartQueenAttack2_1: -1996325342
-      HeartQueenAttack2_2: 862988705
-      HeartQueenAttack2_3: 1568671391
-      HeartQueenAttack2_4: 1339514848
-      HeartQueenAttack2_5: 553752063
-      HeartQueenAttack2_6: 864239557
-      HeartQueenAttack2_7: 1333961991
-      HeartQueenAttack2_8: -821352320
-      HeartQueenAttack2_9: -1827541753
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

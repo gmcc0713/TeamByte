@@ -15,7 +15,6 @@ public enum Save_Data
     Stage_4_1,
     Stage_4_2,
     Stage_4_3,
-	Stage_EndingScene,
 	Count,
 }
 public class SaveLoadManager : MonoBehaviour
@@ -38,8 +37,7 @@ public class SaveLoadManager : MonoBehaviour
 	bool m_bIsFirst;
 	public void NextSceneStart()
 	{
-		m_eSaveData = m_eNextScene;
-        SceneManager.LoadScene("LoadingScene");
+		SceneManager.LoadScene("LoadingScene");
 	}
     void Start()
     {
@@ -56,14 +54,10 @@ public class SaveLoadManager : MonoBehaviour
 	{
 		m_eNextScene =(Save_Data)data;
 	}
-    public void SetSaveData(int i)
-    {
-        m_eSaveData = (Save_Data)i;
-    }
-    public void SettingSaveDatas()
+	public void SettingSaveDatas()
 	{
 
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < (int)Save_Data.Count; i++)
 		{
 			m_SaveStageBtn[i].interactable = false;
 		}
