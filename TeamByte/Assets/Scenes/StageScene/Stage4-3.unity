@@ -46218,9 +46218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
-  Player: {fileID: 939480655}
-  SummonPositionLeft: {fileID: 0}
-  SummonPositionRight: {fileID: 0}
   data: 6
 --- !u!58 &1293122800
 CircleCollider2D:

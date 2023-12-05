@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HeartQueenIdle_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 955
+        width: 139
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.5707547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bef4d17c40ee1244957f624a899a73e
+      internalID: -1613208221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenIdle_1
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 955
+        width: 139
+        height: 221
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.5656109}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af106f400c5c87547b2df5d808372efe
+      internalID: 1137216345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenIdle_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 555
+        width: 139
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.56164384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a820342c596aa4084c87498712db1e
+      internalID: -1514735657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenIdle_5
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 555
+        width: 139
+        height: 221
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.5605382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680a34e84277def4c8b7c31b247dfdf3
+      internalID: -1190758188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenIdle_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 155
+        width: 139
+        height: 214
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.57009345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd234568e26d26d4b83851fdd45ade62
+      internalID: -736849177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenIdle_9
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 155
+        width: 139
+        height: 211
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.5774648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28411a921c3ff4644b2b707e479be633
+      internalID: -101961893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HeartQueenIdle_0: -1613208221
+      HeartQueenIdle_1: 1137216345
+      HeartQueenIdle_10: -1005882267
+      HeartQueenIdle_11: -1169873367
+      HeartQueenIdle_2: 975207238
+      HeartQueenIdle_3: 1798298370
+      HeartQueenIdle_4: -1514735657
+      HeartQueenIdle_5: -1190758188
+      HeartQueenIdle_6: 886934011
+      HeartQueenIdle_7: 1843467020
+      HeartQueenIdle_8: -736849177
+      HeartQueenIdle_9: -101961893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

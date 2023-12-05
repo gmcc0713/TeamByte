@@ -70,7 +70,7 @@ public class HeartQueenBossMonster : BossMonster
 	public void SpinSqureUpdate()
 	{
 
-        spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.3f);
+        spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.1f);
 	}
 	
 	protected override void ChangeStateBossPattern(int idx)

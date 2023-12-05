@@ -121,7 +121,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HeartQueenDeath_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 898
+        width: 139
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.5754717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3b78c2ca558bd4396101da3a30af3a
+      internalID: -1995393957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 897
+        width: 139
+        height: 215
+      alignment: 9
+      pivot: {x: 0.50359714, y: 0.5860465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c117e744506dd04d943426460d41b1e
+      internalID: 723676355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_2
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 899
+        width: 139
+        height: 217
+      alignment: 9
+      pivot: {x: 0.51079136, y: 0.562212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d0028fac51a224bb3ce6ecaeed41fa
+      internalID: -478470860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 497
+        width: 139
+        height: 224
+      alignment: 9
+      pivot: {x: 0.52517986, y: 0.59375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9244ecaf34e6c4d8324a1131587cfc
+      internalID: -953473114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_8
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 499
+        width: 147
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5238095, y: 0.55357146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feebfb5c931bcf94e863e13b2508268a
+      internalID: 735854590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_11
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 499
+        width: 149
+        height: 214
+      alignment: 9
+      pivot: {x: 0.5100671, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdbe36238122a548ae9251d3211f3af
+      internalID: 788902732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenDeath_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 94
+        width: 153
+        height: 218
+      alignment: 9
+      pivot: {x: 0.49019608, y: 0.5275229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9421f4188d205d4faddecd2a109ee42
+      internalID: -1760326160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +279,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HeartQueenDeath_0: -1995393957
+      HeartQueenDeath_1: 723676355
+      HeartQueenDeath_10: 333387107
+      HeartQueenDeath_11: 788902732
+      HeartQueenDeath_12: 931861515
+      HeartQueenDeath_13: 1387801084
+      HeartQueenDeath_14: -100209496
+      HeartQueenDeath_15: 267807404
+      HeartQueenDeath_16: -2093683492
+      HeartQueenDeath_17: -1760326160
+      HeartQueenDeath_18: -1883231864
+      HeartQueenDeath_19: 124923807
+      HeartQueenDeath_2: -478470860
+      HeartQueenDeath_20: -1805184578
+      HeartQueenDeath_3: -63316460
+      HeartQueenDeath_4: -1536031488
+      HeartQueenDeath_5: 1567069701
+      HeartQueenDeath_6: -953473114
+      HeartQueenDeath_7: -1028225325
+      HeartQueenDeath_8: 735854590
+      HeartQueenDeath_9: -37374477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

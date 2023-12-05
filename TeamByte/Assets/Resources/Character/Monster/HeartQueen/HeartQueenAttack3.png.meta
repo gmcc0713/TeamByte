@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HeartQueenAttack3_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 498
+        width: 139
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4820144, y: 0.6037736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f549d7525dc13d4596f1d0434ab01b4
+      internalID: 490149386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenAttack3_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 498
+        width: 139
+        height: 214
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.6074766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93b56d2fc3646b4c8d755c99ae8905a
+      internalID: 1282424536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenAttack3_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 100
+        width: 139
+        height: 217
+      alignment: 9
+      pivot: {x: 0.50359714, y: 0.58064514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94997fe23b490844bc5b0cacdb93ff2
+      internalID: 1197691673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartQueenAttack3_5
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 97
+        width: 139
+        height: 214
+      alignment: 9
+      pivot: {x: 0.50359714, y: 0.6074766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c35c54b66a8b749b3147b18a44b6b1
+      internalID: 707142561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HeartQueenAttack3_0: 490149386
+      HeartQueenAttack3_1: 1282424536
+      HeartQueenAttack3_2: -661125641
+      HeartQueenAttack3_3: 1784056932
+      HeartQueenAttack3_4: 1197691673
+      HeartQueenAttack3_5: 707142561
+      HeartQueenAttack3_6: -714210499
+      HeartQueenAttack3_7: 863964427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
