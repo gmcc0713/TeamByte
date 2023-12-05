@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageScene/TitleScene.unity
     guid: b02f54a36f001224481afc86c27570c9
+  - enabled: 1
+    path: Assets/Scenes/StageScene/LoadingScene.unity
+    guid: 15cf099410f4b514082e54c1645449b0
   - enabled: 0
     path: Assets/Scenes/KJHTest.unity
     guid: 738c6fe931c57e64cafda78644bd03d1

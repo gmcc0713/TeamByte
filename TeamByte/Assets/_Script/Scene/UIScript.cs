@@ -26,4 +26,5 @@ public class UIScript : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+
 }

@@ -6,16 +6,37 @@ using UnityEngine.SceneManagement;
 public class LoadingSceneController : MonoBehaviour
 {
     [SerializeField] Slider loadingBar;
-
+    
     void Start()
     {
         StartCoroutine(LoadingSceneProgress());
     }
-
-
+    
+    public string GetSceneName(Save_Data data)
+    {
+        switch(data)
+        {
+            case Save_Data.Tutorial:
+                return "Tutorial";
+			case Save_Data.Stage_1:
+				return "Stage1";
+			case Save_Data.Stage_2:
+				return "Stage2";
+			case Save_Data.Stage_3:
+				return "Stage3";
+			case Save_Data.Stage_4_1:
+				return "Stage4-1";
+			case Save_Data.Stage_4_2:
+				return "Stage4-2";
+			case Save_Data.Stage_4_3:
+				return "Stage4-3";
+            default:
+                return "";
+		}
+    }
     IEnumerator LoadingSceneProgress()
     {
-        AsyncOperation op =   SceneManager.LoadSceneAsync("Stage1");       //비동기 방식(씬을 불러오는 도중 다른작업이 가능함)
+        AsyncOperation op =   SceneManager.LoadSceneAsync(GetSceneName(SaveLoadManager.Instance.GetNextSceneData()));       //비동기 방식(씬을 불러오는 도중 다른작업이 가능함)
         op.allowSceneActivation = false;    //씬을 비동기로 불러들일때 씬의 로딩이 끝나면 자동으로 불러온 씬으로 이동할건지 설정(로딩시간이 너무 짧을때를 대비)
 
         float timer = 0;

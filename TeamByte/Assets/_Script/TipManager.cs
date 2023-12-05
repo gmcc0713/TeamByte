@@ -40,7 +40,6 @@ public class TipManager : MonoBehaviour
         {
             string tipText = tipNode.InnerText;
             data.tipDatas.Add(tipText);
-            Debug.Log(tipText);
         }
     }
     IEnumerator TipShowRandom()
