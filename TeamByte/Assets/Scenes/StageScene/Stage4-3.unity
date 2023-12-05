@@ -7492,7 +7492,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 5.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7517,7 +7517,7 @@ Transform:
   m_GameObject: {fileID: 711009494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.52892, y: -11.967039, z: -11.440001}
+  m_LocalPosition: {x: 59.25892, y: -11.968065, z: -11.440001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7743,7 +7743,7 @@ Transform:
   m_GameObject: {fileID: 859141854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.53, y: -15.41, z: -11.440001}
+  m_LocalPosition: {x: 59.26, y: -15.41, z: -11.440001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8061,7 +8061,7 @@ MonoBehaviour:
   speed: 4
   bulletSpeed: 10
   maxBullet: 10
-  delay: 10
+  reloadTime: 10
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1759945360}
 --- !u!58 &939480658
@@ -8187,7 +8187,7 @@ Transform:
   m_GameObject: {fileID: 939480655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.53, y: -15.41, z: -1.44}
+  m_LocalPosition: {x: 59.26, y: -15.41, z: -1.44}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9159,7 +9159,7 @@ Transform:
   m_GameObject: {fileID: 1073764098}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 101.5, y: 5.5, z: -38.28454}
+  m_LocalPosition: {x: 59.75, y: 0.04, z: -11.440001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9218,13 +9218,17 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 1875412183889619442, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 711009496}
   - key: {fileID: 2583967452393268209, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
     value: {fileID: 939480655}
   - key: {fileID: -2842471049434858217, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
     value: {fileID: 939480656}
   - key: {fileID: 3919275619825827672, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
     value: {fileID: 939480656}
+  - key: {fileID: 4532121587075273759, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5236736895736391469, guid: d64bfd18d61331045a276d03007e4dbb, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 85649b3b347681245975a368a396b663: {fileID: 761402177}
@@ -9235,9 +9239,11 @@ PlayableDirector:
     - 561287d12c5e2fe439eb2c6054b2cd74: {fileID: 1006582799}
     - a6a494bc9da7dee4ca2c050ee98d96f3: {fileID: 1006582799}
     - 51911af48b056cf4ea8356110f9bee4e: {fileID: 0}
+    - c869db2665e570842b42aea9086bc96f: {fileID: 1006582799}
     - 5333f3cfa8f56fb43817398eae49a0ce: {fileID: 1006574982}
     - 48d7b7955023b304f8f78ee79daa4712: {fileID: 761402177}
     - d85039723dbe40e4a8b46efecf4c42b9: {fileID: 1006574982}
+    - 4a2efac326e61304f8f7758f165e3604: {fileID: 859141856}
 --- !u!1 &1098535652
 GameObject:
   m_ObjectHideFlags: 0
@@ -47099,8 +47105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: -50, y: -35}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1526449396
 MonoBehaviour:
@@ -47190,7 +47196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1893712245, guid: fa803d9c66b31ca4a850d155f70ce385, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80659431f26d5074e8a1fb09c7a37755, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48733,13 +48739,13 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1949263478}
+  - {fileID: 711009500}
   - {fileID: 939480661}
   - {fileID: 1234952722}
   - {fileID: 1570418289}
   - {fileID: 290634710}
   - {fileID: 226049356}
   - {fileID: 1607445455}
-  - {fileID: 711009500}
   - {fileID: 859141857}
   - {fileID: 499015389}
   - {fileID: 1349527429}

@@ -799,9 +799,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 167
-        y: 285
-        width: 53
-        height: 22
+        y: 296
+        width: 51
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,10 +819,10 @@ TextureImporter:
       name: ICON_AtoZ (1)_33
       rect:
         serializedVersion: 2
-        x: 191
+        x: 149
         y: 276
         width: 38
-        height: 17
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -840,10 +840,10 @@ TextureImporter:
       name: ICON_AtoZ (1)_34
       rect:
         serializedVersion: 2
-        x: 221
-        y: 285
-        width: 43
-        height: 5
+        x: 191
+        y: 276
+        width: 38
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -863,7 +863,7 @@ TextureImporter:
         serializedVersion: 2
         x: 142
         y: 275
-        width: 45
+        width: 5
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -895,6 +895,27 @@ TextureImporter:
       bones: []
       spriteID: 92fef6f7342d9314d8f517f21b35f2ec
       internalID: -313571578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICON_AtoZ (1)_37
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 282
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a876e59bd0f4d6e4e90f494b446aa406
+      internalID: -2136065539
       vertices: []
       indices: 
       edges: []
@@ -941,6 +962,7 @@ TextureImporter:
       ICON_AtoZ (1)_34: -1499438936
       ICON_AtoZ (1)_35: 1125776870
       ICON_AtoZ (1)_36: -313571578
+      ICON_AtoZ (1)_37: -1949658738
       ICON_AtoZ (1)_4: -1661990014
       ICON_AtoZ (1)_5: -21120336
       ICON_AtoZ (1)_6: -2078602426

@@ -195,7 +195,7 @@ MonoBehaviour:
   speed: 4
   bulletSpeed: 10
   maxBullet: 10
-  delay: 10
+  reloadTime: 10
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1762511400}
 --- !u!58 &4187280
@@ -979,8 +979,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -21.79, y: -5.25, z: -0.45611367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 336842807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78778,7 +78778,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 5.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
