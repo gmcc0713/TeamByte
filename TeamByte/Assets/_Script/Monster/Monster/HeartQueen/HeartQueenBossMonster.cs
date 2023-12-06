@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class HeartQueenBossMonster : BossMonster
 	[SerializeField] GameObject spinSquare;
 	[SerializeField] GameObject damagePlane;
 	[SerializeField] GameObject enemyObstacle;
+	[SerializeField] GameObject m_gWarning;
 	[SerializeField] GameObject[] enemySpawnPoints;
 
 	private void Start()
@@ -45,19 +47,45 @@ public class HeartQueenBossMonster : BossMonster
 		clone.transform.position = m_target.transform.position;
 		m_cFSM.ChangeState(m_cState.BossWaitState);
     }
+	public IEnumerator SpawnDamagePlanes(int a)
+	{
+		for(int i =0;i<a;i++)
+		{
+			yield return new WaitForSeconds(1.0f);
+			SpawnDamagePlane();
+		}
+		m_cFSM.ChangeState(m_cState.BossWaitState);
+	}
+	public void SpawnDamagePlaneState()
+	{
+		StartCoroutine(SpawnDamagePlanes(3));
+	}
 	public void SpawnDamagePlane()
 	{
 		Debug.Log("장애물 소환");
 		GameObject clone = Instantiate(damagePlane);
 		clone.transform.position = m_target.transform.position;
-
-		m_cFSM.ChangeState(m_cState.BossWaitState);
+	}
+	public IEnumerator WarningSpin()
+	{
+		int rand = Random.RandomRange(0,180);
+		m_gWarning.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rand));
+		SpriteRenderer waringPatternRenderer = m_gWarning.GetComponent<SpriteRenderer>();
+		for (int i = 0; i < 20; i++)
+		{
+			waringPatternRenderer.color = new Color(1, 0, 0, 0.05f * i);
+			yield return new WaitForSeconds(0.1f);
+		}
+		waringPatternRenderer.color = new Color(1, 0, 0, 0);
+		Debug.Log("Spin");
+		spinSquare.SetActive(true);
+		spinSquare.GetComponent<SpinSquareBullet>().SetRotateStartPoint(rand);
+		StartCoroutine(TimerCheck(10.0f));
 	}
 	public void StartSpin()
 	{
-		Debug.Log("Spin");
-        spinSquare.SetActive(true);
-		StartCoroutine(TimerCheck(10.0f));
+		m_gWarning.SetActive(true);
+		StartCoroutine(WarningSpin());
     }
 	public IEnumerator TimerCheck(float time)
 	{
@@ -69,8 +97,10 @@ public class HeartQueenBossMonster : BossMonster
 	}
 	public void SpinSqureUpdate()
 	{
-
-        spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.1f);
+		if(spinSquare.activeSelf)
+		{
+			spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.1f);
+		}
 	}
 	
 	protected override void ChangeStateBossPattern(int idx)

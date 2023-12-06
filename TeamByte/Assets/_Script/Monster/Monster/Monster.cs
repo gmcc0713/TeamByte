@@ -16,6 +16,9 @@ public class Monster : MonoBehaviour
     public Animator _animator => m_animator;
     public GameObject _target => m_target;
     [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] private bool m_bIsDie;
+
+    public bool _IsDie => m_bIsDie;
 
     [SerializeField] protected int m_iHP;
     [SerializeField] protected int m_iMaxHP;
@@ -34,7 +37,9 @@ public class Monster : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-    }
+		m_bIsDie = false;
+
+	}
     public virtual void Idle() { }
     public virtual void Move() { }
 
@@ -71,6 +76,7 @@ public class Monster : MonoBehaviour
 
     public void StartDie()
     {
+        m_bIsDie = true;
         StartCoroutine(Die());
     }
     IEnumerator Die()

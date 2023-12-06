@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HeartQueenBossData
   m_EditorClassIdentifier: 
   m_iAttackDamage: 1
-  m_iHP: 200
+  m_iHP: 400
   m_iSpeed: 1
   m_iAttackRange: 0

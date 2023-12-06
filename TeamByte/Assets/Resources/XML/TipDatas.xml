@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Tips>
-		<tip>팁1</tip>
-		<tip>팁2</tip>
-		<tip>팁3</tip>
-		<tip>팁4</tip>
-		<tip>팁5</tip>
+		<tip>적을 바라보고 공격하지 않으면 공격이 나가지 않아요!</tip>
+		<tip>탄환에는 재장선 시간이 있으니 막 쓰시면 안돼요!</tip>
+		<tip>길을 잃었다면 맵 곳곳에 표지판을 찾아보세요!</tip>
+		<tip>토비가 발사하는 당근은 사실 입에서 뱉는거에요!!</tip>
 </Tips>

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 public enum DamagePlaneType
 {
-    CheckType = 2,
+    CheckType = 4,
     DamageType = 10,
 }
 public class BossObstacle : MonoBehaviour
@@ -41,7 +41,6 @@ public class BossObstacle : MonoBehaviour
     }
     public IEnumerator WaitForDestroy()
     {
-        Debug.Log((float)damagePlaneType+0.5f);
         yield return new WaitForSeconds((float)damagePlaneType);
         Destroy(this.gameObject);
     }

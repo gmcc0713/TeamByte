@@ -514,8 +514,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sData: {fileID: 11400000, guid: 1e050b03e34a8d44d99e8607f9d58c9c, type: 2}
   m_target: {fileID: 0}
+  agent: {fileID: 0}
+  m_bIsDie: 0
+  m_iHP: 0
+  m_iMaxHP: 0
+  m_iattackDamage: 0
   m_bullet: {fileID: 8801748014444227644, guid: a129bb21210bf8c47adb9eaa3d813d0a, type: 3}
-  m_spawnPos: {x: 0, y: 0, z: 0}
   m_HPUI: {fileID: 9082644129953698647}
   m_aMovingRoot: []
 --- !u!195 &7027748590429889208
