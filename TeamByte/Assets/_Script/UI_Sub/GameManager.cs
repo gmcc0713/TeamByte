@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
         ObjData objData = scanObject.GetComponent<ObjData>();
         Talk(objData.id, objData.isNPC);
 
+        if (objData.id >= 501 && objData.id <= 508)
+            scanObj.transform.Find("PotionImage").gameObject.SetActive(false);
+
+
+
         talkPanel.SetActive(isAction);
 
     }
@@ -51,6 +56,8 @@ public class GameManager : MonoBehaviour
         {
             talkText.text = talkData;
         }
+
+
         isAction = true;
         talkIndex++;
     }
