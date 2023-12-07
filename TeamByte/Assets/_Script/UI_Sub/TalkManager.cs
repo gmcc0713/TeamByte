@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,9 @@ public class TalkManager : MonoBehaviour
     public string currentScene;
     public GameObject CutSceneObject;//Destory
 
+    public PotionFind PotionTalk;
+
+    public GameObject PotionObject;
 
     private void Awake()
     {
@@ -24,6 +28,8 @@ public class TalkManager : MonoBehaviour
         nameimageData = new Dictionary<int, Sprite>();
         cutSceneImage = new Dictionary<int, Sprite>();
         GenerateData();
+
+        PotionTalk = PotionObject.GetComponent<PotionFind>();
     }
 
     private void Start()
@@ -100,7 +106,9 @@ public class TalkManager : MonoBehaviour
 
         //id = 1006 : Stage2 sign1
         talkData.Add(1006, new string[] { "원래는 단순한 동굴었는데...?", "구조가 알아보기 힘들정도로 꼬여버렸어요...", 
-            "방향은 알려주기 힘들 것 같아요.. \n대신 바로 앞에 어떤게 있는지 정도는 알 수 있을 것 같아요!" });
+            "방향은 알려주기 힘들 것 같아요.. \n대신 바로 앞에 어떤게 있는지 정도는 알 수 있을 것 같아요!",
+            "일단 오른쪽으로 먼저 가봐야 할 것 같아요!"});
+
 
         //id = 1007 : Stage2 sign2
         talkData.Add(1007, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
@@ -108,7 +116,35 @@ public class TalkManager : MonoBehaviour
 
         //id = 1008 : Stage2 Alice
         talkData.Add(1008, new string[] { "지름길로 와서 먼저 동굴앞에 도착해 있었는데..\n 궁금해서 먼저 들어와 버렸어!",
-            "맞아 동굴 안을 돌아다니다 보니까 물약같이 생긴게 있더라?", "+3, x7 이런 숫자가 적혀 있던데 \n어디에 쓰는걸까?" });
+            "맞아 동굴 안을 돌아다니다 보니까 여러 색깔의 물약이 있더라?", "빨간색.. 파란색.. 또 무슨 색이 있더라? \n어디에 쓰는걸까?" });
+
+        //id = 1009 : Stage2 sign3
+        talkData.Add(1009, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
+
+
+        //id = 501 : Stage2 Red Potion
+        talkData.Add(501, new string[] { "빨간색 물약을 획득했다!" });
+
+        //id = 502 : Stage2 Green Potion
+        talkData.Add(502, new string[] { "초록색 물약을 획득했다!" });
+
+        //id = 503 : Stage2 Blue Potion
+        talkData.Add(503, new string[] { "파란색 물약을 획득했다!" });
+
+        //id = 504 : Stage2 Yellow Potion
+        talkData.Add(504, new string[] { "노란색 물약을 획득했다!" });
+
+        //id = 505 : Stage2 Red Potion Bundle
+        talkData.Add(505, new string[] { "빨간색 물약 더미를 획득했다!" });
+
+        //id = 506 : Stage2 Green Potion Bundle
+        talkData.Add(506, new string[] { "초록색 물약 더미를 획득했다!" });
+
+        //id = 507 : Stage2 Blue Potion Bundle
+        talkData.Add(507, new string[] { "파란색 물약 더미를 획득했다!" });
+
+        //id = 508 : Stage2 Yellow Potion Bundle
+        talkData.Add(508, new string[] { "노란색 물약 더미를 획득했다!" });
 
 
     }
@@ -117,6 +153,40 @@ public class TalkManager : MonoBehaviour
     {
         if (talkIndex == talkData[id].Length)
             return null;
+        if (id >= 501 && id <= 508)
+        {
+            Debug.Log(id);
+            switch (id)
+            {
+                case 501:
+                    PotionTalk.potionCount[0]++;
+                    break;
+                case 502:
+                    PotionTalk.potionCount[1]++;
+                    break;
+                case 503:
+                    PotionTalk.potionCount[2]++;
+                    break;
+                case 504:
+                    PotionTalk.potionCount[3]++;
+                    break;
+                case 505:
+                    PotionTalk.potionCount[0] += 5;
+                    break;
+                case 506:
+                    PotionTalk.potionCount[1] += 5;
+                    break;
+                case 507:
+                    PotionTalk.potionCount[2] += 5;
+                    break;
+                case 508:
+                    PotionTalk.potionCount[3] += 5;
+                    break;
+                default:
+                    break;
+            }
+            return talkData[id][talkIndex];
+        }
         else
             return talkData[id][talkIndex];
     }
