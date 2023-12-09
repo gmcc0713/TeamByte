@@ -13,7 +13,7 @@ public class BossMonster : Monster
     [SerializeField] protected GameObject[] m_aMovingRoot;
 	protected bool m_bIsAttacking = false;
 	protected int m_iPriviousAttackType;
-    protected int m_ipatternCount;
+    [SerializeField] protected int m_ipatternCount;
 
     public override void Initialize()
     {

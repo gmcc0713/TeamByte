@@ -28,11 +28,9 @@ public class TalkManager : MonoBehaviour
         talkData = new Dictionary<int, string[]>();
         GenerateData();
 
+        potionTalk = potionObject.GetComponent<PotionFind>();
         if (potionTalk == null)
             return;
-
-        potionTalk = potionObject.GetComponent<PotionFind>();
-
 
     }
 
