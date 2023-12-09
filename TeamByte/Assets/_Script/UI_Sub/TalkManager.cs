@@ -4,32 +4,33 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
-    Dictionary<int, Sprite> nameimageData;
-    Dictionary<int, Sprite> cutSceneImage;
 
     public GameManager gameManager;
     public Sprite[] nameimageArr;
     public Sprite[] cutSceneimageArr;
     public string currentScene;
-    public GameObject CutSceneObject;//Destory
+    public GameObject cutSceneObject;//Destory
 
-    public PotionFind PotionTalk;
+    public PotionFind potionTalk;
+    public GameObject potionObject;
 
-    public GameObject PotionObject;
+    public Image nameImage;
+    public Sprite[] imageSprite;
 
     private void Awake()
     {
         currentScene = SceneManager.GetActiveScene().name;
         talkData = new Dictionary<int, string[]>();
-        nameimageData = new Dictionary<int, Sprite>();
-        cutSceneImage = new Dictionary<int, Sprite>();
         GenerateData();
 
-        PotionTalk = PotionObject.GetComponent<PotionFind>();
+        potionTalk = potionObject.GetComponent<PotionFind>();
+
+
     }
 
     private void Start()
@@ -42,15 +43,11 @@ public class TalkManager : MonoBehaviour
     {
         // id : 1500~1699 = 이미지 설정
 
-        // 이름 이미지 설정
-        //nameimageData.Add(1500, nameimageArr[0]);
-
-        // id : 1700~1999 = 컷씬 이미지 설정
-        //cutSceneImage.Add(1700, cutSceneImage[0]);
 
         // id : 0~499 = 독백, 컷씬용 대화
         // id : 500~999 = 일반 대화 오브젝트
-        // id : 1000~1499 = NPC, 표지판 등 많은 대화 오브젝트
+        // id : 1000~1199 = 표지판 등 많은 대화 오브젝트
+        // id : 1200~1499 = 앨리스 등 많은 대화 오브젝트
 
 
         //Tutorial Scene
@@ -92,34 +89,34 @@ public class TalkManager : MonoBehaviour
         //id = 1003 : Stage1 sign2
         talkData.Add(1003, new string[] { "저기 다리 건너편에 앨리스가 있어요!", "얼른 가봐요!" });
 
-        //id = 1004 : Stage1 Alice
-        talkData.Add(1004, new string[] { "어? 토끼 친구구나, 안녕?", "뭐? 너를 따라와 보라고?",
+        //id = 1200 : Stage1 Alice
+        talkData.Add(1200, new string[] { "어? 토끼 친구구나, 안녕?", "뭐? 너를 따라와 보라고?",
             "음.. 마침 심심하기도 했고... 재미있어보이니까 한번 따라가볼게!", "먼저 가고 있으면 내가 조금 있다가 따라갈게!" });
 
-        //id = 1005 : Stage1 sign3
-        talkData.Add(1005, new string[] { "앨리스가 너를 찾아야 할게 있어!", "그게 뭐냐면... \n 시계 조각이야.",
+        //id = 1004 : Stage1 sign3
+        talkData.Add(1004, new string[] { "앨리스가 너를 찾아야 할게 있어!", "그게 뭐냐면... \n 시계 조각이야.",
             "원래 이 동화에서 토끼가 회중시계를 가지고 있는건 알지? ", "원래라면 너가 가지고 있어야하는데, \n동화가 망가진 여파인지 조각나서 흩어져버렸어.",
             "다행인점은 조각들의 대략적인 위치는 알 쉬 있는거랄까?", "지금 위치하고 있는 이 지역에 몇 개 정도 있을거야.", "그걸 찾아서 길을 따라서 동굴 앞으로 와주면 될 것 같아!"});
 
 
         // Stage2
 
-        //id = 1006 : Stage2 sign1
-        talkData.Add(1006, new string[] { "원래는 단순한 동굴었는데...?", "구조가 알아보기 힘들정도로 꼬여버렸어요...", 
+        //id = 1005 : Stage2 sign1
+        talkData.Add(1005, new string[] { "원래는 단순한 동굴었는데...?", "구조가 알아보기 힘들정도로 꼬여버렸어요...", 
             "방향은 알려주기 힘들 것 같아요.. \n대신 바로 앞에 어떤게 있는지 정도는 알 수 있을 것 같아요!",
             "일단 오른쪽으로 먼저 가봐야 할 것 같아요!"});
 
 
-        //id = 1007 : Stage2 sign2
-        talkData.Add(1007, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
+        //id = 1006 : Stage2 sign2
+        talkData.Add(1006, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
             "오른쪽으로 가면.. 앨리스가 있는것 같아요. \n 따라온다더니 벌써 동굴로 들어와 있었네요." });
 
-        //id = 1008 : Stage2 Alice
-        talkData.Add(1008, new string[] { "지름길로 와서 먼저 동굴앞에 도착해 있었는데..\n 궁금해서 먼저 들어와 버렸어!",
+        //id = 1201 : Stage2 Alice
+        talkData.Add(1201, new string[] { "지름길로 와서 먼저 동굴앞에 도착해 있었는데..\n 궁금해서 먼저 들어와 버렸어!",
             "맞아 동굴 안을 돌아다니다 보니까 여러 색깔의 물약이 있더라?", "빨간색.. 파란색.. 또 무슨 색이 있더라? \n어디에 쓰는걸까?" });
 
-        //id = 1009 : Stage2 sign3
-        talkData.Add(1009, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
+        //id = 1007 : Stage2 sign3
+        talkData.Add(1007, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
 
 
         //id = 501 : Stage2 Red Potion
@@ -151,6 +148,22 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int id, int talkIndex)  // obj id, string[] index
     {
+        // 독백 : 1~499
+        if (id >= 1 || id <= 499)
+            nameImage.sprite = imageSprite[0]; Debug.Log("0");
+
+        // 표지판(요정) : 1000~1199 
+        if (id >= 1000 || id <= 1199)
+            nameImage.sprite = imageSprite[1]; Debug.Log("1");
+
+        // 앨리스 : 1200~1499
+        if (id >= 1200 || id <= 1499)
+            nameImage.sprite = imageSprite[2]; Debug.Log("2");
+
+        if (id >= 500 || id <= 999)
+            nameImage.sprite = null;
+
+
         if (talkIndex == talkData[id].Length)
             return null;
         if (id >= 501 && id <= 508)
@@ -159,28 +172,28 @@ public class TalkManager : MonoBehaviour
             switch (id)
             {
                 case 501:
-                    PotionTalk.potionCount[0]++;
+                    potionTalk.potionCount[0]++;
                     break;
                 case 502:
-                    PotionTalk.potionCount[1]++;
+                    potionTalk.potionCount[1]++;
                     break;
                 case 503:
-                    PotionTalk.potionCount[2]++;
+                    potionTalk.potionCount[2]++;
                     break;
                 case 504:
-                    PotionTalk.potionCount[3]++;
+                    potionTalk.potionCount[3]++;
                     break;
                 case 505:
-                    PotionTalk.potionCount[0] += 5;
+                    potionTalk.potionCount[0] += 5;
                     break;
                 case 506:
-                    PotionTalk.potionCount[1] += 5;
+                    potionTalk.potionCount[1] += 5;
                     break;
                 case 507:
-                    PotionTalk.potionCount[2] += 5;
+                    potionTalk.potionCount[2] += 5;
                     break;
                 case 508:
-                    PotionTalk.potionCount[3] += 5;
+                    potionTalk.potionCount[3] += 5;
                     break;
                 default:
                     break;
@@ -212,6 +225,6 @@ public class TalkManager : MonoBehaviour
     {
 
         yield return new WaitForSecondsRealtime(10.0f);
-        Destroy(CutSceneObject);
+        Destroy(cutSceneObject);
     }
 }
