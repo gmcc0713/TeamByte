@@ -60,6 +60,7 @@ public class SaveLoadManager : MonoBehaviour
     public void SetNextScene(int data)
 	{
 		m_eNextScene =(Save_Data)data;
+		Debug.Log(data);
 	}
     public void SetSaveData(int i)
     {

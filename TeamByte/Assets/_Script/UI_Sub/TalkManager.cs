@@ -28,6 +28,9 @@ public class TalkManager : MonoBehaviour
         talkData = new Dictionary<int, string[]>();
         GenerateData();
 
+        if (potionTalk == null)
+            return;
+
         potionTalk = potionObject.GetComponent<PotionFind>();
 
 
@@ -148,7 +151,7 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int id, int talkIndex)  // obj id, string[] index
     {
-        // 독백 : 1~499
+        /*        // 독백 : 1~499
         if (id >= 1 || id <= 499)
             nameImage.sprite = imageSprite[0]; Debug.Log("0");
 
@@ -162,7 +165,7 @@ public class TalkManager : MonoBehaviour
 
         if (id >= 500 || id <= 999)
             nameImage.sprite = null;
-
+*/
 
         if (talkIndex == talkData[id].Length)
             return null;

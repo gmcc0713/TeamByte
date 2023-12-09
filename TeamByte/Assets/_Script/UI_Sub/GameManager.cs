@@ -17,10 +17,15 @@ public class GameManager : MonoBehaviour
 
     public void Action(GameObject scanObj)
     {
+        Debug.Log(scanObject);
         isAction = true;
         scanObject = scanObj;
+        Debug.Log(scanObject.GetComponent<ObjData>());
         ObjData objData = scanObject.GetComponent<ObjData>();
+        Debug.Log(objData);
         Talk(objData.id, objData.isNPC);
+        Debug.Log(objData.id);
+        Debug.Log(objData.isNPC);
 
         if (objData.id >= 501 && objData.id <= 508)
             scanObj.transform.Find("PotionImage").gameObject.SetActive(false);

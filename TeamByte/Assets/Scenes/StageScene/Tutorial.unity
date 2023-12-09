@@ -663,6 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1001
   isNPC: 1
+  sprite: {fileID: 0}
 --- !u!212 &158241335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -793,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNPC: 1
+  sprite: {fileID: 0}
 --- !u!212 &285818887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -891,8 +893,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1640612263}
   nameimageArr: []
+  cutSceneimageArr: []
   currentScene: 
-  CutSceneObject: {fileID: 285818884}
+  cutSceneObject: {fileID: 0}
+  potionTalk: {fileID: 0}
+  potionObject: {fileID: 0}
+  nameImage: {fileID: 0}
+  imageSprite:
+  - {fileID: 770806672, guid: 6a31ec96c4dd3b64da210c165cfacafb, type: 3}
+  - {fileID: 954646055, guid: 6a31ec96c4dd3b64da210c165cfacafb, type: 3}
+  - {fileID: -1879952344, guid: 6a31ec96c4dd3b64da210c165cfacafb, type: 3}
 --- !u!4 &297065843
 Transform:
   m_ObjectHideFlags: 0
@@ -43658,6 +43668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   bulletSpeed: 10
+  maxBullet: 10
+  reloadTime: 10
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1640612263}
 --- !u!58 &1127416646
@@ -43771,7 +43783,7 @@ SpriteRenderer:
   m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1135716352
@@ -44401,10 +44413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2d47782720f54cb526c9e3af4aa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 
-  Player: {fileID: 0}
-  SummonPositionLeft: {fileID: 0}
-  SummonPositionRight: {fileID: 0}
+  currentScene: 0
+  data: 0
 --- !u!58 &1399148369
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46400,6 +46410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 500
   isNPC: 0
+  sprite: {fileID: 0}
 --- !u!212 &1608730887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46500,6 +46511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNPC: 1
+  sprite: {fileID: 0}
 --- !u!212 &1616574406
 SpriteRenderer:
   m_ObjectHideFlags: 0
