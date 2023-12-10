@@ -16,14 +16,15 @@ public class TalkManager : MonoBehaviour
     public string currentScene;
     public GameObject cutSceneObject;//Destory
 
-    public PotionFind potionTalk;
+    private PotionFind potionTalk;
     public GameObject potionObject;
 
-    public ClockFind clockTalk;
+    private ClockFind clockTalk;
     public GameObject clockObject;
 
-    public Image nameImage;
-    public Sprite[] imageSprite;
+    //public GameObject[] nameImage;
+    
+    public GameObject ActiveUI;
 
     private void Awake()
     {
@@ -150,10 +151,10 @@ public class TalkManager : MonoBehaviour
         //id = 508 : Stage1 ClockPiece
         talkData.Add(508, new string[] { "단순한 고철인 것 같다..." });
 
-        //id = 508 : Stage1 ClockPiece
+        //id = 509 : Stage1 ClockPiece
         talkData.Add(509, new string[] { "돌멩이를 착각한 듯 하다..." });
 
-        //id = 508 : Stage1 ClockPiece
+        //id = 510 : Stage1 ClockPiece
         talkData.Add(510, new string[] { "알수없는 파편이다.. 내가 찾는건 아닌듯 하다." });
 
 
@@ -225,21 +226,6 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int id, int talkIndex)  // obj id, string[] index
     {
-        /*        // 독백 : 1~499
-        if (id >= 1 || id <= 499)
-            nameImage.sprite = imageSprite[0]; Debug.Log("0");
-
-        // 표지판(요정) : 1000~1199 
-        if (id >= 1000 || id <= 1199)
-            nameImage.sprite = imageSprite[1]; Debug.Log("1");
-
-        // 앨리스 : 1200~1499
-        if (id >= 1200 || id <= 1499)
-            nameImage.sprite = imageSprite[2]; Debug.Log("2");
-
-        if (id >= 500 || id <= 999)
-            nameImage.sprite = null;
-*/
 
         if (talkIndex == talkData[id].Length)
             return null;
@@ -299,6 +285,13 @@ public class TalkManager : MonoBehaviour
             }
             return talkData[id][talkIndex];
         }
+
+        if (id == 1201 || id == 1004) // stage2 Alice Talk
+        {
+           ActiveUI.SetActive(true);
+           return talkData[id][talkIndex];
+        }
+
         else
             return talkData[id][talkIndex];
     }
