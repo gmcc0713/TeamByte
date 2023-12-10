@@ -19,6 +19,9 @@ public class TalkManager : MonoBehaviour
     public PotionFind potionTalk;
     public GameObject potionObject;
 
+    public ClockFind clockTalk;
+    public GameObject clockObject;
+
     public Image nameImage;
     public Sprite[] imageSprite;
 
@@ -28,10 +31,21 @@ public class TalkManager : MonoBehaviour
         talkData = new Dictionary<int, string[]>();
         GenerateData();
 
-        potionTalk = potionObject.GetComponent<PotionFind>();
-        if (potionTalk == null)
-            return;
+        if(potionObject != null)
+        {
+            potionTalk = potionObject.GetComponent<PotionFind>();
+            Debug.Log("potion");
+        }
+            
+        if (clockObject != null)
+        {
+            clockTalk = clockObject.GetComponent<ClockFind>();
+            Debug.Log("clock");
+        }
 
+
+        if (potionTalk == null && clockTalk == null)
+            return;
     }
 
     private void Start()
@@ -95,55 +109,117 @@ public class TalkManager : MonoBehaviour
             "음.. 마침 심심하기도 했고... 재미있어보이니까 한번 따라가볼게!", "먼저 가고 있으면 내가 조금 있다가 따라갈게!" });
 
         //id = 1004 : Stage1 sign3
-        talkData.Add(1004, new string[] { "앨리스가 너를 찾아야 할게 있어!", "그게 뭐냐면... \n 시계 조각이야.",
-            "원래 이 동화에서 토끼가 회중시계를 가지고 있는건 알지? ", "원래라면 너가 가지고 있어야하는데, \n동화가 망가진 여파인지 조각나서 흩어져버렸어.",
-            "다행인점은 조각들의 대략적인 위치는 알 쉬 있는거랄까?", "지금 위치하고 있는 이 지역에 몇 개 정도 있을거야.", "그걸 찾아서 길을 따라서 동굴 앞으로 와주면 될 것 같아!"});
+        talkData.Add(1004, new string[] { "찾아야 할게 있어요!", "그게 뭐냐면... \n회중시계 조각이에요.",
+            "원래 이 동화에서 토끼가 회중시계를 가지고 있는건 아시죠? ", "원래라면 가지고 있으셔야하는데, \n동화가 망가진 여파인지 조각나서 흩어져버렸어요.",
+            "다행인점은 조각들이 그렇게 멀리 흩어진게 아니라는 거에요.", "아마 지금 위치하고 있는 이 지역에 전부 있을거에요. \n그걸 찾아서 길을 따라서 동굴로 가시면 될 것 같아요!",
+             "바로 앞에 보이는 것부터 가져가죠!"});
+
+        //id = 1005 : Stage1 sign4
+        talkData.Add(1005, new string[] { "시계조각은 대략 7개 인것 같아요! ",
+            "잡다한게 많아서 어떤게 시계조각인지는.. \n잘 모르겠네요", "아마 이 시계조각을 다 모으셔서 합치셔야 \n동굴로 들어갈 수 있을 것 같아요!."});
+
+        //id = 1006 : Stage1 sign5
+        talkData.Add(1006, new string[] { "가면 갈수록 적들이 자주 나오는 것만 같아요.... \n조심하세요!"});
+
+        //id = 1007 : Stage1 sign6
+        talkData.Add(1007, new string[] { "시계가 있어야지 동굴에 들어갈 수 있다고 말씀드렸는데..\n앨리스는 어떡하냐구요?",
+            "그건 괜찮아요! \n원래 이 세계의 주민들이라면 큰 제약을 받거나 하는건 아니에요. ", "다만...\n당신께서는 끌려오신것이라 그런지 이곳에서는 불순물 취급을 하는 것 같더라구요",
+            "그런 걸 막아줄 역할을 해주는 것이 회중시계에요.", "그래서 제가 필요하다고 이야기 드렸던 것이기도 하구요."});
+
+        //id = 501 : Stage1 ClockPiece
+        talkData.Add(501, new string[] { "1번 시계조각을 획득했다!" });
+
+        //id = 502 : Stage1 ClockPiece
+        talkData.Add(502, new string[] { "2번 시계조각을 획득했다!" });
+
+        //id = 503 : Stage1 ClockPiece
+        talkData.Add(503, new string[] { "3번 시계조각을 획득했다!" });
+
+        //id = 504 : Stage1 ClockPiece
+        talkData.Add(504, new string[] { "4번 시계조각을 획득했다!" });
+
+        //id = 505 : Stage1 ClockPiece
+        talkData.Add(505, new string[] { "5번 시계조각을 획득했다!" });
+
+        //id = 506 : Stage1 ClockPiece
+        talkData.Add(506, new string[] { "6번 시계조각을 획득했다!" });
+
+        //id = 507 : Stage1 ClockPiece
+        talkData.Add(507, new string[] { "7번 시계조각을 획득했다!" });
+
+        //id = 508 : Stage1 ClockPiece
+        talkData.Add(508, new string[] { "단순한 고철인 것 같다..." });
+
+        //id = 508 : Stage1 ClockPiece
+        talkData.Add(509, new string[] { "돌멩이를 착각한 듯 하다..." });
+
+        //id = 508 : Stage1 ClockPiece
+        talkData.Add(510, new string[] { "알수없는 파편이다.. 내가 찾는건 아닌듯 하다." });
+
 
 
         // Stage2
 
-        //id = 1005 : Stage2 sign1
-        talkData.Add(1005, new string[] { "원래는 단순한 동굴었는데...?", "구조가 알아보기 힘들정도로 꼬여버렸어요...", 
+        //id = 1008 : Stage2 sign1
+        talkData.Add(1008, new string[] { "원래는 단순한 동굴었는데...?", "구조가 알아보기 힘들정도로 꼬여버렸어요...", 
             "방향은 알려주기 힘들 것 같아요.. \n대신 바로 앞에 어떤게 있는지 정도는 알 수 있을 것 같아요!",
             "일단 오른쪽으로 먼저 가봐야 할 것 같아요!"});
 
 
-        //id = 1006 : Stage2 sign2
-        talkData.Add(1006, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
+        //id = 1009 : Stage2 sign2
+        talkData.Add(1009, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
             "오른쪽으로 가면.. 앨리스가 있는것 같아요. \n 따라온다더니 벌써 동굴로 들어와 있었네요." });
 
         //id = 1201 : Stage2 Alice
         talkData.Add(1201, new string[] { "지름길로 와서 먼저 동굴앞에 도착해 있었는데..\n 궁금해서 먼저 들어와 버렸어!",
             "맞아 동굴 안을 돌아다니다 보니까 여러 색깔의 물약이 있더라?", "빨간색.. 파란색.. 또 무슨 색이 있더라? \n어디에 쓰는걸까?" });
 
-        //id = 1007 : Stage2 sign3
-        talkData.Add(1007, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
+        //id = 1010 : Stage2 sign3
+        talkData.Add(1010, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
+
+        //id = 1011 : Stage2 sign4
+        talkData.Add(1011, new string[] { "여태껏 모아오신 물약들..", "몸의 크기를 조절하는 물약의 재료인 것 같아요!",
+            "그냥 먹었을 때에는 특별한 변화는 없는 것 같아요."});
+
+        //id = 1012 : Stage2 sign5
+        talkData.Add(1012, new string[] { "이제보니 빨간색 물약에는 3이라는 숫자가 적혀있어요.", "초록색 물약에는 7, 파란색 물약에는 13, 노란색 물약에는 -1이 적혀있어요!",
+            "이 숫자들이 물약을 만드는 힌트가 아닐까요?"});
+
+        //id = 1013 : Stage2 sign6
+        talkData.Add(1013, new string[] { "일지는 제가 읽어드릴 수 있어요!", "한 번 확인해보니 저희가 필요했던 물약에 대한 정보가 적혀있어요!",
+            "어디보자...\n물약의 완성품에 대한 정보가...", "아! 여기있네요!", " '나는 기억력이 좋지 않아서 재료들에다가 여러 정보를 적어두곤 했다. ", 
+            "\n그 덕분에 여러 물약을 만들때 일일이 적어둔 것들을 찾지 않아도 되게 되었다.' ", "몸이 작아지는 물약 : 50 \n몸이 커지는 물약 : ....",
+              "알아두면 써먹을 수 있지 않을까요...?"});
+
+        //id = 1014 : Stage2 sign7
+        talkData.Add(1014, new string[] { "출구로 나가기에는 출구의 크기가 많이 작아요...", "아! 아까 전 찾았던 재료물약들을 조합하면 물약을 만들 수 있지 않나요?\n" +
+            "일지에 레시피도 적혀 있었잖아요!", "얼른 해볼까요!", "아래쪽에 위치한 테이블에서 물약을 조합할 수 있습니다.\n테이블 앞에서 상호작용 버튼 : F를 눌러보세요."});
 
 
-        //id = 501 : Stage2 Red Potion
-        talkData.Add(501, new string[] { "빨간색 물약을 획득했다!" });
 
-        //id = 502 : Stage2 Green Potion
-        talkData.Add(502, new string[] { "초록색 물약을 획득했다!" });
+        //id = 511 : Stage2 Red Potion
+        talkData.Add(511, new string[] { "빨간색 재료물약을 획득했다!" });
 
-        //id = 503 : Stage2 Blue Potion
-        talkData.Add(503, new string[] { "파란색 물약을 획득했다!" });
+        //id = 512 : Stage2 Green Potion
+        talkData.Add(512, new string[] { "초록색 재료물약을 획득했다!" });
 
-        //id = 504 : Stage2 Yellow Potion
-        talkData.Add(504, new string[] { "노란색 물약을 획득했다!" });
+        //id = 513 : Stage2 Blue Potion
+        talkData.Add(513, new string[] { "파란색 재료물약을 획득했다!" });
 
-        //id = 505 : Stage2 Red Potion Bundle
-        talkData.Add(505, new string[] { "빨간색 물약 더미를 획득했다!" });
+        //id = 514 : Stage2 Yellow Potion
+        talkData.Add(514, new string[] { "노란색 재료물약을 획득했다!" });
 
-        //id = 506 : Stage2 Green Potion Bundle
-        talkData.Add(506, new string[] { "초록색 물약 더미를 획득했다!" });
+        //id = 515 : Stage2 Red Potion Bundle
+        talkData.Add(515, new string[] { "빨간색 재료물약 더미를 획득했다!" });
 
-        //id = 507 : Stage2 Blue Potion Bundle
-        talkData.Add(507, new string[] { "파란색 물약 더미를 획득했다!" });
+        //id = 516 : Stage2 Green Potion Bundle
+        talkData.Add(516, new string[] { "초록색 재료물약 더미를 획득했다!" });
 
-        //id = 508 : Stage2 Yellow Potion Bundle
-        talkData.Add(508, new string[] { "노란색 물약 더미를 획득했다!" });
+        //id = 517 : Stage2 Blue Potion Bundle
+        talkData.Add(517, new string[] { "파란색 재료물약 더미를 획득했다!" });
 
+        //id = 518 : Stage2 Yellow Potion Bundle
+        talkData.Add(518, new string[] { "노란색 재료물약 더미를 획득했다!" });
 
     }
 
@@ -167,33 +243,55 @@ public class TalkManager : MonoBehaviour
 
         if (talkIndex == talkData[id].Length)
             return null;
-        if (id >= 501 && id <= 508)
+        if (id >= 501 && id <= 518)
         {
             Debug.Log(id);
             switch (id)
             {
                 case 501:
-                    potionTalk.potionCount[0]++;
+                    clockTalk.clockCount++;
                     break;
                 case 502:
-                    potionTalk.potionCount[1]++;
+                    clockTalk.clockCount++;
                     break;
                 case 503:
-                    potionTalk.potionCount[2]++;
+                    clockTalk.clockCount++;
                     break;
                 case 504:
-                    potionTalk.potionCount[3]++;
+                    clockTalk.clockCount++;
                     break;
                 case 505:
-                    potionTalk.potionCount[0] += 5;
+                    clockTalk.clockCount++;
                     break;
                 case 506:
-                    potionTalk.potionCount[1] += 5;
+                    clockTalk.clockCount++;
                     break;
                 case 507:
+                    clockTalk.clockCount++;
+                    break;
+
+                case 511:
+                    potionTalk.potionCount[0]++;
+                    break;
+                case 512:
+                    potionTalk.potionCount[1]++;
+                    break;
+                case 513:
+                    potionTalk.potionCount[2]++;
+                    break;
+                case 514:
+                    potionTalk.potionCount[3]++;
+                    break;
+                case 515:
+                    potionTalk.potionCount[0] += 5;
+                    break;
+                case 516:
+                    potionTalk.potionCount[1] += 5;
+                    break;
+                case 517:
                     potionTalk.potionCount[2] += 5;
                     break;
-                case 508:
+                case 518:
                     potionTalk.potionCount[3] += 5;
                     break;
                 default:

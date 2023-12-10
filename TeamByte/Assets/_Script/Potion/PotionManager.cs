@@ -13,6 +13,8 @@ public class PotionManager : MonoBehaviour
     public int BluePotionValue = 13;
     public int YellowPotionValue = 1;
 
+    public GameObject CutSceneTriggerBox;
+
     private void Start()
     {
         successText.gameObject.SetActive(false);
@@ -49,6 +51,7 @@ public class PotionManager : MonoBehaviour
         if (resultValue == 50)
         {
             successText.gameObject.SetActive(true);
+            CutSceneTriggerBox.SetActive(true);
             StartCoroutine(CloseQuiz());
         }
     }

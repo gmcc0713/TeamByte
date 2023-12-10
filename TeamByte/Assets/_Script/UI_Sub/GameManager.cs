@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
         Debug.Log(objData.id);
         Debug.Log(objData.isNPC);
 
-        if (objData.id >= 501 && objData.id <= 508)
+        if (objData.id >= 501 && objData.id <= 507)
+            scanObj.transform.Find("ClockImage").gameObject.SetActive(false);
+
+        if (objData.id >= 511 && objData.id <= 518)
             scanObj.transform.Find("PotionImage").gameObject.SetActive(false);
 
 
