@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float rotationSpeed = 100.0f;
+
+    void Update()
+    {
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
