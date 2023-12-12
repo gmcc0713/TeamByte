@@ -35,7 +35,7 @@ public class BossMonster : Monster
     }
     public override void GetDamage(int damage)
     {
-		m_bCanDamaged = false;
+
 		if (m_bCanDamaged)
 		{
 			m_iHP -= damage;

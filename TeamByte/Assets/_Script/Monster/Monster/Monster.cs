@@ -114,6 +114,7 @@ public class Monster : MonoBehaviour
     {
         if(m_activeGameObject)
         {
+
             m_activeObject.SetActive(true);
         }
     }

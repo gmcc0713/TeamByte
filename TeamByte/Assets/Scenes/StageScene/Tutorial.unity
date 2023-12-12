@@ -2196,6 +2196,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5018537114763119866, guid: e4834982a63093c4f9c3fbc3f009f607, type: 3}
+      propertyPath: m_activeObject
+      value: 
+      objectReference: {fileID: 1399148365}
+    - target: {fileID: -5018537114763119866, guid: e4834982a63093c4f9c3fbc3f009f607, type: 3}
+      propertyPath: m_activeGameObject
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4839759781614722535, guid: e4834982a63093c4f9c3fbc3f009f607, type: 3}
       propertyPath: m_Name
       value: Normal_Monster_Spade
@@ -43798,6 +43806,7 @@ MonoBehaviour:
   bulletSpeed: 10
   maxBullet: 10
   reloadTime: 10
+  currentHearts: 0
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1640612263}
 --- !u!58 &1127416646

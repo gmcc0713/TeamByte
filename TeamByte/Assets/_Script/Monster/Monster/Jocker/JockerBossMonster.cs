@@ -9,6 +9,7 @@ public class JockerBossMonster : BossMonster
     {
 		Debug.Log("Start");
         Initialize();
+		m_bCanDamaged = true;
     }
     public void MoveAttack()
 	{
