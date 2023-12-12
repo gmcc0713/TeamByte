@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public float bulletSpeed = 10.0f;
     public int maxBullet = 10;
-    public float reloadTime = 10.0f;
+    public float reloadTime = 3.0f;
+    public float currentHearts;
 
     public GameObject bulletPrefab;
     Rigidbody2D playerRb;
@@ -31,9 +32,15 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Player hpValueFromPlayer = FindObjectOfType<Player>();
+        if (hpValueFromPlayer != null)
+        {
+            float currnetHearts = hpValueFromPlayer.f_currentHearts;
+        }
+        playerRb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         isReload = false;
-
-
     }
 
     // Update is called once per frame
@@ -162,5 +169,13 @@ public class PlayerController : MonoBehaviour
         }
         else
             scanObject = null;
+    }
+
+    private void PlayerDied()
+    {
+        if (currentHearts <= 0)
+        {
+            
+        }
     }
 }

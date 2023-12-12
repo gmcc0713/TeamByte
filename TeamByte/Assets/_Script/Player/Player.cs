@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Image[] heartUI;
     public float f_playerHCount = 3;
     public float f_maxHearts = 3; // 최대 하트 개수
-    private float f_currentHearts;
+    public float f_currentHearts;
     public bool m_bGuard = false;
 
     void Start()

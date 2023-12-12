@@ -21258,7 +21258,8 @@ MonoBehaviour:
   speed: 4
   bulletSpeed: 10
   maxBullet: 10
-  reloadTime: 10
+  reloadTime: 3
+  currentHearts: 0
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 1153227814}
 --- !u!58 &939480658
