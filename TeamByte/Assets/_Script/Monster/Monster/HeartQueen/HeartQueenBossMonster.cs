@@ -17,8 +17,7 @@ public class HeartQueenBossMonster : BossMonster
         Initialize();
         enemySpawnPoints = BossManager.Instance.GetSpawnPoints();
 		m_ipatternCount = 4;
-
-
+		MonsterManager.Instance.AddBossMon(this);
 	}
 	public void SpawnMonster()
 	{
@@ -102,7 +101,6 @@ public class HeartQueenBossMonster : BossMonster
 			spinSquare.GetComponent<SpinSquareBullet>().AddSpeed(0.1f);
 		}
 	}
-	
 	protected override void ChangeStateBossPattern(int idx)
 	{
 		switch (idx)
@@ -124,5 +122,9 @@ public class HeartQueenBossMonster : BossMonster
 				m_cFSM.ChangeState(m_cState.BossSpawnMonster);
 				break;
 		}
+	}
+	public void canDamaged() 
+	{ 
+		m_bCanDamaged = true; 
 	}
 }

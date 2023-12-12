@@ -24,7 +24,6 @@ public class BossMonster : Monster
         m_aMovingRoot = BossManager.Instance.GetMovingRoot();
 		m_target = GameObject.Find("Player");
 		m_ipatternCount = 4;
-       
     }
     public override void Idle()
     {
@@ -36,16 +35,22 @@ public class BossMonster : Monster
     }
     public override void GetDamage(int damage)
     {
-        m_iHP -= damage;
+		m_bCanDamaged = false;
+		if (m_bCanDamaged)
+		{
+			m_iHP -= damage;
 
-        if (m_iHP <= 0)
-        {
-            m_cFSM.ChangeState(m_cState.DieState);
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-        }
+			if (m_iHP <= 0)
+			{
+				m_cFSM.ChangeState(m_cState.DieState);
+				agent.isStopped = true;
+				agent.velocity = Vector3.zero;
+			}
 
-        m_HPUI.value = (float)m_iHP / m_iMaxHP;
+			m_HPUI.value = (float)m_iHP / m_iMaxHP;
+		}
+
+		
     }
     public void StartAttackCoolTime()
     {

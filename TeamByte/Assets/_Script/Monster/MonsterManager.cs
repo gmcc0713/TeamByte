@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,8 @@ public class MonsterManager : MonoBehaviour
 {
     public static MonsterManager Instance { get; private set; }
     [SerializeField] private List<Monster> m_lMonsterList;
-    void Awake()
+    public Monster bossMon => m_lMonsterList[0];
+	void Awake()
     {
         if (null == Instance)
         {
@@ -44,5 +46,11 @@ public class MonsterManager : MonoBehaviour
             bossJumpAttack, bossCircleShot, bossSectorShot,bossWait, bossDashAttack, 
             bossSpawnObstacle, bossSpinSquare, bossSpawnDamagePlane,bossSpawnMonster);
         monster.SetData(data);
-    }
+
+
+	}
+    public void AddBossMon(BossMonster mon)
+    {
+		m_lMonsterList.Add(mon);
+	}
 }

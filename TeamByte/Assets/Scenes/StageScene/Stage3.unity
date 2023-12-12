@@ -71635,7 +71635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
-  data: 0
+  data: 3
 --- !u!58 &1293122800
 CircleCollider2D:
   m_ObjectHideFlags: 0

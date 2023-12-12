@@ -14,6 +14,10 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             collision.GetComponent<Monster>().GetDamage(10);
-        }
-    }
+		}
+		if (collision.gameObject.CompareTag("EnemyHealth"))
+		{
+			collision.GetComponent<EnemyHealth>().GetDamage();
+		}
+	}
 }

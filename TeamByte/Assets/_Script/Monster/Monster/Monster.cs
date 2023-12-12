@@ -23,7 +23,10 @@ public class Monster : MonoBehaviour
     [SerializeField] protected int m_iHP;
     [SerializeField] protected int m_iMaxHP;
     [SerializeField] protected int m_iattackDamage;
-    void Start()
+    [SerializeField] protected GameObject m_activeObject;
+    [SerializeField] protected bool m_activeGameObject;
+	[SerializeField] public bool m_bCanDamaged;
+	void Start()
     {
         Initialize();
     }
@@ -38,7 +41,6 @@ public class Monster : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 		m_bIsDie = false;
-
 	}
     public virtual void Idle() { }
     public virtual void Move() { }
@@ -77,7 +79,9 @@ public class Monster : MonoBehaviour
     public void StartDie()
     {
         m_bIsDie = true;
-        StartCoroutine(Die());
+        ActiveObjectByDie();
+
+		StartCoroutine(Die());
     }
     IEnumerator Die()
     {
@@ -88,13 +92,15 @@ public class Monster : MonoBehaviour
 
     public virtual void GetDamage(int damage)
     {
-        m_iHP-=damage;
-        if (m_iHP <= 0)
-        {
-            m_cFSM.ChangeState(m_cState.DieState);
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-        }
+
+			m_iHP -= damage;
+			if (m_iHP <= 0)
+			{
+				m_cFSM.ChangeState(m_cState.DieState);
+				agent.isStopped = true;
+				agent.velocity = Vector3.zero;
+			}
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -102,6 +108,13 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("attack");
+        }
+    }
+    private void ActiveObjectByDie()
+    {
+        if(m_activeGameObject)
+        {
+            m_activeObject.SetActive(true);
         }
     }
 }
