@@ -116,11 +116,12 @@ public class TalkManager : MonoBehaviour
              "바로 앞에 보이는 것부터 가져가죠!"});
 
         //id = 1005 : Stage1 sign4
-        talkData.Add(1005, new string[] { "시계조각은 대략 7개 인것 같아요! ",
-            "잡다한게 많아서 어떤게 시계조각인지는.. \n잘 모르겠네요", "아마 이 시계조각을 다 모으셔서 합치셔야 \n동굴로 들어갈 수 있을 것 같아요!."});
+        talkData.Add(1005, new string[] { "주변을 잘 살펴보시면 좋을 것 같아요!", "앗! 저기 꽃이 심어져 곳은 나무 사이로 길이 나 있는 것 같아요!" });
 
         //id = 1006 : Stage1 sign5
-        talkData.Add(1006, new string[] { "가면 갈수록 적들이 자주 나오는 것만 같아요.... \n조심하세요!"});
+        talkData.Add(1006, new string[] { "시계조각은 대략 7개 인것 같아요! ",
+            "잡다한게 많아서 어떤게 시계조각인지는.. \n잘 모르겠네요", "아마 이 시계조각을 다 모으셔서 합치셔야 \n동굴로 들어갈 수 있을 것 같아요!."});
+
 
         //id = 1007 : Stage1 sign6
         talkData.Add(1007, new string[] { "시계가 있어야지 동굴에 들어갈 수 있다고 말씀드렸는데..\n앨리스는 어떡하냐구요?",
@@ -167,7 +168,7 @@ public class TalkManager : MonoBehaviour
             "일단 오른쪽으로 먼저 가봐야 할 것 같아요!"});
 
 
-        //id = 1009 : Stage2 sign2
+        //id = 1009 : Stage2 Fairy1
         talkData.Add(1009, new string[] { "왼쪽으로 가면.. \n적들이 있지만 뭔가를 얻을 수 있을 것 같아요!", 
             "오른쪽으로 가면.. 앨리스가 있는것 같아요. \n 따라온다더니 벌써 동굴로 들어와 있었네요." });
 
@@ -175,18 +176,18 @@ public class TalkManager : MonoBehaviour
         talkData.Add(1201, new string[] { "지름길로 와서 먼저 동굴앞에 도착해 있었는데..\n 궁금해서 먼저 들어와 버렸어!",
             "맞아 동굴 안을 돌아다니다 보니까 여러 색깔의 물약이 있더라?", "빨간색.. 파란색.. 또 무슨 색이 있더라? \n어디에 쓰는걸까?" });
 
-        //id = 1010 : Stage2 sign3
+        //id = 1010 : Stage2 Fairy2
         talkData.Add(1010, new string[] { "바로 앞에 적들이 있는 것 같아요! ", "혹시 안가본 곳이 있따면 가보는 것도 나쁘지 않을 것 같아요!"});
 
-        //id = 1011 : Stage2 sign4
+        //id = 1011 : Stage2 Fairy3
         talkData.Add(1011, new string[] { "여태껏 모아오신 물약들..", "몸의 크기를 조절하는 물약의 재료인 것 같아요!",
             "그냥 먹었을 때에는 특별한 변화는 없는 것 같아요."});
 
-        //id = 1012 : Stage2 sign5
+        //id = 1012 : Stage2 Fairy4
         talkData.Add(1012, new string[] { "이제보니 빨간색 물약에는 3이라는 숫자가 적혀있어요.", "초록색 물약에는 7, 파란색 물약에는 13, 노란색 물약에는 -1이 적혀있어요!",
             "이 숫자들이 물약을 만드는 힌트가 아닐까요?"});
 
-        //id = 1013 : Stage2 sign6
+        //id = 1013 : Stage2 Fairy5
         talkData.Add(1013, new string[] { "일지는 제가 읽어드릴 수 있어요!", "한 번 확인해보니 저희가 필요했던 물약에 대한 정보가 적혀있어요!",
             "어디보자...\n물약의 완성품에 대한 정보가...", "아! 여기있네요!", " '나는 기억력이 좋지 않아서 재료들에다가 여러 정보를 적어두곤 했다. ", 
             "\n그 덕분에 여러 물약을 만들때 일일이 적어둔 것들을 찾지 않아도 되게 되었다.' ", "몸이 작아지는 물약 : 50 \n몸이 커지는 물약 : ....",
@@ -196,7 +197,8 @@ public class TalkManager : MonoBehaviour
         talkData.Add(1014, new string[] { "출구로 나가기에는 출구의 크기가 많이 작아요...", "아! 아까 전 찾았던 재료물약들을 조합하면 물약을 만들 수 있지 않나요?\n" +
             "일지에 레시피도 적혀 있었잖아요!", "얼른 해볼까요!", "아래쪽에 위치한 테이블에서 물약을 조합할 수 있습니다.\n테이블 앞에서 상호작용 버튼 : F를 눌러보세요."});
 
-
+        //id = 1008 : Stage2 sign1
+        talkData.Add(1020, new string[] { "<-"});
 
         //id = 511 : Stage2 Red Potion
         talkData.Add(511, new string[] { "빨간색 재료물약을 획득했다!" });
@@ -319,4 +321,6 @@ public class TalkManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(10.0f);
         Destroy(cutSceneObject);
     }
+
+
 }
