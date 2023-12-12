@@ -8,6 +8,10 @@ public class BtnManager : MonoBehaviour
 {
     [SerializeField] Button[] m_SaveStageBtn;
     // Start is called before the first frame update
+    private void Start()
+    {
+        SaveLoadManager.Instance.m_SaveStageBtn = m_SaveStageBtn;
+    }
     public void SetNextScene(int data)
     {
         SaveLoadManager.Instance.SetNextScene(data);
@@ -34,11 +38,18 @@ public class BtnManager : MonoBehaviour
     }
     public void StartBtnClick(GameObject obj)
     {
-        if(SaveLoadManager.Instance._bIsFirst)
+        if (SaveLoadManager.Instance._bIsFirst)
+        {
+            return;
+
+
+        }
+        if (!SaveLoadManager.Instance._bIsFirst)
         {
             obj.SetActive(true);
+            return;
+        }
 
-		}
 
-	}
+    }
 }

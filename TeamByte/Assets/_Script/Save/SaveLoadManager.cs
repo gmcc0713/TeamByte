@@ -33,9 +33,10 @@ public class SaveLoadManager : MonoBehaviour
 	}
 
 	[SerializeField] Save_Data m_eSaveData; //1,2,3,4-1,4-2,4-3
-	[SerializeField] Button[] m_SaveStageBtn;
+	[SerializeField] public Button[] m_SaveStageBtn;
 	Save_Data m_eNextScene;
-	bool m_bIsFirst;
+	public bool m_bIsFirst;
+	public int health = 3; 
 	public bool _bIsFirst => m_bIsFirst;
 	public void NextSceneStart()
 	{
@@ -47,7 +48,9 @@ public class SaveLoadManager : MonoBehaviour
 		m_eSaveData = Save_Data.Stage_1;
 		m_bIsFirst = true;
 		m_eNextScene = Save_Data.Tutorial;
-	}
+        
+
+    }
 
 	public Save_Data GetNextSceneData()
 	{
@@ -68,23 +71,26 @@ public class SaveLoadManager : MonoBehaviour
     }
     public void SettingSaveDatas()
 	{
-		if(m_bIsFirst)
+		if (m_bIsFirst)
 		{
 			m_eNextScene = Save_Data.Tutorial;
 			NextSceneStart();
 			m_bIsFirst = false;
 			return;
 		}
-			
+		Debug.Log("aaaaaaaaaaa");
 		for (int i = 0; i < 4; i++)
 		{
 			m_SaveStageBtn[i].interactable = false;
 		}
-		Debug.Log((int)m_eSaveData);
 		for (int i =0;i<= (int)m_eSaveData; i++)
 		{
 			m_SaveStageBtn[i].interactable = true;
 		}
+
+	}
+	public void btnset()
+	{
 
 	}
 }

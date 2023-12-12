@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -15,7 +16,8 @@ public class Player : MonoBehaviour
     {
         f_currentHearts = f_maxHearts;
         UpdateHeartsUI();
-
+        f_currentHearts = SaveLoadManager.Instance.health;
+        UpdateHeartsUI();
     }
 
     IEnumerator CollideCoroutine()
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1f);
         m_bGuard = false;
     }
+    
     void UpdateHeartsUI()
         {
             for (int i = 0; i < heartUI.Length; i++)
@@ -49,6 +52,8 @@ public class Player : MonoBehaviour
                 if (f_currentHearts <= 0)
                 {
                     Destroy(gameObject);
+                 SaveLoadManager.Instance.health = 3;
+                 SceneManager.LoadScene("TitleScene"); 
                 }
                 StartCoroutine(CollideCoroutine());
                 UpdateHeartsUI();

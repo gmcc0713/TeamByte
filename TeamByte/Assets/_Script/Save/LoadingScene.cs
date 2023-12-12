@@ -17,6 +17,8 @@ public class LoadingScene : MonoBehaviour
         switch (data)
         {
             case Save_Data.Tutorial:
+                SaveLoadManager.Instance.SetNextScene((int)Save_Data.Stage_1);
+                SaveLoadManager.Instance.m_bIsFirst = false;
                 return "Tutorial";
             case Save_Data.Stage_1:
                 return "Stage1";
