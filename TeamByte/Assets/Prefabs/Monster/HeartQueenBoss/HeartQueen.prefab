@@ -286,6 +286,9 @@ MonoBehaviour:
   m_iHP: 0
   m_iMaxHP: 0
   m_iattackDamage: 0
+  m_activeObject: {fileID: 0}
+  m_activeGameObject: 0
+  m_bCanDamaged: 0
   m_bullet: {fileID: 8801748014444227644, guid: a129bb21210bf8c47adb9eaa3d813d0a, type: 3}
   m_HPUI: {fileID: 2661572548647977995}
   m_aMovingRoot: []
@@ -1084,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d4ee354829e224fbc739d053b2da8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 3
+  rotateSpeed: 1
   curSpeed: 0
 --- !u!61 &7967334822903413585
 BoxCollider2D:

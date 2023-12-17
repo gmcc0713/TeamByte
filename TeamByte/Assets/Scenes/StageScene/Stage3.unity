@@ -1876,7 +1876,7 @@ GameObject:
   - component: {fileID: 255727195}
   m_Layer: 0
   m_Name: ObstacleEx
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29995,7 +29995,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.3
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -84787,7 +84787,7 @@ GameObject:
   - component: {fileID: 1844965968}
   m_Layer: 0
   m_Name: PlayerBoundry
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88537,7 +88537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1949263476
 MonoBehaviour:
   m_ObjectHideFlags: 0

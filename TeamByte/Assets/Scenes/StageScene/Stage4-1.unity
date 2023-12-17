@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 255727195}
   m_Layer: 0
   m_Name: ObstacleEx
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5343,7 +5343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 5.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5886,9 +5886,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   bulletSpeed: 10
+  curBulletCount: 0
   maxBullet: 10
-  reloadTime: 10
   currentHearts: 0
+  bulletCountText: {fileID: 0}
+  reloadText: {fileID: 0}
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 447936608}
 --- !u!58 &939480658
@@ -6036,6 +6038,7 @@ MonoBehaviour:
   - {fileID: 1156406552}
   - {fileID: 146717406}
   - {fileID: 741755000}
+  gameOverPanel: {fileID: 0}
   f_playerHCount: 3
   f_maxHearts: 3
   f_currentHearts: 0
@@ -62923,7 +62926,7 @@ GameObject:
   - component: {fileID: 1966280812}
   m_Layer: 0
   m_Name: PlayerBoundry
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64167,7 +64170,7 @@ GameObject:
   - component: {fileID: 2130700576}
   m_Layer: 0
   m_Name: DestroyObstacleEx
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

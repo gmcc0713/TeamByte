@@ -21,6 +21,8 @@ TagManager:
   - Piece6Pos
   - Piece7Pos
   - Piece8Pos
+  - EnemyHealth
+  - Obstacle
   layers:
   - Default
   - TransparentFX
