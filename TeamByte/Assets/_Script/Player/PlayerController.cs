@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class PlayerController : MonoBehaviour
     private bool isReload = false;
 
     public float bulletSpeed = 10.0f;
+    public int curBulletCount;
     public int maxBullet = 10;
-    public float reloadTime = 3.0f;
+    private float reloadTime = 3.0f;
     public float currentHearts;
 
+    public Text bulletCountText;
+    public Text reloadText;
     public GameObject bulletPrefab;
     Rigidbody2D playerRb;
     Animator animator;
@@ -29,6 +33,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        reloadText.enabled = false;
+        isReload = false;
+        curBulletCount = maxBullet;
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,7 +47,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isReload = false;
+        UpdateBulletCountUI();
     }
 
     // Update is called once per frame
@@ -51,11 +58,12 @@ public class PlayerController : MonoBehaviour
 
         Scan();
 
-
         if (isReload)
+        {
             return;
+        }
 
-        if (maxBullet <= 0)
+        if (curBulletCount <= 0)
         {
             StartCoroutine(ReloadBullet());
             return;
@@ -63,14 +71,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             FireBullet();
-            maxBullet--;
+            curBulletCount--;
+            UpdateBulletCountUI();
         }
     }
     IEnumerator ReloadBullet()
     {
+        reloadText.enabled = true;
         isReload = true;
         yield return new WaitForSeconds(reloadTime);
-        maxBullet = 10; 
+        curBulletCount = maxBullet;
+        UpdateBulletCountUI();
+        reloadText.enabled = false;
         isReload = false;
     }
 
@@ -171,11 +183,8 @@ public class PlayerController : MonoBehaviour
             scanObject = null;
     }
 
-    private void PlayerDied()
+    void UpdateBulletCountUI()
     {
-        if (currentHearts <= 0)
-        {
-            
-        }
+        bulletCountText.text = "Bullet : " + curBulletCount.ToString();
     }
 }

@@ -11,6 +11,7 @@ public class PiecesController : MonoBehaviour
     private float puzzlePanelSize = 5.0f;
     public int progressCount = 0;
     private int numOfPuzzle = 8;
+    public bool clearPuzzle = false;
 
     void Start()
     {
@@ -45,12 +46,19 @@ public class PiecesController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if ((collision.gameObject.name == gameObject.name) && (isClicked == true))
+        if ((curPieceStatus != "locked" && collision.gameObject.name == gameObject.name) && (isClicked == true))
         {
             transform.position = collision.transform.position;
             curPieceStatus = "locked";
             isClicked = false;
             progressCount++;
+        }
+    }
+    void ClearPuzzle()
+    {
+        if (progressCount == numOfPuzzle)
+        {
+            clearPuzzle = true;
         }
     }
 }

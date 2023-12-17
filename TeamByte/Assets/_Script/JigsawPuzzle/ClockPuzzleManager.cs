@@ -5,37 +5,27 @@ using UnityEngine.UI;
 
 public class ClockPuzzleManager : MonoBehaviour
 {
-    public GameObject Canvas;
-    public Text successText;
-    public int progressCount;
-    private int numOfPuzzle = 8;
+    GameObject clockPuzzlePanel;
+    public bool isClear;
     // Start is called before the first frame update
     void Start()
     {
         PiecesController ValueFromPiecesController = FindObjectOfType<PiecesController>();
         if (ValueFromPiecesController != null)
         {
-            progressCount = ValueFromPiecesController.progressCount;
+            isClear = ValueFromPiecesController.clearPuzzle;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        FinishedPuzzle();
+        if(isClear) { StartCoroutine(CloseQuiz()); }
     }
-    private void FinishedPuzzle()
-    {
-        if (progressCount == numOfPuzzle)
-        {
-            Debug.Log("ddddd");
-            successText.gameObject.SetActive(true);
-            StartCoroutine(CloseQuiz());
-        }
-    }
-    private IEnumerator CloseQuiz()
+
+     IEnumerator CloseQuiz()
     {
         yield return new WaitForSeconds(3);
-        Canvas.SetActive(false);
+        clockPuzzlePanel.SetActive(false);
     }
 }
