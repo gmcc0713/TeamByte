@@ -12,7 +12,7 @@ public class JockerBossMonster : BossMonster
 		m_bCanDamaged = true;
     }
     public void MoveAttack()
-	{
+	{ 
 		StartCoroutine(BossWalk());
 	}
 	public void ShootBulletCircle()

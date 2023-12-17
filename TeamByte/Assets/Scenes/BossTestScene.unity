@@ -49385,11 +49385,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkManager: {fileID: 1123153301}
   talkPanel: {fileID: 0}
-  nameImage: {fileID: 0}
   talkText: {fileID: 0}
   scanObject: {fileID: 0}
   isAction: 0
   talkIndex: 0
+  activeImageUI: {fileID: 0}
+  nameImage: {fileID: 0}
+  imageSprite: []
 --- !u!4 &667204949
 Transform:
   m_ObjectHideFlags: 0
@@ -49725,7 +49727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Monster:
-  - {fileID: 4933843765706588361, guid: 098feab8ef2f09847b236b926d22bc1d, type: 3}
+  - {fileID: 8528506545941225601, guid: 961ed5636df95be4986e07edc8fc48d8, type: 3}
   m_spawnPos:
   - {fileID: 828626972}
 --- !u!4 &787094174
@@ -120057,12 +120059,9 @@ MonoBehaviour:
   cutSceneimageArr: []
   currentScene: 
   cutSceneObject: {fileID: 0}
-  potionTalk: {fileID: 0}
   potionObject: {fileID: 0}
-  clockTalk: {fileID: 0}
   clockObject: {fileID: 0}
-  nameImage: {fileID: 0}
-  imageSprite: []
+  ActiveUI: {fileID: 0}
 --- !u!4 &1123153302
 Transform:
   m_ObjectHideFlags: 0
@@ -120113,8 +120112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartUI: []
+  gameOverPanel: {fileID: 0}
   f_playerHCount: 3
   f_maxHearts: 3
+  f_currentHearts: 0
   m_bGuard: 0
 --- !u!58 &1150727451
 CircleCollider2D:
@@ -120192,8 +120193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bulletSpeed: 10
+  curBulletCount: 0
   maxBullet: 10
-  reloadTime: 10
+  currentHearts: 0
+  bulletCountText: {fileID: 0}
+  reloadText: {fileID: 0}
   bulletPrefab: {fileID: 8801748014444227644, guid: 23027b7fb43ee4a4e9e078ad90fcabcb, type: 3}
   manager: {fileID: 667204948}
 --- !u!95 &1150727454

@@ -10,7 +10,7 @@ public class MonsterFSM : MonoBehaviour
     MonsterFSM() { }
     public MonsterFSM(Monster owner)
     {
-        this.owner = owner;
+        this.owner = owner; 
     }
     public void Update()
     {

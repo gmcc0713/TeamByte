@@ -14,7 +14,7 @@ public class BossMonster : Monster
 	protected bool m_bIsAttacking = false;
 	protected int m_iPriviousAttackType;
     [SerializeField] protected int m_ipatternCount;
-
+     
     public override void Initialize()
     {
         base.Initialize();
