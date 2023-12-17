@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public bool m_bGuard = false;
     private int i_DelayTime = 3;
     private int i_invincibleTime = 1;
-
+    [SerializeField] GameManager gameManager;
+    
     void Start() 
     {
         gameOverPanel.SetActive(false);
@@ -55,9 +56,9 @@ public class Player : MonoBehaviour
 
                 if (f_currentHearts <= 0)
                 {
-                Destroy(gameObject);
-                StartCoroutine(RestartGame());
-                return;
+
+                    StartCoroutine(RestartGame());
+                    return;
                 }
                 StartCoroutine(CollideCoroutine());
                 UpdateHeartsUI();
@@ -65,9 +66,12 @@ public class Player : MonoBehaviour
      }
     IEnumerator RestartGame() 
     {
+        gameManager.isAction = true;
         gameOverPanel.SetActive(true);
         yield return new WaitForSeconds(i_DelayTime);
+        Destroy(gameObject);
         SaveLoadManager.Instance.health = 3;
         SceneManager.LoadScene("TitleScene");
+
     }
 }

@@ -44252,6 +44252,7 @@ MonoBehaviour:
   f_maxHearts: 3
   f_currentHearts: 0
   m_bGuard: 0
+  gameManager: {fileID: 1640612263}
 --- !u!1 &1135716352
 GameObject:
   m_ObjectHideFlags: 0
