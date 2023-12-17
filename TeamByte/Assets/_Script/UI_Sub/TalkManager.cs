@@ -267,6 +267,11 @@ public class TalkManager : MonoBehaviour
         //id = 1033 : Stage4-2 Fairy2
         talkData.Add(1033, new string[] { "이곳의 사용인들도 모두 변해버린 것 같네요.", "이렇게 된다면.. 이 모든 상황에 대해서 물어볼 수 있는 자는 하트여왕 뿐이겠어요." });
 
+        //id = 1034 : Stage4-2 Fairy2
+        talkData.Add(1034, new string[] { "여기가 하트여왕이있는 곳이에요... \n왜 아무도 없지..?", "한번  주변을 둘러봐요"});
+
+
+
     }
 
     public string GetTalk(int id, int talkIndex)  // obj id, string[] index
