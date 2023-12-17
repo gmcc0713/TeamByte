@@ -38,6 +38,7 @@ public class SaveLoadManager : MonoBehaviour
 	public bool m_bIsFirst;
 	public int health = 3; 
 	public bool _bIsFirst => m_bIsFirst;
+	public AudioSource m_btnSound;
 	public void NextSceneStart()
 	{
 		m_eSaveData = m_eNextScene;
@@ -89,8 +90,9 @@ public class SaveLoadManager : MonoBehaviour
 		}
 
 	}
-	public void btnset()
+	public void BtnSoundPlay()
 	{
+		m_btnSound.PlayOneShot(m_btnSound.clip);
 
-	}
+    }
 }

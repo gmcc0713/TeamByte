@@ -113,7 +113,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 7138701999468483878}
   m_HandleRect: {fileID: 0}
@@ -421,7 +421,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7501454205587537004}
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_iMaxHP: 0
   m_iattackDamage: 0
   m_activeObject: {fileID: 0}
-  m_activeGameObject: 0
+  m_activeGameObject: 1
   m_bCanDamaged: 1
   m_bullet: {fileID: 8801748014444227644, guid: a129bb21210bf8c47adb9eaa3d813d0a, type: 3}
   m_HPUI: {fileID: 9082644129953698647}

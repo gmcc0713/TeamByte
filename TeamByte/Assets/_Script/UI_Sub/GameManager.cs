@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
     public GameObject activeImageUI;
-
     public Image nameImage;
     public Sprite[] imageSprite;
+    
 
     public void Action(GameObject scanObj)
     {
@@ -92,4 +92,5 @@ public class GameManager : MonoBehaviour
         isAction = true;
         talkIndex++;
     }
+
 }

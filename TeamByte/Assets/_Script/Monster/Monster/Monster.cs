@@ -41,7 +41,11 @@ public class Monster : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 		m_bIsDie = false;
-	}
+        if(m_activeGameObject == true)
+        {
+            m_activeObject = GameObject.Find("Active").GetComponent<ActiveObject>().GetActiveObj();
+        }
+    }
     public virtual void Idle() { }
     public virtual void Move() { }
 
@@ -79,14 +83,15 @@ public class Monster : MonoBehaviour
     public void StartDie()
     {
         m_bIsDie = true;
-        ActiveObjectByDie();
 
 		StartCoroutine(Die());
+
     }
     IEnumerator Die()
     {
         m_animator.SetTrigger("IsDie");
         yield return new WaitForSeconds(0.7f);
+        ActiveObjectByDie();
         gameObject.SetActive(false);
     }
 
@@ -96,10 +101,12 @@ public class Monster : MonoBehaviour
 			m_iHP -= damage;
 			if (m_iHP <= 0)
 			{
-				m_cFSM.ChangeState(m_cState.DieState);
+                m_cFSM.ChangeState(m_cState.DieState);
 				agent.isStopped = true;
 				agent.velocity = Vector3.zero;
-			}
+                ActiveObjectByDie();
+
+            }
 
 
     }
@@ -112,10 +119,10 @@ public class Monster : MonoBehaviour
     }
     private void ActiveObjectByDie()
     {
-        if(m_activeGameObject)
+        if(m_activeGameObject == true)
         {
-
             m_activeObject.SetActive(true);
+
         }
     }
 }

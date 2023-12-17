@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
         UpdateBulletCountUI();
     }
 
+    public void TP()
+    {
+        transform.position = new Vector3(transform.position.x, -10, transform.position.z);
+    }
     // Update is called once per frame
     void Update()
     {
