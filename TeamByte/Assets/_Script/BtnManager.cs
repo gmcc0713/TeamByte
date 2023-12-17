@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BtnManager : MonoBehaviour
 {
     [SerializeField] Button[] m_SaveStageBtn;
+    [SerializeField] AudioSource m_AudioSource;
     // Start is called before the first frame update
     private void Start()
     {
@@ -38,6 +39,8 @@ public class BtnManager : MonoBehaviour
     }
     public void StartBtnClick(GameObject obj)
     {
+        BtnAudioPlay();
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
         if (SaveLoadManager.Instance._bIsFirst)
         {
             return;
@@ -51,5 +54,9 @@ public class BtnManager : MonoBehaviour
         }
 
 
+    }
+    public void BtnAudioPlay()
+    {
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 }
