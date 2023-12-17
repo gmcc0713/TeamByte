@@ -196,13 +196,13 @@ public class TalkManager : MonoBehaviour
         //id = 1014 : Stage2 Fairy7
         talkData.Add(1014, new string[] { "이곳 저곳 주의깊게 다니면 알 수 있는게 많은 것 같아요..!", "최대한 많은 곳을 둘러봐요!"});
 
-        //id = 1014 : Stage2 Fairy8
-        talkData.Add(1015, new string[] { "출구로 나가기에는 출구의 크기가 많이 작아요...", "아! 아까 전 찾았던 재료물약들을 조합하면 물약을 만들 수 있지 않나요?\n" +
-            "일지에 레시피도 적혀 있었잖아요!", "얼른 해볼까요!", "아래쪽에 위치한 테이블에서 물약을 조합할 수 있습니다.\n테이블 앞에서 상호작용 버튼 : F를 눌러보세요."});
+        //id = 1015 : Stage2 Fairy8
+        talkData.Add(1015, new string[] { "출구로 나가기에는 출구의 크기가 많이 작아요...", "아! 아까 전 찾았던 재료물약들을 조합하면 물약을 만들 수 있지 않나요?" ,
+            "일지에 레시피도 적혀 있었잖아요! \n얼른 해볼까요!", "아래쪽에 위치한 테이블에서 물약을 조합할 수 있습니다.\n테이블 앞에서 상호작용 버튼 : F를 눌러보세요."});
 
 
-        //id = 1008 : Stage2 sign1
-        talkData.Add(1020, new string[] { "<-"});
+        //id = 1016 : Stage2 sign1
+        talkData.Add(1016, new string[] { "<-"});
 
         //id = 511 : Stage2 Red Potion
         talkData.Add(511, new string[] { "빨간색 재료물약을 획득했다!" });
@@ -227,6 +227,45 @@ public class TalkManager : MonoBehaviour
 
         //id = 518 : Stage2 Yellow Potion Bundle
         talkData.Add(518, new string[] { "노란색 재료물약 더미를 획득했다!" });
+
+        //id = 1020 : Stage3 Fairy1
+        talkData.Add(1020, new string[] { "이 모든 것의 원인은... 아마도 하트여왕이지 않을까 싶어요.", "원래 이곳의 주인이지만.. \n" +
+            "하트여왕의 병사들이 그렇게 변해버린 것을 보았을 때 아마도 하트여왕도..."});
+
+        //id = 2 : Stage3 독백1
+        talkData.Add(2, new string[] { "여기가 어디지.."});
+
+        //id = 3 : Stage3 독백2
+        talkData.Add(3, new string[] { "여기가 맞는건가?" });
+
+        //id = 4 : Stage3 독백3
+        talkData.Add(4, new string[] { "헷갈리네.." });
+
+        //id = 520 : Stage3 Sign1
+        talkData.Add(520, new string[] { "이곳은 위대하신 하트여왕님의 성입니다. \n초대받지 못한 자라면 돌아가시기 바랍니다."});
+
+        //id = 1022 : Stage3 Fairy2
+        talkData.Add(1022, new string[] { "원래는 잘 정돈된 정원이었던 곳이에요.", "관리를 하지 않았던 그런 정원을 칩입자를 막기 위한 미로로 바꾸어 버렸나 보네요. ",
+            "미로를 헤메면서 길을 찾아야할 것 같네요. ", "아마도 이번 미로만 넘으면 여왕의 성에 도착할 수 있을 것 같아요!"});
+
+
+        //id = 1030 : Stage4-1 Fairy1
+        talkData.Add(1030, new string[] { "성 안이 뭔가 으스스하네요..", "여왕을 어서 만나러 가보도록하죠..!"});
+
+        //id = 522 : Stage4-1  Sign1
+        talkData.Add(522, new string[] { "다시 한번 더 알려드립니다.이곳은 위대하신 하트여왕님의 성입니다. \n" +
+            "초대받지 못한 자라면 지금 바로 돌아가시기 바랍니다." });
+
+        //id = 1031 : Stage4-1 Fairy2
+        talkData.Add(1031, new string[] { "여왕이 있는 곳으로 가는 문은 막혀 있는 것 같아요..", "다른 곳을 먼저 둘러보는게 좋을 것 같아요!" });
+
+
+
+        //id = 1032 : Stage4-2 Fairy1
+        talkData.Add(1032, new string[] { "조금 더 안쪽까지 살펴볼까요..?", "뭔가를 알아낼 수 있을 것 같아요." });
+
+        //id = 1033 : Stage4-2 Fairy2
+        talkData.Add(1033, new string[] { "이곳의 사용인들도 모두 변해버린 것 같네요.", "이렇게 된다면.. 이 모든 상황에 대해서 물어볼 수 있는 자는 하트여왕 뿐이겠어요." });
 
     }
 

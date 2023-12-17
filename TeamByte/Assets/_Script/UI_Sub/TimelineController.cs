@@ -17,6 +17,7 @@ public class TimelineController : MonoBehaviour
     // stage 2
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision);
         if (collision.gameObject.CompareTag("Player"))
         {
             TimelineFunction();
