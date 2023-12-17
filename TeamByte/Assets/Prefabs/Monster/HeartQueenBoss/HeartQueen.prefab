@@ -287,7 +287,7 @@ MonoBehaviour:
   m_iMaxHP: 0
   m_iattackDamage: 0
   m_activeObject: {fileID: 0}
-  m_activeGameObject: 0
+  m_activeGameObject: 1
   m_bCanDamaged: 0
   m_bullet: {fileID: 8801748014444227644, guid: a129bb21210bf8c47adb9eaa3d813d0a, type: 3}
   m_HPUI: {fileID: 2661572548647977995}

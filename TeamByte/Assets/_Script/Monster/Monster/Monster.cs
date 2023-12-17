@@ -41,6 +41,10 @@ public class Monster : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 		m_bIsDie = false;
+        if(m_activeGameObject==true)
+        {
+            m_activeObject = GameObject.Find("Active").GetComponent<ActiveObject>().activeObject();
+        }
 	}
     public virtual void Idle() { }
     public virtual void Move() { }
