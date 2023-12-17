@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         if (objData.id >= 1 && objData.id <= 499)
             nameImage.sprite = imageSprite[0];
 
-        // 표지판(요정) : 1000~1199 
+        // 요정 : 1000~1199 
         if (objData.id >= 1000 && objData.id <= 1199)
             nameImage.sprite = imageSprite[1];
 
