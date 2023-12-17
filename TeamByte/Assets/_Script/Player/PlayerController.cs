@@ -38,15 +38,13 @@ public class PlayerController : MonoBehaviour
         curBulletCount = maxBullet;
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Debug.Log(animator);
         spriteRenderer = GetComponent<SpriteRenderer>();
         Player hpValueFromPlayer = FindObjectOfType<Player>();
         if (hpValueFromPlayer != null)
         {
             float currnetHearts = hpValueFromPlayer.f_currentHearts;
         }
-        playerRb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateBulletCountUI();
     }
 
