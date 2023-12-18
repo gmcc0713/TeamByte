@@ -39,8 +39,8 @@ public class PiecesController : MonoBehaviour
     }
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-puzzlePanelSize / 2, puzzlePanelSize / 2);
-        float y = Random.Range(-puzzlePanelSize / 2, puzzlePanelSize / 2);
+        float x = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize *0.9f);
+        float y = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize * 0.9f);
         return new Vector3(x, y, 0f);
     }
 
@@ -48,6 +48,7 @@ public class PiecesController : MonoBehaviour
     {
         if ((curPieceStatus != "locked" && collision.gameObject.name == gameObject.name) && (isClicked == true))
         {
+            clearPuzzle = true;
             transform.position = collision.transform.position;
             curPieceStatus = "locked";
             isClicked = false;

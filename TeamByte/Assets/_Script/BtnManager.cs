@@ -43,6 +43,7 @@ public class BtnManager : MonoBehaviour
         m_AudioSource.PlayOneShot(m_AudioSource.clip);
         if (SaveLoadManager.Instance._bIsFirst)
         {
+            
             return;
         }
         if (!SaveLoadManager.Instance._bIsFirst)
