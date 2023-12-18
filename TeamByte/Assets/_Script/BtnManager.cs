@@ -44,8 +44,6 @@ public class BtnManager : MonoBehaviour
         if (SaveLoadManager.Instance._bIsFirst)
         {
             return;
-
-
         }
         if (!SaveLoadManager.Instance._bIsFirst)
         {

@@ -41,11 +41,6 @@ public class SaveLoadManager : MonoBehaviour
 	public void NextSceneStart()
 	{
         SceneManager.LoadScene("LoadingScene");
-		if(m_bIsFirst)
-		{
-            m_eNextScene = Save_Data.Stage_1;
-        }
-		m_eSaveData = m_eNextScene;
 	}
     void Start()
     {
