@@ -43,7 +43,7 @@ public class BossMonster : Monster
 			if (m_iHP <= 0)
 			{
 				m_cFSM.ChangeState(m_cState.DieState);
-				agent.isStopped = true;
+				//agent.isStopped = true;
 				agent.velocity = Vector3.zero;
 			}
 
