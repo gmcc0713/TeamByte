@@ -48,7 +48,6 @@ public class SaveLoadManager : MonoBehaviour
 		m_eSaveData = Save_Data.Stage_1;
 		m_bIsFirst = true;
 		m_eNextScene = Save_Data.Tutorial;
-        
 
     }
 
@@ -76,9 +75,9 @@ public class SaveLoadManager : MonoBehaviour
 			m_eNextScene = Save_Data.Tutorial;
 			NextSceneStart();
 			m_bIsFirst = false;
-			return;
+            m_eNextScene = Save_Data.Stage_1;
+            return;
 		}
-		Debug.Log("aaaaaaaaaaa");
 		for (int i = 0; i < 4; i++)
 		{
 			m_SaveStageBtn[i].interactable = false;
