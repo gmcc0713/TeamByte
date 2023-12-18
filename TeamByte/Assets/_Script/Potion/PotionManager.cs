@@ -7,7 +7,7 @@ public class PotionManager : MonoBehaviour
     public GameObject Canvas;
     public Text resultText;
     private int resultValue = 0;
-    public Text successText;
+    public GameObject successText;
     public int redPotionValue = 3;
     public int GreenPotionValue = 7;
     public int BluePotionValue = 13;
@@ -46,7 +46,7 @@ public class PotionManager : MonoBehaviour
 
     private void UpdateResultValue()
     {
-        resultText.text = "Result: " + resultValue.ToString();
+        resultText.text =resultValue.ToString();
 
         if (resultValue == 50)
         {

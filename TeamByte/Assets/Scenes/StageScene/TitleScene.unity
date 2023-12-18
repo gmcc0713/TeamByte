@@ -4813,8 +4813,8 @@ MonoBehaviour:
   - {fileID: 1317973055}
   - {fileID: 1972672080}
   audioBGMClips:
-  - {fileID: 8300000, guid: ad8d6c815fad6a6419bb3d73fda5a6b0, type: 3}
-  - {fileID: 8300000, guid: c69b8b5b840bbb947a33f1f653609fa3, type: 3}
+  - {fileID: 8300000, guid: a6dba60c3260f564da56152ea0b8e61f, type: 3}
+  - {fileID: 8300000, guid: 8afead7221242ab48ad1f6193a304583, type: 3}
   audioSFXClips:
   - {fileID: 8300000, guid: 014e910094ad2e14994981224ec34b92, type: 3}
 --- !u!4 &1959143260
