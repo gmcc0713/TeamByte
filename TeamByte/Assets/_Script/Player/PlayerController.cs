@@ -69,8 +69,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             FireBullet();
-            curBulletCount--;
-            UpdateBulletCountUI();
         }
     }
     IEnumerator ReloadBullet()
@@ -156,6 +154,8 @@ public class PlayerController : MonoBehaviour
             bulletRb = newBullet.GetComponent<Rigidbody2D>();
             // 플레이어가 +방향을 보고 있을 때만 발사
             bulletRb.velocity = shootDirection * bulletSpeed;
+            curBulletCount--;
+            UpdateBulletCountUI();
         }
         else if (gameObject.transform.position.x > mousePosition.x && !spriteRenderer.flipX)
         {
@@ -163,6 +163,8 @@ public class PlayerController : MonoBehaviour
             bulletRb = newBullet.GetComponent<Rigidbody2D>();
             // 플레이어가 -방향을 보고 있을 때는 반대 방향으로 발사
             bulletRb.velocity = shootDirection * bulletSpeed;
+            curBulletCount--;
+            UpdateBulletCountUI();
         }
 
     }
@@ -183,6 +185,6 @@ public class PlayerController : MonoBehaviour
 
     void UpdateBulletCountUI()
     {
-        bulletCountText.text = "Bullet : " + curBulletCount.ToString();
+        bulletCountText.text = " * " + curBulletCount.ToString();
     }
 }
