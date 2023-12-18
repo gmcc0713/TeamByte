@@ -14,10 +14,12 @@ public class LoadingScene : MonoBehaviour
 
     public string GetSceneName(Save_Data data)
     {
+        Debug.Log(data);
         switch (data)
         {
             case Save_Data.Tutorial:
-                SaveLoadManager.Instance.SetNextScene((int)Save_Data.Stage_1);
+                /*SaveLoadManager.Instance.SetNextScene((int)Save_Data.Stage_1);
+                SaveLoadManager.Instance.SetSaveData((int)Save_Data.Stage_1);*/
                 SaveLoadManager.Instance.m_bIsFirst = false;
                 return "Tutorial";
             case Save_Data.Stage_1:
@@ -39,6 +41,7 @@ public class LoadingScene : MonoBehaviour
     IEnumerator LoadingSceneProgress()
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(GetSceneName(SaveLoadManager.Instance.GetNextSceneData()));       //비동기 방식(씬을 불러오는 도중 다른작업이 가능함)
+
         op.allowSceneActivation = false;    //씬을 비동기로 불러들일때 씬의 로딩이 끝나면 자동으로 불러온 씬으로 이동할건지 설정(로딩시간이 너무 짧을때를 대비)
 
         float timer = 0;

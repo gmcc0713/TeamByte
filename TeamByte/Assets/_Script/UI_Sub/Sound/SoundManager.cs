@@ -71,11 +71,11 @@ public class SoundManager : MonoBehaviour
     {
         Initialize();
 
-        if (scene.name == "MenuScene")
+        if (scene.name == "TitleScene")
         {
             audioSources[(int)Sound_Type.Sound_BGM].clip = audioBGMClips[(int)BGM_Num.BGM_MenuScene];
         }
-        else if (scene.name == "PlayScene")
+        else
         {
             audioSources[(int)Sound_Type.Sound_BGM].clip = audioBGMClips[(int)BGM_Num.BGM_PlayScene];
         }

@@ -4091,12 +4091,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8048b49a01cc22b46b6de8f7ceb15c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_eSaveData: 0
+  m_eSaveData: -1
   m_SaveStageBtn:
   - {fileID: 50217475}
   - {fileID: 1361593421}
   - {fileID: 1785775660}
   - {fileID: 1301794845}
+  m_eNextScene: 0
   m_bIsFirst: 0
   health: 3
 --- !u!4 &1693816129
