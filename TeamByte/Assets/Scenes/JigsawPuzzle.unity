@@ -5328,7 +5328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043574e6903ac544fb1dd0c4e9e6d248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clockPuzzlePanel: {fileID: 605963726}
+  clockPuzzlePanel: {fileID: 582777805}
   isClear: 0
   ValueFromPiecesController:
   - {fileID: 1207226594}

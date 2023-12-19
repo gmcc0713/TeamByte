@@ -13,6 +13,8 @@ public class PiecesController : MonoBehaviour
     private int numOfPuzzle = 8;
     public bool clearPuzzle = false;
 
+    public GameObject PuzzlePosition;
+
     void Start()
     {
         initialPosition = GetRandomPosition();
@@ -39,8 +41,10 @@ public class PiecesController : MonoBehaviour
     }
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize *0.9f);
-        float y = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize * 0.9f);
+        float x = Random.Range(PuzzlePosition.gameObject.transform.position.x +5.0f, PuzzlePosition.gameObject.transform.position.x -5.0f);
+        float y = Random.Range(PuzzlePosition.gameObject.transform.position.y +5.0f, PuzzlePosition.gameObject.transform.position.y - 5.0f);     
+        //float x = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize *0.9f);
+        //float y = Random.Range(-puzzlePanelSize * 0.9f, puzzlePanelSize * 0.9f);
         return new Vector3(x, y, 0f);
     }
 
