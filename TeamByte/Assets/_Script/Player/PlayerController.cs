@@ -185,6 +185,6 @@ public class PlayerController : MonoBehaviour
 
     void UpdateBulletCountUI()
     {
-        bulletCountText.text = " * " + curBulletCount.ToString();
+        bulletCountText.text =" : " + curBulletCount.ToString();
     }
 }

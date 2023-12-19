@@ -32,6 +32,8 @@ public class LoadingScene : MonoBehaviour
                 return "Stage4-1";
             case Save_Data.Stage_4_2:
                 return "Stage4-2";
+            case Save_Data.Stage_4_1_1:
+                return "Stage4-1-1";
             case Save_Data.Stage_4_3:
                 return "Stage4-3";
             default:

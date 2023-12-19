@@ -14,6 +14,7 @@ public enum Save_Data
     Stage_3,
     Stage_4_1,
     Stage_4_2,
+    Stage_4_1_1,
     Stage_4_3,
 	Stage_EndingScene,
 	Count,
