@@ -43,9 +43,8 @@ public class ClockPuzzleManager : MonoBehaviour
         clockPuzzlePanel.SetActive(false);
         //SceneManager.LoadScene("LoadingScene");
         ActiveObject.SetActive(true);
-
+        Destroy(this);
         for (int i = 0; i < FalseObject.Length; i++)
             Destroy(FalseObject[i]);
-
     }
 }
