@@ -6,11 +6,22 @@ public class CircleInteraction : MonoBehaviour
     public float interactDistance = 20f; // 허용 거리
     public GameObject quizUI; // 퀴즈 UI 게임 오브젝트
     public GameObject playerObj;
+    public GameObject PressUI;
 
     void Update()
     {
         // Circle 오브젝트와의 거리를 계산
         float distance = Vector3.Distance(playerObj.transform.position, circleObj.transform.position);
+
+        if (distance < interactDistance)
+        {
+            Debug.Log("Press");
+            PressUI.SetActive(true);
+        }
+        else
+        {
+            PressUI.SetActive(false);
+        }
 
         // 거리가 20 이하이고 F 키를 누르면 퀴즈 UI를 엽니다.
         if (distance <= interactDistance && Input.GetKeyDown(KeyCode.F))
