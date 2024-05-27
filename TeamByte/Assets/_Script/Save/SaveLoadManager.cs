@@ -17,6 +17,7 @@ public enum Save_Data
     Stage_4_1_1,
     Stage_4_3,
 	Stage_EndingScene,
+	Stage_2_boss,
 	Count,
 }
 public class SaveLoadManager : MonoBehaviour

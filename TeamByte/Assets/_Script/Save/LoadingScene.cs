@@ -38,6 +38,8 @@ public class LoadingScene : MonoBehaviour
                 return "Stage4-3";
             case Save_Data.Stage_EndingScene:
                 return "EndingScene";
+            case Save_Data.Stage_2_boss:
+                return "Stage2(boss)";
             default:
                 return "";
         }
