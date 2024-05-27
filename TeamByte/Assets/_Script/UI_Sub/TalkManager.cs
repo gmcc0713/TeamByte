@@ -271,6 +271,9 @@ public class TalkManager : MonoBehaviour
         talkData.Add(1034, new string[] { "여기가 하트여왕이있는 곳이에요... \n왜 아무도 없지..?", "한번  주변을 둘러봐요"});
 
 
+        //id = 1040 : Stage4-3 Fairy
+        talkData.Add(1040, new string[] { "하트여왕의 방이에요! \n 방의 구석마다 위치한 트럼프 카드들을 먼저 제거해야 할 것 같아요!" });
+
 
     }
 

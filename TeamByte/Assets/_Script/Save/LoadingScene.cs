@@ -36,14 +36,17 @@ public class LoadingScene : MonoBehaviour
                 return "Stage4-1-1";
             case Save_Data.Stage_4_3:
                 return "Stage4-3";
+            case Save_Data.Stage_EndingScene:
+                return "EndingScene";
             default:
                 return "";
         }
     }
     IEnumerator LoadingSceneProgress()
     {
-        AsyncOperation op = SceneManager.LoadSceneAsync(GetSceneName(SaveLoadManager.Instance.GetNextSceneData()));       //비동기 방식(씬을 불러오는 도중 다른작업이 가능함)
-
+        //비동기 방식(씬을 불러오는 도중 다른작업이 가능함)
+        AsyncOperation op = SceneManager.LoadSceneAsync(GetSceneName(SaveLoadManager.Instance.GetNextSceneData()));       
+        
         op.allowSceneActivation = false;    //씬을 비동기로 불러들일때 씬의 로딩이 끝나면 자동으로 불러온 씬으로 이동할건지 설정(로딩시간이 너무 짧을때를 대비)
 
         float timer = 0;

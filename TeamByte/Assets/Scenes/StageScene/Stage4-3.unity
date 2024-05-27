@@ -50826,7 +50826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42ac29ad36104c42978e7978e66d412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1000
+  id: 1040
   isNPC: 1
   sprite: {fileID: 0}
 --- !u!212 &1355768834
