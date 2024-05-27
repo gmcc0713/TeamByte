@@ -7544,6 +7544,7 @@ MonoBehaviour:
   - {fileID: 1721636772}
   - {fileID: 1817383335}
   - {fileID: 1856038492}
+  - {fileID: 748250491}
 --- !u!4 &503786761
 Transform:
   m_ObjectHideFlags: 0
@@ -26177,6 +26178,7 @@ MonoBehaviour:
   quizUI:
   - {fileID: 1496192614}
   - {fileID: 1856038492}
+  - {fileID: 1496192614}
   playerObj: {fileID: 4187276}
 --- !u!1 &1408466617
 GameObject:
@@ -141968,7 +141970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2098869527
 Transform:
   m_ObjectHideFlags: 0
